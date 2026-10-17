@@ -1,6 +1,6 @@
 # 9tensor.com
 
-The website of 9Tensor: open-source software and data, each with a live version on the web.
+The website of 9Tensor: open-source software and data.
 
 It's one page of plain HTML and CSS. There's no build step and no JavaScript, and nothing loads from anywhere else.
 
@@ -25,13 +25,17 @@ Then open http://localhost:8000.
 
 ## Add a project
 
-Each project is one `<li class="project">` in `index.html`. Copy the Rétouch block and change:
+The page has a section per kind of work, Software and Data, and the menu at the top links to
+them. Each project is one `<li class="project">` in its section's list. Copy the Rétouch block and
+change:
 
 - the name, and its link to the live version;
-- the kind (`Software` or `Data`);
 - one line on what it is;
-- the links: the live version first, then the source;
+- the links: Open (the live version) first, then Source;
 - `--tint` (and `--tint-dark` for dark mode) to the project's own color.
+
+A section with nothing in it yet says Coming soon. When its first project arrives, drop the
+`<span class="label__note">` and add a `<ul class="list">` under the label, as in Software.
 
 ## Deploy
 
