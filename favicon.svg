@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .on { fill: #111214; }
+    .off { fill: #111214; opacity: 0.18; }
+    .accent { fill: #3E4BF0; }
+    @media (prefers-color-scheme: dark) {
+      .on, .off { fill: #EDEEF0; }
+      .accent { fill: #8C96FF; }
+    }
+  </style>
+  <circle class="on" cx="7" cy="7" r="3.6"/><circle class="on" cx="16" cy="7" r="3.6"/><circle class="on" cx="25" cy="7" r="3.6"/>
+  <circle class="on" cx="7" cy="16" r="3.6"/><circle class="on" cx="16" cy="16" r="3.6"/><circle class="on" cx="25" cy="16" r="3.6"/>
+  <circle class="off" cx="7" cy="25" r="3.6"/><circle class="off" cx="16" cy="25" r="3.6"/><circle class="accent" cx="25" cy="25" r="3.6"/>
+</svg>
