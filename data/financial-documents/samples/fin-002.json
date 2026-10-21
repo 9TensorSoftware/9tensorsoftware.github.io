@@ -1,0 +1,953 @@
+{
+  "id": "fin-002",
+  "dataset": "financial-documents",
+  "document_type": "invoice",
+  "language": "tr-TR",
+  "script": "Latn",
+  "direction": "ltr",
+  "synthetic": true,
+  "title": "Invoice · Turkish",
+  "image": {
+    "file": "fin-002.png",
+    "width": 1350,
+    "height": 1905
+  },
+  "fields": [
+    {
+      "name": "seller_name",
+      "value": "Kuzey Yıldızı Tekstil A.Ş.",
+      "bbox": [
+        96,
+        84,
+        384,
+        30
+      ]
+    },
+    {
+      "name": "seller_address",
+      "value": "Organize Sanayi Bölgesi 4. Cadde No:17, Bursa",
+      "bbox": [
+        96,
+        114,
+        384,
+        26
+      ]
+    },
+    {
+      "name": "seller_tax_id",
+      "value": "4101426162",
+      "bbox": [
+        142,
+        142,
+        100,
+        21
+      ]
+    },
+    {
+      "name": "invoice_number",
+      "value": "KYT2026090485138",
+      "bbox": [
+        1090,
+        151,
+        164,
+        21
+      ]
+    },
+    {
+      "name": "invoice_date",
+      "value": "14.10.2026",
+      "bbox": [
+        1164,
+        177,
+        90,
+        21
+      ]
+    },
+    {
+      "name": "buyer_name",
+      "value": "Ege Moda Konfeksiyon Ltd. Şti.",
+      "bbox": [
+        122,
+        290,
+        510,
+        30
+      ]
+    },
+    {
+      "name": "buyer_address",
+      "value": "Kemeraltı Mah. Gazi Bulvarı No:88, İzmir",
+      "bbox": [
+        122,
+        320,
+        510,
+        26
+      ]
+    },
+    {
+      "name": "buyer_tax_id",
+      "value": "2388727938",
+      "bbox": [
+        168,
+        348,
+        100,
+        21
+      ]
+    },
+    {
+      "name": "due_date",
+      "value": "13.11.2026",
+      "bbox": [
+        769,
+        291,
+        90,
+        21
+      ]
+    },
+    {
+      "name": "iban",
+      "value": "TR34 0009 9319 8883 0304 9905 51",
+      "bbox": [
+        770,
+        317,
+        293,
+        21
+      ]
+    },
+    {
+      "name": "items[0].description",
+      "value": "Pamuklu kumaş, 150 cm",
+      "bbox": [
+        108,
+        501,
+        232,
+        24
+      ]
+    },
+    {
+      "name": "items[0].quantity",
+      "value": "320",
+      "bbox": [
+        737,
+        501,
+        35,
+        24
+      ]
+    },
+    {
+      "name": "items[0].unit_price",
+      "value": "48,50",
+      "bbox": [
+        948,
+        501,
+        53,
+        24
+      ]
+    },
+    {
+      "name": "items[0].amount",
+      "value": "15.520,00",
+      "bbox": [
+        1149,
+        501,
+        93,
+        24
+      ]
+    },
+    {
+      "name": "items[1].description",
+      "value": "Keten karışım kumaş",
+      "bbox": [
+        108,
+        553,
+        196,
+        24
+      ]
+    },
+    {
+      "name": "items[1].quantity",
+      "value": "140",
+      "bbox": [
+        737,
+        553,
+        35,
+        24
+      ]
+    },
+    {
+      "name": "items[1].unit_price",
+      "value": "72,00",
+      "bbox": [
+        948,
+        553,
+        53,
+        24
+      ]
+    },
+    {
+      "name": "items[1].amount",
+      "value": "10.080,00",
+      "bbox": [
+        1149,
+        553,
+        93,
+        24
+      ]
+    },
+    {
+      "name": "items[2].description",
+      "value": "Dikiş ipliği (kutu)",
+      "bbox": [
+        108,
+        606,
+        152,
+        24
+      ]
+    },
+    {
+      "name": "items[2].quantity",
+      "value": "25",
+      "bbox": [
+        748,
+        606,
+        23,
+        24
+      ]
+    },
+    {
+      "name": "items[2].unit_price",
+      "value": "135,00",
+      "bbox": [
+        936,
+        606,
+        64,
+        24
+      ]
+    },
+    {
+      "name": "items[2].amount",
+      "value": "3.375,00",
+      "bbox": [
+        1160,
+        606,
+        82,
+        24
+      ]
+    },
+    {
+      "name": "items[3].description",
+      "value": "Kargo ve ambalaj",
+      "bbox": [
+        108,
+        659,
+        163,
+        24
+      ]
+    },
+    {
+      "name": "items[3].quantity",
+      "value": "1",
+      "bbox": [
+        760,
+        659,
+        12,
+        24
+      ]
+    },
+    {
+      "name": "items[3].unit_price",
+      "value": "950,00",
+      "bbox": [
+        936,
+        659,
+        64,
+        24
+      ]
+    },
+    {
+      "name": "items[3].amount",
+      "value": "950,00",
+      "bbox": [
+        1178,
+        659,
+        64,
+        24
+      ]
+    },
+    {
+      "name": "subtotal",
+      "value": "₺29.925,00",
+      "bbox": [
+        1137,
+        736,
+        105,
+        24
+      ]
+    },
+    {
+      "name": "vat",
+      "value": "₺5.985,00",
+      "bbox": [
+        1149,
+        783,
+        93,
+        24
+      ]
+    },
+    {
+      "name": "total",
+      "value": "₺35.910,00",
+      "bbox": [
+        1137,
+        829,
+        105,
+        26
+      ]
+    }
+  ],
+  "scan": {
+    "file": "fin-002-scan.jpg",
+    "width": 1350,
+    "height": 1905,
+    "rotation_deg": -1.4,
+    "fields": [
+      {
+        "name": "seller_name",
+        "value": "Kuzey Yıldızı Tekstil A.Ş.",
+        "quad": [
+          [
+            117,
+            70
+          ],
+          [
+            501,
+            79
+          ],
+          [
+            501,
+            109
+          ],
+          [
+            117,
+            100
+          ]
+        ]
+      },
+      {
+        "name": "seller_address",
+        "value": "Organize Sanayi Bölgesi 4. Cadde No:17, Bursa",
+        "quad": [
+          [
+            117,
+            100
+          ],
+          [
+            501,
+            109
+          ],
+          [
+            500,
+            135
+          ],
+          [
+            116,
+            126
+          ]
+        ]
+      },
+      {
+        "name": "seller_tax_id",
+        "value": "4101426162",
+        "quad": [
+          [
+            162,
+            129
+          ],
+          [
+            262,
+            132
+          ],
+          [
+            261,
+            153
+          ],
+          [
+            161,
+            150
+          ]
+        ]
+      },
+      {
+        "name": "invoice_number",
+        "value": "KYT2026090485138",
+        "quad": [
+          [
+            1109,
+            161
+          ],
+          [
+            1273,
+            165
+          ],
+          [
+            1273,
+            186
+          ],
+          [
+            1109,
+            182
+          ]
+        ]
+      },
+      {
+        "name": "invoice_date",
+        "value": "14.10.2026",
+        "quad": [
+          [
+            1183,
+            189
+          ],
+          [
+            1273,
+            191
+          ],
+          [
+            1272,
+            212
+          ],
+          [
+            1182,
+            210
+          ]
+        ]
+      },
+      {
+        "name": "buyer_name",
+        "value": "Ege Moda Konfeksiyon Ltd. Şti.",
+        "quad": [
+          [
+            138,
+            277
+          ],
+          [
+            648,
+            289
+          ],
+          [
+            647,
+            319
+          ],
+          [
+            138,
+            307
+          ]
+        ]
+      },
+      {
+        "name": "buyer_address",
+        "value": "Kemeraltı Mah. Gazi Bulvarı No:88, İzmir",
+        "quad": [
+          [
+            138,
+            307
+          ],
+          [
+            647,
+            319
+          ],
+          [
+            647,
+            345
+          ],
+          [
+            137,
+            333
+          ]
+        ]
+      },
+      {
+        "name": "buyer_tax_id",
+        "value": "2388727938",
+        "quad": [
+          [
+            183,
+            336
+          ],
+          [
+            283,
+            338
+          ],
+          [
+            282,
+            359
+          ],
+          [
+            182,
+            357
+          ]
+        ]
+      },
+      {
+        "name": "due_date",
+        "value": "13.11.2026",
+        "quad": [
+          [
+            785,
+            293
+          ],
+          [
+            875,
+            296
+          ],
+          [
+            875,
+            317
+          ],
+          [
+            785,
+            314
+          ]
+        ]
+      },
+      {
+        "name": "iban",
+        "value": "TR34 0009 9319 8883 0304 9905 51",
+        "quad": [
+          [
+            785,
+            320
+          ],
+          [
+            1078,
+            327
+          ],
+          [
+            1078,
+            348
+          ],
+          [
+            785,
+            341
+          ]
+        ]
+      },
+      {
+        "name": "items[0].description",
+        "value": "Pamuklu kumaş, 150 cm",
+        "quad": [
+          [
+            119,
+            487
+          ],
+          [
+            351,
+            493
+          ],
+          [
+            351,
+            517
+          ],
+          [
+            119,
+            511
+          ]
+        ]
+      },
+      {
+        "name": "items[0].quantity",
+        "value": "320",
+        "quad": [
+          [
+            748,
+            503
+          ],
+          [
+            783,
+            504
+          ],
+          [
+            782,
+            527
+          ],
+          [
+            747,
+            527
+          ]
+        ]
+      },
+      {
+        "name": "items[0].unit_price",
+        "value": "48,50",
+        "quad": [
+          [
+            959,
+            508
+          ],
+          [
+            1012,
+            509
+          ],
+          [
+            1011,
+            533
+          ],
+          [
+            958,
+            532
+          ]
+        ]
+      },
+      {
+        "name": "items[0].amount",
+        "value": "15.520,00",
+        "quad": [
+          [
+            1160,
+            513
+          ],
+          [
+            1253,
+            515
+          ],
+          [
+            1252,
+            539
+          ],
+          [
+            1159,
+            537
+          ]
+        ]
+      },
+      {
+        "name": "items[1].description",
+        "value": "Keten karışım kumaş",
+        "quad": [
+          [
+            118,
+            539
+          ],
+          [
+            314,
+            544
+          ],
+          [
+            313,
+            568
+          ],
+          [
+            117,
+            563
+          ]
+        ]
+      },
+      {
+        "name": "items[1].quantity",
+        "value": "140",
+        "quad": [
+          [
+            747,
+            555
+          ],
+          [
+            782,
+            555
+          ],
+          [
+            781,
+            579
+          ],
+          [
+            746,
+            579
+          ]
+        ]
+      },
+      {
+        "name": "items[1].unit_price",
+        "value": "72,00",
+        "quad": [
+          [
+            958,
+            560
+          ],
+          [
+            1011,
+            561
+          ],
+          [
+            1010,
+            585
+          ],
+          [
+            957,
+            584
+          ]
+        ]
+      },
+      {
+        "name": "items[1].amount",
+        "value": "10.080,00",
+        "quad": [
+          [
+            1159,
+            565
+          ],
+          [
+            1252,
+            567
+          ],
+          [
+            1251,
+            591
+          ],
+          [
+            1158,
+            589
+          ]
+        ]
+      },
+      {
+        "name": "items[2].description",
+        "value": "Dikiş ipliği (kutu)",
+        "quad": [
+          [
+            117,
+            592
+          ],
+          [
+            269,
+            596
+          ],
+          [
+            268,
+            620
+          ],
+          [
+            116,
+            616
+          ]
+        ]
+      },
+      {
+        "name": "items[2].quantity",
+        "value": "25",
+        "quad": [
+          [
+            756,
+            608
+          ],
+          [
+            779,
+            608
+          ],
+          [
+            779,
+            632
+          ],
+          [
+            756,
+            632
+          ]
+        ]
+      },
+      {
+        "name": "items[2].unit_price",
+        "value": "135,00",
+        "quad": [
+          [
+            944,
+            612
+          ],
+          [
+            1008,
+            614
+          ],
+          [
+            1008,
+            638
+          ],
+          [
+            944,
+            636
+          ]
+        ]
+      },
+      {
+        "name": "items[2].amount",
+        "value": "3.375,00",
+        "quad": [
+          [
+            1168,
+            618
+          ],
+          [
+            1250,
+            620
+          ],
+          [
+            1250,
+            644
+          ],
+          [
+            1168,
+            642
+          ]
+        ]
+      },
+      {
+        "name": "items[3].description",
+        "value": "Kargo ve ambalaj",
+        "quad": [
+          [
+            115,
+            645
+          ],
+          [
+            278,
+            649
+          ],
+          [
+            278,
+            673
+          ],
+          [
+            115,
+            669
+          ]
+        ]
+      },
+      {
+        "name": "items[3].quantity",
+        "value": "1",
+        "quad": [
+          [
+            767,
+            661
+          ],
+          [
+            779,
+            661
+          ],
+          [
+            779,
+            685
+          ],
+          [
+            767,
+            685
+          ]
+        ]
+      },
+      {
+        "name": "items[3].unit_price",
+        "value": "950,00",
+        "quad": [
+          [
+            943,
+            665
+          ],
+          [
+            1007,
+            667
+          ],
+          [
+            1006,
+            691
+          ],
+          [
+            943,
+            689
+          ]
+        ]
+      },
+      {
+        "name": "items[3].amount",
+        "value": "950,00",
+        "quad": [
+          [
+            1185,
+            671
+          ],
+          [
+            1249,
+            673
+          ],
+          [
+            1248,
+            697
+          ],
+          [
+            1184,
+            695
+          ]
+        ]
+      },
+      {
+        "name": "subtotal",
+        "value": "₺29.925,00",
+        "quad": [
+          [
+            1142,
+            747
+          ],
+          [
+            1247,
+            750
+          ],
+          [
+            1247,
+            774
+          ],
+          [
+            1142,
+            771
+          ]
+        ]
+      },
+      {
+        "name": "vat",
+        "value": "₺5.985,00",
+        "quad": [
+          [
+            1153,
+            795
+          ],
+          [
+            1246,
+            797
+          ],
+          [
+            1245,
+            821
+          ],
+          [
+            1152,
+            819
+          ]
+        ]
+      },
+      {
+        "name": "total",
+        "value": "₺35.910,00",
+        "quad": [
+          [
+            1140,
+            840
+          ],
+          [
+            1245,
+            843
+          ],
+          [
+            1244,
+            869
+          ],
+          [
+            1139,
+            866
+          ]
+        ]
+      }
+    ]
+  }
+}

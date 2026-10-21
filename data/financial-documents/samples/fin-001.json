@@ -1,0 +1,1881 @@
+{
+  "id": "fin-001",
+  "dataset": "financial-documents",
+  "document_type": "bank_statement",
+  "language": "en-GB",
+  "script": "Latn",
+  "direction": "ltr",
+  "synthetic": true,
+  "title": "Bank statement · English",
+  "image": {
+    "file": "fin-001.png",
+    "width": 1350,
+    "height": 1905
+  },
+  "fields": [
+    {
+      "name": "bank_name",
+      "value": "Northgate Savings Bank",
+      "bbox": [
+        171,
+        94,
+        407,
+        38
+      ]
+    },
+    {
+      "name": "bank_address",
+      "value": "14 Wharf Row, Bristol BS1 4QA",
+      "bbox": [
+        96,
+        155,
+        254,
+        21
+      ]
+    },
+    {
+      "name": "statement_period",
+      "value": "1 Sep 2026 – 30 Sep 2026",
+      "bbox": [
+        1005,
+        120,
+        249,
+        24
+      ]
+    },
+    {
+      "name": "account_holder",
+      "value": "Eleanor Whitcombe",
+      "bbox": [
+        96,
+        233,
+        311,
+        30
+      ]
+    },
+    {
+      "name": "holder_address",
+      "value": "34 Linden Avenue, Bath BA2 6JP",
+      "bbox": [
+        96,
+        264,
+        311,
+        30
+      ]
+    },
+    {
+      "name": "account_number",
+      "value": "60477639",
+      "bbox": [
+        1069,
+        257,
+        80,
+        21
+      ]
+    },
+    {
+      "name": "sort_code",
+      "value": "48-75-47",
+      "bbox": [
+        1014,
+        283,
+        74,
+        21
+      ]
+    },
+    {
+      "name": "iban",
+      "value": "GB33 NGSB 487547 60477639",
+      "bbox": [
+        977,
+        309,
+        252,
+        21
+      ]
+    },
+    {
+      "name": "opening_balance",
+      "value": "£3,587.73",
+      "bbox": [
+        1135,
+        418,
+        93,
+        24
+      ]
+    },
+    {
+      "name": "closing_balance",
+      "value": "£6,581.85",
+      "bbox": [
+        1135,
+        456,
+        93,
+        26
+      ]
+    },
+    {
+      "name": "transactions[0].date",
+      "value": "02 Sep 2026",
+      "bbox": [
+        108,
+        604,
+        119,
+        24
+      ]
+    },
+    {
+      "name": "transactions[0].description",
+      "value": "Metro Rail",
+      "bbox": [
+        325,
+        604,
+        96,
+        24
+      ]
+    },
+    {
+      "name": "transactions[0].paid_out",
+      "value": "87.17",
+      "bbox": [
+        868,
+        604,
+        53,
+        24
+      ]
+    },
+    {
+      "name": "transactions[0].balance",
+      "value": "3,500.56",
+      "bbox": [
+        1160,
+        604,
+        82,
+        24
+      ]
+    },
+    {
+      "name": "transactions[1].date",
+      "value": "04 Sep 2026",
+      "bbox": [
+        108,
+        655,
+        119,
+        24
+      ]
+    },
+    {
+      "name": "transactions[1].description",
+      "value": "Harbour Grocers",
+      "bbox": [
+        325,
+        655,
+        157,
+        24
+      ]
+    },
+    {
+      "name": "transactions[1].paid_out",
+      "value": "22.70",
+      "bbox": [
+        868,
+        655,
+        53,
+        24
+      ]
+    },
+    {
+      "name": "transactions[1].balance",
+      "value": "3,477.86",
+      "bbox": [
+        1160,
+        655,
+        82,
+        24
+      ]
+    },
+    {
+      "name": "transactions[2].date",
+      "value": "06 Sep 2026",
+      "bbox": [
+        108,
+        707,
+        119,
+        24
+      ]
+    },
+    {
+      "name": "transactions[2].description",
+      "value": "City Power Co.",
+      "bbox": [
+        325,
+        707,
+        142,
+        24
+      ]
+    },
+    {
+      "name": "transactions[2].paid_out",
+      "value": "39.60",
+      "bbox": [
+        868,
+        707,
+        53,
+        24
+      ]
+    },
+    {
+      "name": "transactions[2].balance",
+      "value": "3,438.26",
+      "bbox": [
+        1160,
+        707,
+        82,
+        24
+      ]
+    },
+    {
+      "name": "transactions[3].date",
+      "value": "08 Sep 2026",
+      "bbox": [
+        108,
+        758,
+        119,
+        24
+      ]
+    },
+    {
+      "name": "transactions[3].description",
+      "value": "Salary — Fernwood Studio Ltd",
+      "bbox": [
+        325,
+        758,
+        289,
+        24
+      ]
+    },
+    {
+      "name": "transactions[3].paid_in",
+      "value": "2,491.70",
+      "bbox": [
+        1000,
+        758,
+        82,
+        24
+      ]
+    },
+    {
+      "name": "transactions[3].balance",
+      "value": "5,929.96",
+      "bbox": [
+        1160,
+        758,
+        82,
+        24
+      ]
+    },
+    {
+      "name": "transactions[4].date",
+      "value": "10 Sep 2026",
+      "bbox": [
+        108,
+        810,
+        119,
+        24
+      ]
+    },
+    {
+      "name": "transactions[4].description",
+      "value": "Metro Rail",
+      "bbox": [
+        325,
+        810,
+        96,
+        24
+      ]
+    },
+    {
+      "name": "transactions[4].paid_out",
+      "value": "163.21",
+      "bbox": [
+        857,
+        810,
+        64,
+        24
+      ]
+    },
+    {
+      "name": "transactions[4].balance",
+      "value": "5,766.75",
+      "bbox": [
+        1160,
+        810,
+        82,
+        24
+      ]
+    },
+    {
+      "name": "transactions[5].date",
+      "value": "12 Sep 2026",
+      "bbox": [
+        108,
+        861,
+        119,
+        24
+      ]
+    },
+    {
+      "name": "transactions[5].description",
+      "value": "Corner Café",
+      "bbox": [
+        325,
+        861,
+        114,
+        24
+      ]
+    },
+    {
+      "name": "transactions[5].paid_out",
+      "value": "170.66",
+      "bbox": [
+        857,
+        861,
+        64,
+        24
+      ]
+    },
+    {
+      "name": "transactions[5].balance",
+      "value": "5,596.09",
+      "bbox": [
+        1160,
+        861,
+        82,
+        24
+      ]
+    },
+    {
+      "name": "transactions[6].date",
+      "value": "14 Sep 2026",
+      "bbox": [
+        108,
+        912,
+        119,
+        24
+      ]
+    },
+    {
+      "name": "transactions[6].description",
+      "value": "City Power Co.",
+      "bbox": [
+        325,
+        912,
+        142,
+        24
+      ]
+    },
+    {
+      "name": "transactions[6].paid_out",
+      "value": "121.78",
+      "bbox": [
+        857,
+        912,
+        64,
+        24
+      ]
+    },
+    {
+      "name": "transactions[6].balance",
+      "value": "5,474.31",
+      "bbox": [
+        1160,
+        912,
+        82,
+        24
+      ]
+    },
+    {
+      "name": "transactions[7].date",
+      "value": "16 Sep 2026",
+      "bbox": [
+        108,
+        964,
+        119,
+        24
+      ]
+    },
+    {
+      "name": "transactions[7].description",
+      "value": "Metro Rail",
+      "bbox": [
+        325,
+        964,
+        96,
+        24
+      ]
+    },
+    {
+      "name": "transactions[7].paid_out",
+      "value": "141.61",
+      "bbox": [
+        857,
+        964,
+        64,
+        24
+      ]
+    },
+    {
+      "name": "transactions[7].balance",
+      "value": "5,332.70",
+      "bbox": [
+        1160,
+        964,
+        82,
+        24
+      ]
+    },
+    {
+      "name": "transactions[8].date",
+      "value": "18 Sep 2026",
+      "bbox": [
+        108,
+        1015,
+        119,
+        24
+      ]
+    },
+    {
+      "name": "transactions[8].description",
+      "value": "Corner Café",
+      "bbox": [
+        325,
+        1015,
+        114,
+        24
+      ]
+    },
+    {
+      "name": "transactions[8].paid_out",
+      "value": "13.17",
+      "bbox": [
+        868,
+        1015,
+        53,
+        24
+      ]
+    },
+    {
+      "name": "transactions[8].balance",
+      "value": "5,319.53",
+      "bbox": [
+        1160,
+        1015,
+        82,
+        24
+      ]
+    },
+    {
+      "name": "transactions[9].date",
+      "value": "20 Sep 2026",
+      "bbox": [
+        108,
+        1067,
+        119,
+        24
+      ]
+    },
+    {
+      "name": "transactions[9].description",
+      "value": "Salary — Fernwood Studio Ltd",
+      "bbox": [
+        325,
+        1067,
+        289,
+        24
+      ]
+    },
+    {
+      "name": "transactions[9].paid_in",
+      "value": "1,415.64",
+      "bbox": [
+        1000,
+        1067,
+        82,
+        24
+      ]
+    },
+    {
+      "name": "transactions[9].balance",
+      "value": "6,735.17",
+      "bbox": [
+        1160,
+        1067,
+        82,
+        24
+      ]
+    },
+    {
+      "name": "transactions[10].date",
+      "value": "22 Sep 2026",
+      "bbox": [
+        108,
+        1118,
+        119,
+        24
+      ]
+    },
+    {
+      "name": "transactions[10].description",
+      "value": "Lantern Books",
+      "bbox": [
+        325,
+        1118,
+        137,
+        24
+      ]
+    },
+    {
+      "name": "transactions[10].paid_out",
+      "value": "109.77",
+      "bbox": [
+        857,
+        1118,
+        64,
+        24
+      ]
+    },
+    {
+      "name": "transactions[10].balance",
+      "value": "6,625.40",
+      "bbox": [
+        1160,
+        1118,
+        82,
+        24
+      ]
+    },
+    {
+      "name": "transactions[11].date",
+      "value": "24 Sep 2026",
+      "bbox": [
+        108,
+        1170,
+        119,
+        24
+      ]
+    },
+    {
+      "name": "transactions[11].description",
+      "value": "Harbour Grocers",
+      "bbox": [
+        325,
+        1170,
+        157,
+        24
+      ]
+    },
+    {
+      "name": "transactions[11].paid_out",
+      "value": "43.55",
+      "bbox": [
+        868,
+        1170,
+        53,
+        24
+      ]
+    },
+    {
+      "name": "transactions[11].balance",
+      "value": "6,581.85",
+      "bbox": [
+        1160,
+        1170,
+        82,
+        24
+      ]
+    }
+  ],
+  "scan": {
+    "file": "fin-001-scan.jpg",
+    "width": 1350,
+    "height": 1905,
+    "rotation_deg": -1.596,
+    "fields": [
+      {
+        "name": "bank_name",
+        "value": "Northgate Savings Bank",
+        "quad": [
+          [
+            195,
+            80
+          ],
+          [
+            602,
+            92
+          ],
+          [
+            601,
+            130
+          ],
+          [
+            194,
+            118
+          ]
+        ]
+      },
+      {
+        "name": "bank_address",
+        "value": "14 Wharf Row, Bristol BS1 4QA",
+        "quad": [
+          [
+            118,
+            139
+          ],
+          [
+            372,
+            146
+          ],
+          [
+            372,
+            167
+          ],
+          [
+            118,
+            160
+          ]
+        ]
+      },
+      {
+        "name": "statement_period",
+        "value": "1 Sep 2026 – 30 Sep 2026",
+        "quad": [
+          [
+            1028,
+            130
+          ],
+          [
+            1277,
+            136
+          ],
+          [
+            1276,
+            160
+          ],
+          [
+            1027,
+            154
+          ]
+        ]
+      },
+      {
+        "name": "account_holder",
+        "value": "Eleanor Whitcombe",
+        "quad": [
+          [
+            116,
+            217
+          ],
+          [
+            427,
+            226
+          ],
+          [
+            426,
+            256
+          ],
+          [
+            115,
+            247
+          ]
+        ]
+      },
+      {
+        "name": "holder_address",
+        "value": "34 Linden Avenue, Bath BA2 6JP",
+        "quad": [
+          [
+            115,
+            248
+          ],
+          [
+            426,
+            257
+          ],
+          [
+            425,
+            287
+          ],
+          [
+            115,
+            278
+          ]
+        ]
+      },
+      {
+        "name": "account_number",
+        "value": "60477639",
+        "quad": [
+          [
+            1088,
+            268
+          ],
+          [
+            1168,
+            270
+          ],
+          [
+            1168,
+            291
+          ],
+          [
+            1088,
+            289
+          ]
+        ]
+      },
+      {
+        "name": "sort_code",
+        "value": "48-75-47",
+        "quad": [
+          [
+            1033,
+            293
+          ],
+          [
+            1106,
+            295
+          ],
+          [
+            1106,
+            316
+          ],
+          [
+            1032,
+            314
+          ]
+        ]
+      },
+      {
+        "name": "iban",
+        "value": "GB33 NGSB 487547 60477639",
+        "quad": [
+          [
+            995,
+            318
+          ],
+          [
+            1247,
+            325
+          ],
+          [
+            1246,
+            346
+          ],
+          [
+            994,
+            339
+          ]
+        ]
+      },
+      {
+        "name": "opening_balance",
+        "value": "£3,587.73",
+        "quad": [
+          [
+            1150,
+            431
+          ],
+          [
+            1243,
+            434
+          ],
+          [
+            1242,
+            458
+          ],
+          [
+            1149,
+            455
+          ]
+        ]
+      },
+      {
+        "name": "closing_balance",
+        "value": "£6,581.85",
+        "quad": [
+          [
+            1149,
+            469
+          ],
+          [
+            1242,
+            472
+          ],
+          [
+            1241,
+            498
+          ],
+          [
+            1148,
+            495
+          ]
+        ]
+      },
+      {
+        "name": "transactions[0].date",
+        "value": "02 Sep 2026",
+        "quad": [
+          [
+            118,
+            588
+          ],
+          [
+            237,
+            592
+          ],
+          [
+            236,
+            616
+          ],
+          [
+            117,
+            612
+          ]
+        ]
+      },
+      {
+        "name": "transactions[0].description",
+        "value": "Metro Rail",
+        "quad": [
+          [
+            335,
+            594
+          ],
+          [
+            431,
+            597
+          ],
+          [
+            430,
+            621
+          ],
+          [
+            334,
+            618
+          ]
+        ]
+      },
+      {
+        "name": "transactions[0].paid_out",
+        "value": "87.17",
+        "quad": [
+          [
+            878,
+            610
+          ],
+          [
+            931,
+            611
+          ],
+          [
+            930,
+            635
+          ],
+          [
+            877,
+            634
+          ]
+        ]
+      },
+      {
+        "name": "transactions[0].balance",
+        "value": "3,500.56",
+        "quad": [
+          [
+            1170,
+            618
+          ],
+          [
+            1251,
+            620
+          ],
+          [
+            1251,
+            644
+          ],
+          [
+            1169,
+            642
+          ]
+        ]
+      },
+      {
+        "name": "transactions[1].date",
+        "value": "04 Sep 2026",
+        "quad": [
+          [
+            117,
+            639
+          ],
+          [
+            235,
+            643
+          ],
+          [
+            235,
+            667
+          ],
+          [
+            116,
+            663
+          ]
+        ]
+      },
+      {
+        "name": "transactions[1].description",
+        "value": "Harbour Grocers",
+        "quad": [
+          [
+            333,
+            645
+          ],
+          [
+            490,
+            650
+          ],
+          [
+            490,
+            674
+          ],
+          [
+            333,
+            669
+          ]
+        ]
+      },
+      {
+        "name": "transactions[1].paid_out",
+        "value": "22.70",
+        "quad": [
+          [
+            876,
+            660
+          ],
+          [
+            929,
+            662
+          ],
+          [
+            929,
+            686
+          ],
+          [
+            876,
+            684
+          ]
+        ]
+      },
+      {
+        "name": "transactions[1].balance",
+        "value": "3,477.86",
+        "quad": [
+          [
+            1168,
+            669
+          ],
+          [
+            1250,
+            671
+          ],
+          [
+            1249,
+            695
+          ],
+          [
+            1167,
+            693
+          ]
+        ]
+      },
+      {
+        "name": "transactions[2].date",
+        "value": "06 Sep 2026",
+        "quad": [
+          [
+            115,
+            691
+          ],
+          [
+            234,
+            695
+          ],
+          [
+            233,
+            719
+          ],
+          [
+            114,
+            715
+          ]
+        ]
+      },
+      {
+        "name": "transactions[2].description",
+        "value": "City Power Co.",
+        "quad": [
+          [
+            332,
+            697
+          ],
+          [
+            474,
+            701
+          ],
+          [
+            473,
+            725
+          ],
+          [
+            331,
+            721
+          ]
+        ]
+      },
+      {
+        "name": "transactions[2].paid_out",
+        "value": "39.60",
+        "quad": [
+          [
+            875,
+            712
+          ],
+          [
+            928,
+            714
+          ],
+          [
+            927,
+            738
+          ],
+          [
+            874,
+            736
+          ]
+        ]
+      },
+      {
+        "name": "transactions[2].balance",
+        "value": "3,438.26",
+        "quad": [
+          [
+            1167,
+            721
+          ],
+          [
+            1249,
+            723
+          ],
+          [
+            1248,
+            747
+          ],
+          [
+            1166,
+            745
+          ]
+        ]
+      },
+      {
+        "name": "transactions[3].date",
+        "value": "08 Sep 2026",
+        "quad": [
+          [
+            114,
+            742
+          ],
+          [
+            233,
+            746
+          ],
+          [
+            232,
+            770
+          ],
+          [
+            113,
+            766
+          ]
+        ]
+      },
+      {
+        "name": "transactions[3].description",
+        "value": "Salary — Fernwood Studio Ltd",
+        "quad": [
+          [
+            331,
+            748
+          ],
+          [
+            619,
+            756
+          ],
+          [
+            619,
+            780
+          ],
+          [
+            330,
+            772
+          ]
+        ]
+      },
+      {
+        "name": "transactions[3].paid_in",
+        "value": "2,491.70",
+        "quad": [
+          [
+            1005,
+            767
+          ],
+          [
+            1087,
+            769
+          ],
+          [
+            1087,
+            793
+          ],
+          [
+            1005,
+            791
+          ]
+        ]
+      },
+      {
+        "name": "transactions[3].balance",
+        "value": "5,929.96",
+        "quad": [
+          [
+            1165,
+            772
+          ],
+          [
+            1247,
+            774
+          ],
+          [
+            1247,
+            798
+          ],
+          [
+            1165,
+            796
+          ]
+        ]
+      },
+      {
+        "name": "transactions[4].date",
+        "value": "10 Sep 2026",
+        "quad": [
+          [
+            112,
+            794
+          ],
+          [
+            231,
+            798
+          ],
+          [
+            230,
+            822
+          ],
+          [
+            112,
+            818
+          ]
+        ]
+      },
+      {
+        "name": "transactions[4].description",
+        "value": "Metro Rail",
+        "quad": [
+          [
+            329,
+            800
+          ],
+          [
+            425,
+            803
+          ],
+          [
+            424,
+            827
+          ],
+          [
+            328,
+            824
+          ]
+        ]
+      },
+      {
+        "name": "transactions[4].paid_out",
+        "value": "163.21",
+        "quad": [
+          [
+            861,
+            815
+          ],
+          [
+            925,
+            817
+          ],
+          [
+            924,
+            841
+          ],
+          [
+            860,
+            839
+          ]
+        ]
+      },
+      {
+        "name": "transactions[4].balance",
+        "value": "5,766.75",
+        "quad": [
+          [
+            1164,
+            824
+          ],
+          [
+            1246,
+            826
+          ],
+          [
+            1245,
+            850
+          ],
+          [
+            1163,
+            848
+          ]
+        ]
+      },
+      {
+        "name": "transactions[5].date",
+        "value": "12 Sep 2026",
+        "quad": [
+          [
+            111,
+            845
+          ],
+          [
+            230,
+            849
+          ],
+          [
+            229,
+            873
+          ],
+          [
+            110,
+            869
+          ]
+        ]
+      },
+      {
+        "name": "transactions[5].description",
+        "value": "Corner Café",
+        "quad": [
+          [
+            328,
+            851
+          ],
+          [
+            442,
+            854
+          ],
+          [
+            441,
+            878
+          ],
+          [
+            327,
+            875
+          ]
+        ]
+      },
+      {
+        "name": "transactions[5].paid_out",
+        "value": "170.66",
+        "quad": [
+          [
+            859,
+            866
+          ],
+          [
+            923,
+            868
+          ],
+          [
+            923,
+            892
+          ],
+          [
+            859,
+            890
+          ]
+        ]
+      },
+      {
+        "name": "transactions[5].balance",
+        "value": "5,596.09",
+        "quad": [
+          [
+            1162,
+            875
+          ],
+          [
+            1244,
+            877
+          ],
+          [
+            1244,
+            901
+          ],
+          [
+            1162,
+            899
+          ]
+        ]
+      },
+      {
+        "name": "transactions[6].date",
+        "value": "14 Sep 2026",
+        "quad": [
+          [
+            109,
+            896
+          ],
+          [
+            228,
+            900
+          ],
+          [
+            228,
+            924
+          ],
+          [
+            109,
+            920
+          ]
+        ]
+      },
+      {
+        "name": "transactions[6].description",
+        "value": "City Power Co.",
+        "quad": [
+          [
+            326,
+            902
+          ],
+          [
+            468,
+            906
+          ],
+          [
+            468,
+            930
+          ],
+          [
+            326,
+            926
+          ]
+        ]
+      },
+      {
+        "name": "transactions[6].paid_out",
+        "value": "121.78",
+        "quad": [
+          [
+            858,
+            917
+          ],
+          [
+            922,
+            919
+          ],
+          [
+            921,
+            943
+          ],
+          [
+            857,
+            941
+          ]
+        ]
+      },
+      {
+        "name": "transactions[6].balance",
+        "value": "5,474.31",
+        "quad": [
+          [
+            1161,
+            926
+          ],
+          [
+            1243,
+            928
+          ],
+          [
+            1242,
+            952
+          ],
+          [
+            1160,
+            950
+          ]
+        ]
+      },
+      {
+        "name": "transactions[7].date",
+        "value": "16 Sep 2026",
+        "quad": [
+          [
+            108,
+            948
+          ],
+          [
+            227,
+            952
+          ],
+          [
+            226,
+            976
+          ],
+          [
+            107,
+            972
+          ]
+        ]
+      },
+      {
+        "name": "transactions[7].description",
+        "value": "Metro Rail",
+        "quad": [
+          [
+            325,
+            954
+          ],
+          [
+            421,
+            957
+          ],
+          [
+            420,
+            981
+          ],
+          [
+            324,
+            978
+          ]
+        ]
+      },
+      {
+        "name": "transactions[7].paid_out",
+        "value": "141.61",
+        "quad": [
+          [
+            857,
+            969
+          ],
+          [
+            921,
+            971
+          ],
+          [
+            920,
+            995
+          ],
+          [
+            856,
+            993
+          ]
+        ]
+      },
+      {
+        "name": "transactions[7].balance",
+        "value": "5,332.70",
+        "quad": [
+          [
+            1159,
+            978
+          ],
+          [
+            1241,
+            980
+          ],
+          [
+            1241,
+            1004
+          ],
+          [
+            1159,
+            1001
+          ]
+        ]
+      },
+      {
+        "name": "transactions[8].date",
+        "value": "18 Sep 2026",
+        "quad": [
+          [
+            106,
+            999
+          ],
+          [
+            225,
+            1002
+          ],
+          [
+            225,
+            1026
+          ],
+          [
+            106,
+            1023
+          ]
+        ]
+      },
+      {
+        "name": "transactions[8].description",
+        "value": "Corner Café",
+        "quad": [
+          [
+            323,
+            1005
+          ],
+          [
+            437,
+            1008
+          ],
+          [
+            437,
+            1032
+          ],
+          [
+            323,
+            1029
+          ]
+        ]
+      },
+      {
+        "name": "transactions[8].paid_out",
+        "value": "13.17",
+        "quad": [
+          [
+            866,
+            1020
+          ],
+          [
+            919,
+            1022
+          ],
+          [
+            918,
+            1046
+          ],
+          [
+            866,
+            1044
+          ]
+        ]
+      },
+      {
+        "name": "transactions[8].balance",
+        "value": "5,319.53",
+        "quad": [
+          [
+            1158,
+            1028
+          ],
+          [
+            1240,
+            1031
+          ],
+          [
+            1239,
+            1055
+          ],
+          [
+            1157,
+            1052
+          ]
+        ]
+      },
+      {
+        "name": "transactions[9].date",
+        "value": "20 Sep 2026",
+        "quad": [
+          [
+            105,
+            1051
+          ],
+          [
+            224,
+            1054
+          ],
+          [
+            223,
+            1078
+          ],
+          [
+            104,
+            1075
+          ]
+        ]
+      },
+      {
+        "name": "transactions[9].description",
+        "value": "Salary — Fernwood Studio Ltd",
+        "quad": [
+          [
+            322,
+            1057
+          ],
+          [
+            611,
+            1065
+          ],
+          [
+            610,
+            1089
+          ],
+          [
+            321,
+            1081
+          ]
+        ]
+      },
+      {
+        "name": "transactions[9].paid_in",
+        "value": "1,415.64",
+        "quad": [
+          [
+            997,
+            1076
+          ],
+          [
+            1079,
+            1078
+          ],
+          [
+            1078,
+            1102
+          ],
+          [
+            996,
+            1100
+          ]
+        ]
+      },
+      {
+        "name": "transactions[9].balance",
+        "value": "6,735.17",
+        "quad": [
+          [
+            1157,
+            1080
+          ],
+          [
+            1239,
+            1083
+          ],
+          [
+            1238,
+            1107
+          ],
+          [
+            1156,
+            1104
+          ]
+        ]
+      },
+      {
+        "name": "transactions[10].date",
+        "value": "22 Sep 2026",
+        "quad": [
+          [
+            104,
+            1102
+          ],
+          [
+            223,
+            1105
+          ],
+          [
+            222,
+            1129
+          ],
+          [
+            103,
+            1126
+          ]
+        ]
+      },
+      {
+        "name": "transactions[10].description",
+        "value": "Lantern Books",
+        "quad": [
+          [
+            321,
+            1108
+          ],
+          [
+            457,
+            1112
+          ],
+          [
+            457,
+            1136
+          ],
+          [
+            320,
+            1132
+          ]
+        ]
+      },
+      {
+        "name": "transactions[10].paid_out",
+        "value": "109.77",
+        "quad": [
+          [
+            852,
+            1123
+          ],
+          [
+            916,
+            1125
+          ],
+          [
+            916,
+            1149
+          ],
+          [
+            852,
+            1147
+          ]
+        ]
+      },
+      {
+        "name": "transactions[10].balance",
+        "value": "6,625.40",
+        "quad": [
+          [
+            1155,
+            1131
+          ],
+          [
+            1237,
+            1134
+          ],
+          [
+            1237,
+            1158
+          ],
+          [
+            1155,
+            1155
+          ]
+        ]
+      },
+      {
+        "name": "transactions[11].date",
+        "value": "24 Sep 2026",
+        "quad": [
+          [
+            102,
+            1154
+          ],
+          [
+            221,
+            1157
+          ],
+          [
+            220,
+            1181
+          ],
+          [
+            101,
+            1178
+          ]
+        ]
+      },
+      {
+        "name": "transactions[11].description",
+        "value": "Harbour Grocers",
+        "quad": [
+          [
+            319,
+            1160
+          ],
+          [
+            476,
+            1165
+          ],
+          [
+            475,
+            1189
+          ],
+          [
+            318,
+            1184
+          ]
+        ]
+      },
+      {
+        "name": "transactions[11].paid_out",
+        "value": "43.55",
+        "quad": [
+          [
+            862,
+            1175
+          ],
+          [
+            915,
+            1177
+          ],
+          [
+            914,
+            1201
+          ],
+          [
+            861,
+            1199
+          ]
+        ]
+      },
+      {
+        "name": "transactions[11].balance",
+        "value": "6,581.85",
+        "quad": [
+          [
+            1154,
+            1183
+          ],
+          [
+            1236,
+            1186
+          ],
+          [
+            1235,
+            1210
+          ],
+          [
+            1153,
+            1207
+          ]
+        ]
+      }
+    ]
+  }
+}

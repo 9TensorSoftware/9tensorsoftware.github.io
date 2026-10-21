@@ -2,17 +2,24 @@
 
 The website of 9Tensor: open-source software and data.
 
-It's one page of plain HTML and CSS. There's no build step and no JavaScript, and nothing loads from anywhere else.
+It's plain HTML, CSS and a little JavaScript. There's no build step, and nothing loads from other
+servers except the background map in Carte.
 
 ```
-index.html          the page
-styles.css          its styles (light and dark follow the system)
-404.html            what GitHub Pages serves for a missing page
-favicon.svg/.ico    icons: a 3 × 3 grid of dots whose lit ones draw a 9
+index.html              the landing page: two short lists, Software and Data
+lien/ carte/            a page for Lien and for Carte (Rétouch has its own site)
+lien/app/ carte/app/    the free apps: a network canvas and a map
+data/<name>/            a page for each dataset, with its free sample next to it
+styles.css              the site's styles (light and dark follow the system)
+app.css                 the frame shared by the two apps
+site.js                 makes the menus close on an outside click or Escape
+vendor/                 Leaflet, Cytoscape.js, JSZip and toGeoJSON (see vendor/README.md)
+404.html                what GitHub Pages serves for a missing page
+favicon.svg/.ico        icons: a 3 × 3 grid of dots whose lit ones draw a 9
 apple-touch-icon.png
-og.png              the preview shown when the site is linked (1200 × 630)
-CNAME               the custom domain, 9tensor.com
-.nojekyll           tells GitHub Pages to serve the files as they are
+og.png                  the preview shown when the site is linked (1200 × 630)
+CNAME                   the custom domain, 9tensor.com
+.nojekyll               tells GitHub Pages to serve the files as they are
 ```
 
 ## Preview it
@@ -21,21 +28,29 @@ CNAME               the custom domain, 9tensor.com
 python3 -m http.server 8000
 ```
 
-Then open http://localhost:8000.
+Then open http://localhost:8000. Links start with `/`, so serve the site from its root rather than
+opening the files directly.
 
-## Add a project
+## The menu
 
-The page has a section per kind of work, Software and Data, and the menu at the top links to
-them. Each project is one `<li class="project">` in its section's list. Copy the Rétouch block and
-change:
+Every page has the same header, with Software and Data menus. Each menu is a `<details>`, so it
+opens even without JavaScript. To add or rename an item, change the header in **every** page,
+including `404.html` (search for `menu__panel`).
 
-- the name, and its link to the live version;
-- one line on what it is;
-- the links: Open (the live version) first, then Source;
-- `--tint` (and `--tint-dark` for dark mode) to the project's own color.
+## Add a page
 
-A section with nothing in it yet says Coming soon. When its first project arrives, drop the
-`<span class="label__note">` and add a `<ul class="list">` under the label, as in Software.
+Copy the nearest page (`lien/` for software, `data/health-records/` for data) into a new folder,
+then change its title, description, `canonical` and `og:url`, and its text. Add it to the menu on
+every page, to the lists in `index.html`, and to `sitemap.xml`.
+
+Every page offers something free:
+
+- **Software** links to the app itself: Rétouch at retouch.9tensor.com, Lien and Carte in
+  `lien/app/` and `carte/app/`.
+- **Data** shows a free sample on the page and lets people download it. The synthetic document
+  samples sit in `data/<name>/samples/`: each document has a PNG, a scanned-looking JPG, a JSON
+  file of labels and two thumbnails, plus one zip of everything. The media-outlet sample is
+  `data/media-outlets/media-outlets-sample.csv` (and `.json`, which the page's table reads).
 
 ## Deploy
 

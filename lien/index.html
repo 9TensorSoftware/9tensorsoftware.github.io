@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lien — 9Tensor</title>
+  <meta name="description" content="Lien is a free canvas for drawing and analysing networks of people, companies and accounts, in your browser.">
+  <link rel="canonical" href="https://9tensor.com/lien/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#F6F6F3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D0E10" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="9Tensor">
+  <meta property="og:url" content="https://9tensor.com/lien/">
+  <meta property="og:title" content="Lien">
+  <meta property="og:description" content="Lien is a free canvas for drawing and analysing networks of people, companies and accounts, in your browser.">
+  <meta property="og:image" content="https://9tensor.com/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="9Tensor: open-source software and data">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/site.js" defer></script>
+</head>
+<body>
+  <header class="wrap top">
+    <a class="brand" href="/" aria-label="9Tensor, home">
+      <!-- The mark: a 3 × 3 grid of dots (a tensor of nine) whose lit dots draw a 9. -->
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="7" cy="7" r="3.3"/><circle cx="16" cy="7" r="3.3"/><circle cx="25" cy="7" r="3.3"/>
+        <circle cx="7" cy="16" r="3.3"/><circle cx="16" cy="16" r="3.3"/><circle cx="25" cy="16" r="3.3"/>
+        <circle class="mark__off" cx="7" cy="25" r="3.3"/><circle class="mark__off" cx="16" cy="25" r="3.3"/><circle class="mark__accent" cx="25" cy="25" r="3.3"/>
+      </svg>
+      <span class="brand__name">9Tensor</span>
+    </a>
+    <nav class="top__nav" aria-label="Main">
+      <details class="menu">
+        <summary class="top__link">Software</summary>
+        <div class="menu__panel">
+          <a class="menu__item" href="https://retouch.9tensor.com"><strong>R<em>é</em>touch</strong><span>Image and video editing and analysis</span></a>
+          <a class="menu__item" href="/lien/" aria-current="page"><strong>Lien</strong><span>Network analysis on a free canvas</span></a>
+          <a class="menu__item" href="/carte/"><strong>Carte</strong><span>Map analysis for KML, GeoJSON and GPX</span></a>
+        </div>
+      </details>
+      <details class="menu">
+        <summary class="top__link">Data</summary>
+        <div class="menu__panel">
+          <a class="menu__item" href="/data/media-outlets/"><strong>Media outlets</strong><span>News outlets around the world</span></a>
+          <a class="menu__item" href="/data/financial-documents/"><strong>Financial documents</strong><span>Synthetic statements, invoices and receipts</span></a>
+          <a class="menu__item" href="/data/health-records/"><strong>Health records</strong><span>Synthetic lab reports and prescriptions</span></a>
+          <a class="menu__item" href="/data/identity-documents/"><strong>Identity documents</strong><span>Synthetic ID cards, marked as specimens</span></a>
+        </div>
+      </details>
+      <a class="top__link" href="mailto:hello@9tensor.com">Contact</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="page" style="--tint: #1F8A70">
+      <p class="crumb">Software</p>
+      <h1 class="page__title">Lien</h1>
+      <p class="page__lead">Draw and analyse networks: people, companies, accounts and the links between them. Free, in your browser.</p>
+      <div class="actions">
+        <a class="btn btn--primary" href="/lien/app/">Open the canvas, free →</a>
+      </div>
+    </section>
+
+    <section class="section" id="what">
+      <h2 class="label">What you can do</h2>
+      <ul class="features">
+        <li><h3>Draw</h3><p>Double-click to add a node. Connect two nodes, name them, colour them by type.</p></li>
+        <li><h3>Import</h3><p>Paste or load a CSV of links (source, target, label) or a JSON graph.</p></li>
+        <li><h3>Lay out</h3><p>Force-directed, circle, grid and concentric layouts, in one click.</p></li>
+        <li><h3>Find what matters</h3><p>Rank nodes by connections and by how often they sit between others.</p></li>
+        <li><h3>Export</h3><p>Save the graph as JSON to pick up later, or as a PNG image.</p></li>
+        <li><h3>Private</h3><p>Everything stays in your browser. Nothing is uploaded.</p></li>
+      </ul>
+    </section>
+
+    <section class="section" id="import">
+      <h2 class="label">Bring your own data</h2>
+      <div class="prose">
+        <p>A CSV with one link per row is enough. Lien creates the nodes for you.</p>
+      </div>
+      <pre class="code">source,target,label
+Harbor Holdings,Bluefin Trading,owns
+Bluefin Trading,Coral Logistics,pays
+Coral Logistics,Harbor Holdings,leases</pre>
+      <p class="note">Lien is new. <a href="mailto:hello@9tensor.com?subject=Lien">Tell us what you'd like it to do</a>.</p>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <p>© 2026 9Tensor LLC</p>
+    <p class="foot__links">
+      <a href="mailto:hello@9tensor.com">hello@9tensor.com</a>
+      <a href="https://github.com/9tensorsoftware">GitHub</a>
+      <a href="https://github.com/9tensorsoftware/9tensorsoftware.github.io">Site source</a>
+    </p>
+  </footer>
+</body>
+</html>

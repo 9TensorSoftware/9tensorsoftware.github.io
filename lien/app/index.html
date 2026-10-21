@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lien canvas — 9Tensor</title>
+  <meta name="description" content="A free canvas for drawing and analysing networks, in your browser.">
+  <link rel="canonical" href="https://9tensor.com/lien/app/">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/app.css">
+  <script src="/vendor/cytoscape.min.js" defer></script>
+  <script src="/lien/app/lien.js" defer></script>
+</head>
+<body class="app">
+  <header class="bar">
+    <a class="bar__brand" href="/lien/" title="About Lien">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="7" cy="7" r="3.3"/><circle cx="16" cy="7" r="3.3"/><circle cx="25" cy="7" r="3.3"/>
+        <circle cx="7" cy="16" r="3.3"/><circle cx="16" cy="16" r="3.3"/><circle cx="25" cy="16" r="3.3"/>
+        <circle class="mark__off" cx="7" cy="25" r="3.3"/><circle class="mark__off" cx="16" cy="25" r="3.3"/><circle class="mark__accent" cx="25" cy="25" r="3.3"/>
+      </svg>
+      Lien <span>canvas</span>
+    </a>
+    <div class="bar__tools" role="toolbar" aria-label="Canvas tools">
+      <button class="tool" id="add" type="button">+ Node</button>
+      <button class="tool" id="connect" type="button" aria-pressed="false">Connect</button>
+      <button class="tool" id="remove" type="button">Delete</button>
+      <span class="bar__sep"></span>
+      <select id="layout" aria-label="Layout">
+        <option value="">Layout…</option>
+        <option value="cose">Force-directed</option>
+        <option value="circle">Circle</option>
+        <option value="concentric">Concentric</option>
+        <option value="grid">Grid</option>
+        <option value="breadthfirst">Tree</option>
+      </select>
+      <button class="tool" id="fit" type="button">Fit</button>
+      <span class="bar__sep"></span>
+      <button class="tool" id="import" type="button">Import</button>
+      <button class="tool" id="save-json" type="button">Save JSON</button>
+      <button class="tool" id="save-png" type="button">Save PNG</button>
+      <span class="bar__sep"></span>
+      <button class="tool" id="example" type="button">Example</button>
+      <button class="tool" id="clear" type="button">Clear</button>
+    </div>
+  </header>
+
+  <div class="app__main">
+    <div class="stage">
+      <div id="cy" style="position:absolute;inset:0"></div>
+      <div class="hint" id="hint"></div>
+      <div class="drop">Drop a CSV or JSON file</div>
+    </div>
+
+    <aside class="panel" aria-label="Details">
+      <section id="selection">
+        <h2>Selection</h2>
+        <p id="nothing">Double-click the canvas to add a node. Use Connect, then click two nodes, to link them.</p>
+        <div id="node-form" hidden>
+          <label for="node-label">Name</label>
+          <input type="text" id="node-label" autocomplete="off">
+          <label for="node-type">Type</label>
+          <select id="node-type">
+            <option value="person">Person</option>
+            <option value="company">Company</option>
+            <option value="account">Account</option>
+            <option value="place">Place</option>
+            <option value="other">Other</option>
+          </select>
+          <p id="node-degree" style="margin-top:12px"></p>
+        </div>
+        <div id="edge-form" hidden>
+          <label for="edge-label">Link label</label>
+          <input type="text" id="edge-label" autocomplete="off" placeholder="owns, pays, knows">
+        </div>
+      </section>
+
+      <section>
+        <h2>Network</h2>
+        <dl class="stats">
+          <div><dt>Nodes</dt><dd id="n-nodes">0</dd></div>
+          <div><dt>Links</dt><dd id="n-edges">0</dd></div>
+          <div><dt>Groups</dt><dd id="n-groups">0</dd></div>
+        </dl>
+      </section>
+
+      <section>
+        <h2>Most connected</h2>
+        <ol class="ranking" id="by-degree"></ol>
+      </section>
+
+      <section>
+        <h2>Brokers</h2>
+        <p>Nodes that sit on the most paths between others.</p>
+        <ol class="ranking" id="by-between"></ol>
+      </section>
+
+      <section>
+        <p>Your graph is saved in this browser only. Nothing is uploaded.</p>
+      </section>
+    </aside>
+  </div>
+
+  <dialog id="import-dialog">
+    <form method="dialog" id="import-form">
+      <h2>Import</h2>
+      <p>Paste a CSV of links (<code>source,target,label</code>) or Lien JSON, or choose a file. Imported data is added to the canvas.</p>
+      <textarea id="import-text" spellcheck="false" placeholder="source,target,label&#10;Harbor Holdings,Bluefin Trading,owns"></textarea>
+      <p class="error" id="import-error" hidden></p>
+      <div class="row">
+        <label class="tool" style="margin-right:auto">Choose file<input type="file" id="import-file" accept=".csv,.json,.txt,text/csv,application/json" hidden></label>
+        <button class="tool" value="cancel" formnovalidate>Cancel</button>
+        <button class="tool tool--primary" id="import-go" value="default">Import</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>

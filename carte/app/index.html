@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carte map — 9Tensor</title>
+  <meta name="description" content="A free map for KML, KMZ, GeoJSON and GPX files, in your browser.">
+  <link rel="canonical" href="https://9tensor.com/carte/app/">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="/app.css">
+  <style>
+    #map { position: absolute; inset: 0; background: var(--bg); }
+    .coords { position: absolute; left: 10px; bottom: 10px; z-index: 500; padding: 4px 10px; border-radius: 7px; background: var(--bg-2); color: var(--ink-2); font: 12px var(--mono); }
+    .leaflet-popup-content { margin: 12px 14px; font: 13.5px/1.45 var(--font); }
+    .leaflet-popup-content h3 { margin: 0 0 6px; font-size: 14.5px; }
+    .props { border-collapse: collapse; }
+    .props td { padding: 2px 10px 2px 0; vertical-align: top; }
+    .props td:first-child { color: #6B6F77; white-space: nowrap; }
+    .measure-label { padding: 2px 6px; border: 0; border-radius: 6px; background: #111214; color: #fff; font: 600 12px var(--font); box-shadow: none; }
+    .measure-label::before { display: none; }
+  </style>
+  <script src="/vendor/leaflet/leaflet.js" defer></script>
+  <script src="/vendor/togeojson.umd.js" defer></script>
+  <script src="/vendor/jszip.min.js" defer></script>
+  <script src="/carte/app/carte.js" defer></script>
+</head>
+<body class="app">
+  <header class="bar">
+    <a class="bar__brand" href="/carte/" title="About Carte">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="7" cy="7" r="3.3"/><circle cx="16" cy="7" r="3.3"/><circle cx="25" cy="7" r="3.3"/>
+        <circle cx="7" cy="16" r="3.3"/><circle cx="16" cy="16" r="3.3"/><circle cx="25" cy="16" r="3.3"/>
+        <circle class="mark__off" cx="7" cy="25" r="3.3"/><circle class="mark__off" cx="16" cy="25" r="3.3"/><circle class="mark__accent" cx="25" cy="25" r="3.3"/>
+      </svg>
+      Carte <span>map</span>
+    </a>
+    <div class="bar__tools" role="toolbar" aria-label="Map tools">
+      <label class="tool tool--primary">Open files<input type="file" id="files" multiple accept=".kml,.kmz,.geojson,.json,.gpx,.csv" hidden></label>
+      <span class="bar__sep"></span>
+      <button class="tool" id="point" type="button" aria-pressed="false">Add point</button>
+      <button class="tool" id="measure" type="button" aria-pressed="false">Measure</button>
+      <span class="bar__sep"></span>
+      <select id="basemap" aria-label="Basemap">
+        <option value="streets">Streets</option>
+        <option value="satellite">Satellite</option>
+      </select>
+      <button class="tool" id="export" type="button">Export GeoJSON</button>
+      <span class="bar__sep"></span>
+      <button class="tool" id="example" type="button">Example</button>
+      <button class="tool" id="clear" type="button">Clear</button>
+    </div>
+  </header>
+
+  <div class="app__main">
+    <div class="stage">
+      <div id="map"></div>
+      <div class="coords" id="coords"></div>
+      <div class="hint" id="hint"></div>
+      <div class="drop">Drop KML, KMZ, GeoJSON, GPX or CSV files</div>
+    </div>
+
+    <aside class="panel" aria-label="Layers">
+      <section>
+        <h2>Layers</h2>
+        <div id="layers"></div>
+        <p id="no-layers">Open or drop KML, KMZ, GeoJSON, GPX or CSV files. A CSV needs latitude and longitude columns.</p>
+      </section>
+      <section>
+        <h2>Measure</h2>
+        <p id="measure-out">Choose Measure, then click points on the map. Double-click or press Esc to finish.</p>
+      </section>
+      <section>
+        <p>Your files are read in this browser and never uploaded. Only the background map comes from the internet.</p>
+      </section>
+    </aside>
+  </div>
+</body>
+</html>
