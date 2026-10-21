@@ -3,30 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>9Tensor — Open-source software and data</title>
-  <meta name="description" content="Open-source software and data from 9Tensor.">
+  <title>9Tensor — Analysis software and multilingual data</title>
+  <meta name="description" content="9Tensor makes free analysis software — Rétouch, Lien and Carte — and multilingual datasets with free samples.">
   <link rel="canonical" href="https://9tensor.com/">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#F6F6F3" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0D0E10" media="(prefers-color-scheme: dark)">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="favicon.ico" sizes="32x32">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="9Tensor">
   <meta property="og:url" content="https://9tensor.com/">
   <meta property="og:title" content="9Tensor">
-  <meta property="og:description" content="Open-source software and data.">
+  <meta property="og:description" content="9Tensor makes free analysis software — Rétouch, Lien and Carte — and multilingual datasets with free samples.">
   <meta property="og:image" content="https://9tensor.com/og.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="9Tensor: open-source software and data">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/site.js" defer></script>
 </head>
 <body>
   <header class="wrap top">
-    <a class="brand" href="./" aria-label="9Tensor, home">
+    <a class="brand" href="/" aria-label="9Tensor, home">
       <!-- The mark: a 3 × 3 grid of dots (a tensor of nine) whose lit dots draw a 9. -->
       <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
         <circle cx="7" cy="7" r="3.3"/><circle cx="16" cy="7" r="3.3"/><circle cx="25" cy="7" r="3.3"/>
@@ -35,43 +36,59 @@
       </svg>
       <span class="brand__name">9Tensor</span>
     </a>
-    <nav class="top__nav" aria-label="Sections">
-      <a class="top__link" href="#software">Software</a>
-      <a class="top__link" href="#data">Data</a>
-      <a class="top__link" href="https://github.com/9tensorsoftware">GitHub</a>
+    <nav class="top__nav" aria-label="Main">
+      <details class="menu">
+        <summary class="top__link">Software</summary>
+        <div class="menu__panel">
+          <a class="menu__item" href="https://retouch.9tensor.com"><strong>R<em>é</em>touch</strong><span>Image and video editing and analysis</span></a>
+          <a class="menu__item" href="/lien/"><strong>Lien</strong><span>Network analysis on a free canvas</span></a>
+          <a class="menu__item" href="/carte/"><strong>Carte</strong><span>Map analysis for KML, GeoJSON and GPX</span></a>
+        </div>
+      </details>
+      <details class="menu">
+        <summary class="top__link">Data</summary>
+        <div class="menu__panel">
+          <a class="menu__item" href="/data/media-outlets/"><strong>Media outlets</strong><span>News outlets around the world</span></a>
+          <a class="menu__item" href="/data/financial-documents/"><strong>Financial documents</strong><span>Synthetic statements, invoices and receipts</span></a>
+          <a class="menu__item" href="/data/health-records/"><strong>Health records</strong><span>Synthetic lab reports and prescriptions</span></a>
+          <a class="menu__item" href="/data/identity-documents/"><strong>Identity documents</strong><span>Synthetic ID cards, marked as specimens</span></a>
+        </div>
+      </details>
+      <a class="top__link" href="mailto:hello@9tensor.com">Contact</a>
     </nav>
   </header>
 
   <main class="wrap">
     <section class="hero">
-      <h1>Open-source software and&nbsp;data.</h1>
+      <h1>Analysis software and multilingual&nbsp;data.</h1>
+      <p class="hero__sub">Free tools that run in your browser. Free samples of every dataset.</p>
     </section>
 
-    <!-- One section per kind of work. Each project is one <li>; see README.md. -->
-    <section class="group" id="software" aria-labelledby="software-title">
-      <h2 class="label" id="software-title">Software</h2>
-      <ul class="list">
-        <li class="project" style="--tint: #D4572A; --tint-dark: #F5753F">
-          <h3 class="project__name"><a href="https://retouch.9tensor.com">R<em>é</em>touch</a></h3>
-          <div class="project__body">
-            <p class="project__desc">A photo and video editor for the browser, with on-device AI.</p>
-            <p class="project__links">
-              <a class="project__open" href="https://retouch.9tensor.com">Open<span aria-hidden="true"> ↗</span></a>
-              <a href="https://github.com/9tensorsoftware/retouch">Source<span aria-hidden="true"> ↗</span></a>
-            </p>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <section class="group" id="data" aria-labelledby="data-title">
-      <h2 class="label" id="data-title">Data <span class="label__note">Coming soon</span></h2>
+    <section class="index">
+      <div>
+        <h2 class="label">Software</h2>
+        <ul class="index__list">
+          <li><a href="https://retouch.9tensor.com" style="--tint: #D4572A"><span class="index__name">R<em>é</em>touch</span><span class="index__desc">Image and video editing and analysis</span></a></li>
+          <li><a href="/lien/" style="--tint: #1F8A70"><span class="index__name">Lien</span><span class="index__desc">Network analysis on a free canvas</span></a></li>
+          <li><a href="/carte/" style="--tint: #2F6FD0"><span class="index__name">Carte</span><span class="index__desc">Map analysis for KML, GeoJSON and GPX</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="label">Data</h2>
+        <ul class="index__list">
+          <li><a href="/data/media-outlets/"><span class="index__name">Media outlets</span><span class="index__desc">News outlets around the world</span></a></li>
+          <li><a href="/data/financial-documents/"><span class="index__name">Financial documents</span><span class="index__desc">Synthetic statements, invoices and receipts</span></a></li>
+          <li><a href="/data/health-records/"><span class="index__name">Health records</span><span class="index__desc">Synthetic lab reports and prescriptions</span></a></li>
+          <li><a href="/data/identity-documents/"><span class="index__name">Identity documents</span><span class="index__desc">Synthetic ID cards, marked as specimens</span></a></li>
+        </ul>
+      </div>
     </section>
   </main>
 
   <footer class="wrap foot">
     <p>© 2026 9Tensor LLC</p>
     <p class="foot__links">
+      <a href="mailto:hello@9tensor.com">hello@9tensor.com</a>
       <a href="https://github.com/9tensorsoftware">GitHub</a>
       <a href="https://github.com/9tensorsoftware/9tensorsoftware.github.io">Site source</a>
     </p>

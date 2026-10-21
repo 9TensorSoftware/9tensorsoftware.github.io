@@ -1,0 +1,1401 @@
+{
+  "id": "hlt-001",
+  "dataset": "health-records",
+  "document_type": "lab_report",
+  "language": "en-US",
+  "script": "Latn",
+  "direction": "ltr",
+  "synthetic": true,
+  "title": "Lab report · English",
+  "image": {
+    "file": "hlt-001.png",
+    "width": 1350,
+    "height": 1905
+  },
+  "fields": [
+    {
+      "name": "lab_name",
+      "value": "Riverbend Medical Laboratory",
+      "bbox": [
+        96,
+        84,
+        475,
+        48
+      ]
+    },
+    {
+      "name": "lab_address",
+      "value": "2200 Alder Street, Portland, OR 97205",
+      "bbox": [
+        96,
+        132,
+        475,
+        26
+      ]
+    },
+    {
+      "name": "clia_number",
+      "value": "99D8970790",
+      "bbox": [
+        1151,
+        116,
+        103,
+        21
+      ]
+    },
+    {
+      "name": "patient_name",
+      "value": "Kevin T. Oduya",
+      "bbox": [
+        96,
+        240,
+        131,
+        23
+      ]
+    },
+    {
+      "name": "date_of_birth",
+      "value": "08/17/1996",
+      "bbox": [
+        494,
+        240,
+        100,
+        23
+      ]
+    },
+    {
+      "name": "mrn",
+      "value": "51363177",
+      "bbox": [
+        892,
+        240,
+        87,
+        23
+      ]
+    },
+    {
+      "name": "collected_at",
+      "value": "10/12/2026 07:42",
+      "bbox": [
+        96,
+        308,
+        154,
+        23
+      ]
+    },
+    {
+      "name": "reported_at",
+      "value": "10/12/2026 15:10",
+      "bbox": [
+        494,
+        308,
+        154,
+        23
+      ]
+    },
+    {
+      "name": "physician",
+      "value": "Dr. Helen Marsh, MD",
+      "bbox": [
+        892,
+        308,
+        181,
+        23
+      ]
+    },
+    {
+      "name": "results[0].test",
+      "value": "Hemoglobin",
+      "bbox": [
+        108,
+        429,
+        114,
+        24
+      ]
+    },
+    {
+      "name": "results[0].value",
+      "value": "16.2",
+      "bbox": [
+        582,
+        429,
+        41,
+        24
+      ]
+    },
+    {
+      "name": "results[0].flag",
+      "value": "H",
+      "bbox": [
+        647,
+        428,
+        16,
+        26
+      ]
+    },
+    {
+      "name": "results[0].unit",
+      "value": "g/dL",
+      "bbox": [
+        728,
+        429,
+        43,
+        24
+      ]
+    },
+    {
+      "name": "results[0].reference_range",
+      "value": "12.0 – 15.5",
+      "bbox": [
+        926,
+        429,
+        104,
+        24
+      ]
+    },
+    {
+      "name": "results[1].test",
+      "value": "White blood cells",
+      "bbox": [
+        108,
+        482,
+        161,
+        24
+      ]
+    },
+    {
+      "name": "results[1].value",
+      "value": "10.8",
+      "bbox": [
+        582,
+        482,
+        41,
+        24
+      ]
+    },
+    {
+      "name": "results[1].unit",
+      "value": "×10³/µL",
+      "bbox": [
+        728,
+        482,
+        73,
+        24
+      ]
+    },
+    {
+      "name": "results[1].reference_range",
+      "value": "4.5 – 11.0",
+      "bbox": [
+        926,
+        482,
+        92,
+        24
+      ]
+    },
+    {
+      "name": "results[2].test",
+      "value": "Platelets",
+      "bbox": [
+        108,
+        535,
+        81,
+        24
+      ]
+    },
+    {
+      "name": "results[2].value",
+      "value": "256",
+      "bbox": [
+        588,
+        535,
+        35,
+        24
+      ]
+    },
+    {
+      "name": "results[2].unit",
+      "value": "×10³/µL",
+      "bbox": [
+        728,
+        535,
+        73,
+        24
+      ]
+    },
+    {
+      "name": "results[2].reference_range",
+      "value": "150 – 400",
+      "bbox": [
+        926,
+        535,
+        92,
+        24
+      ]
+    },
+    {
+      "name": "results[3].test",
+      "value": "Hematocrit",
+      "bbox": [
+        108,
+        588,
+        104,
+        24
+      ]
+    },
+    {
+      "name": "results[3].value",
+      "value": "44.1",
+      "bbox": [
+        582,
+        588,
+        41,
+        24
+      ]
+    },
+    {
+      "name": "results[3].unit",
+      "value": "%",
+      "bbox": [
+        728,
+        588,
+        21,
+        24
+      ]
+    },
+    {
+      "name": "results[3].reference_range",
+      "value": "36 – 46",
+      "bbox": [
+        926,
+        588,
+        69,
+        24
+      ]
+    },
+    {
+      "name": "results[4].test",
+      "value": "Glucose, fasting",
+      "bbox": [
+        108,
+        641,
+        152,
+        24
+      ]
+    },
+    {
+      "name": "results[4].value",
+      "value": "93.9",
+      "bbox": [
+        582,
+        641,
+        41,
+        24
+      ]
+    },
+    {
+      "name": "results[4].unit",
+      "value": "mg/dL",
+      "bbox": [
+        728,
+        641,
+        61,
+        24
+      ]
+    },
+    {
+      "name": "results[4].reference_range",
+      "value": "70 – 99",
+      "bbox": [
+        926,
+        641,
+        69,
+        24
+      ]
+    },
+    {
+      "name": "results[5].test",
+      "value": "Creatinine",
+      "bbox": [
+        108,
+        694,
+        95,
+        24
+      ]
+    },
+    {
+      "name": "results[5].value",
+      "value": "0.6",
+      "bbox": [
+        594,
+        694,
+        29,
+        24
+      ]
+    },
+    {
+      "name": "results[5].unit",
+      "value": "mg/dL",
+      "bbox": [
+        728,
+        694,
+        61,
+        24
+      ]
+    },
+    {
+      "name": "results[5].reference_range",
+      "value": "0.6 – 1.1",
+      "bbox": [
+        926,
+        694,
+        81,
+        24
+      ]
+    },
+    {
+      "name": "results[6].test",
+      "value": "Sodium",
+      "bbox": [
+        108,
+        747,
+        72,
+        24
+      ]
+    },
+    {
+      "name": "results[6].value",
+      "value": "141",
+      "bbox": [
+        588,
+        747,
+        35,
+        24
+      ]
+    },
+    {
+      "name": "results[6].unit",
+      "value": "mmol/L",
+      "bbox": [
+        728,
+        747,
+        71,
+        24
+      ]
+    },
+    {
+      "name": "results[6].reference_range",
+      "value": "135 – 145",
+      "bbox": [
+        926,
+        747,
+        92,
+        24
+      ]
+    },
+    {
+      "name": "results[7].test",
+      "value": "Potassium",
+      "bbox": [
+        108,
+        800,
+        99,
+        24
+      ]
+    },
+    {
+      "name": "results[7].value",
+      "value": "3.8",
+      "bbox": [
+        594,
+        800,
+        29,
+        24
+      ]
+    },
+    {
+      "name": "results[7].unit",
+      "value": "mmol/L",
+      "bbox": [
+        728,
+        800,
+        71,
+        24
+      ]
+    },
+    {
+      "name": "results[7].reference_range",
+      "value": "3.5 – 5.1",
+      "bbox": [
+        926,
+        800,
+        81,
+        24
+      ]
+    },
+    {
+      "name": "verified_by",
+      "value": "S. Lindqvist, MLS(ASCP)",
+      "bbox": [
+        185,
+        883,
+        199,
+        21
+      ]
+    }
+  ],
+  "scan": {
+    "file": "hlt-001-scan.jpg",
+    "width": 1350,
+    "height": 1905,
+    "rotation_deg": -1.118,
+    "fields": [
+      {
+        "name": "lab_name",
+        "value": "Riverbend Medical Laboratory",
+        "quad": [
+          [
+            113,
+            73
+          ],
+          [
+            588,
+            82
+          ],
+          [
+            587,
+            130
+          ],
+          [
+            112,
+            121
+          ]
+        ]
+      },
+      {
+        "name": "lab_address",
+        "value": "2200 Alder Street, Portland, OR 97205",
+        "quad": [
+          [
+            112,
+            121
+          ],
+          [
+            587,
+            130
+          ],
+          [
+            587,
+            156
+          ],
+          [
+            112,
+            147
+          ]
+        ]
+      },
+      {
+        "name": "clia_number",
+        "value": "99D8970790",
+        "quad": [
+          [
+            1167,
+            125
+          ],
+          [
+            1270,
+            127
+          ],
+          [
+            1270,
+            148
+          ],
+          [
+            1167,
+            146
+          ]
+        ]
+      },
+      {
+        "name": "patient_name",
+        "value": "Kevin T. Oduya",
+        "quad": [
+          [
+            110,
+            229
+          ],
+          [
+            241,
+            231
+          ],
+          [
+            241,
+            254
+          ],
+          [
+            110,
+            252
+          ]
+        ]
+      },
+      {
+        "name": "date_of_birth",
+        "value": "08/17/1996",
+        "quad": [
+          [
+            508,
+            237
+          ],
+          [
+            608,
+            239
+          ],
+          [
+            607,
+            262
+          ],
+          [
+            507,
+            260
+          ]
+        ]
+      },
+      {
+        "name": "mrn",
+        "value": "51363177",
+        "quad": [
+          [
+            906,
+            244
+          ],
+          [
+            993,
+            246
+          ],
+          [
+            992,
+            269
+          ],
+          [
+            905,
+            267
+          ]
+        ]
+      },
+      {
+        "name": "collected_at",
+        "value": "10/12/2026 07:42",
+        "quad": [
+          [
+            109,
+            297
+          ],
+          [
+            263,
+            300
+          ],
+          [
+            262,
+            323
+          ],
+          [
+            108,
+            320
+          ]
+        ]
+      },
+      {
+        "name": "reported_at",
+        "value": "10/12/2026 15:10",
+        "quad": [
+          [
+            507,
+            305
+          ],
+          [
+            661,
+            308
+          ],
+          [
+            660,
+            331
+          ],
+          [
+            506,
+            328
+          ]
+        ]
+      },
+      {
+        "name": "physician",
+        "value": "Dr. Helen Marsh, MD",
+        "quad": [
+          [
+            905,
+            312
+          ],
+          [
+            1085,
+            316
+          ],
+          [
+            1085,
+            339
+          ],
+          [
+            904,
+            335
+          ]
+        ]
+      },
+      {
+        "name": "results[0].test",
+        "value": "Hemoglobin",
+        "quad": [
+          [
+            118,
+            418
+          ],
+          [
+            232,
+            420
+          ],
+          [
+            232,
+            444
+          ],
+          [
+            118,
+            442
+          ]
+        ]
+      },
+      {
+        "name": "results[0].value",
+        "value": "16.2",
+        "quad": [
+          [
+            592,
+            427
+          ],
+          [
+            633,
+            428
+          ],
+          [
+            633,
+            452
+          ],
+          [
+            592,
+            451
+          ]
+        ]
+      },
+      {
+        "name": "results[0].flag",
+        "value": "H",
+        "quad": [
+          [
+            657,
+            428
+          ],
+          [
+            673,
+            428
+          ],
+          [
+            673,
+            454
+          ],
+          [
+            657,
+            454
+          ]
+        ]
+      },
+      {
+        "name": "results[0].unit",
+        "value": "g/dL",
+        "quad": [
+          [
+            738,
+            430
+          ],
+          [
+            781,
+            431
+          ],
+          [
+            781,
+            455
+          ],
+          [
+            738,
+            454
+          ]
+        ]
+      },
+      {
+        "name": "results[0].reference_range",
+        "value": "12.0 – 15.5",
+        "quad": [
+          [
+            936,
+            434
+          ],
+          [
+            1040,
+            436
+          ],
+          [
+            1040,
+            460
+          ],
+          [
+            936,
+            458
+          ]
+        ]
+      },
+      {
+        "name": "results[1].test",
+        "value": "White blood cells",
+        "quad": [
+          [
+            117,
+            471
+          ],
+          [
+            278,
+            474
+          ],
+          [
+            278,
+            498
+          ],
+          [
+            117,
+            495
+          ]
+        ]
+      },
+      {
+        "name": "results[1].value",
+        "value": "10.8",
+        "quad": [
+          [
+            591,
+            480
+          ],
+          [
+            632,
+            481
+          ],
+          [
+            632,
+            505
+          ],
+          [
+            591,
+            504
+          ]
+        ]
+      },
+      {
+        "name": "results[1].unit",
+        "value": "×10³/µL",
+        "quad": [
+          [
+            737,
+            483
+          ],
+          [
+            810,
+            485
+          ],
+          [
+            810,
+            509
+          ],
+          [
+            737,
+            507
+          ]
+        ]
+      },
+      {
+        "name": "results[1].reference_range",
+        "value": "4.5 – 11.0",
+        "quad": [
+          [
+            935,
+            487
+          ],
+          [
+            1027,
+            489
+          ],
+          [
+            1027,
+            513
+          ],
+          [
+            935,
+            511
+          ]
+        ]
+      },
+      {
+        "name": "results[2].test",
+        "value": "Platelets",
+        "quad": [
+          [
+            116,
+            524
+          ],
+          [
+            197,
+            526
+          ],
+          [
+            197,
+            550
+          ],
+          [
+            116,
+            548
+          ]
+        ]
+      },
+      {
+        "name": "results[2].value",
+        "value": "256",
+        "quad": [
+          [
+            596,
+            533
+          ],
+          [
+            631,
+            534
+          ],
+          [
+            631,
+            558
+          ],
+          [
+            596,
+            557
+          ]
+        ]
+      },
+      {
+        "name": "results[2].unit",
+        "value": "×10³/µL",
+        "quad": [
+          [
+            736,
+            536
+          ],
+          [
+            809,
+            538
+          ],
+          [
+            809,
+            562
+          ],
+          [
+            736,
+            560
+          ]
+        ]
+      },
+      {
+        "name": "results[2].reference_range",
+        "value": "150 – 400",
+        "quad": [
+          [
+            934,
+            540
+          ],
+          [
+            1026,
+            542
+          ],
+          [
+            1026,
+            566
+          ],
+          [
+            934,
+            564
+          ]
+        ]
+      },
+      {
+        "name": "results[3].test",
+        "value": "Hematocrit",
+        "quad": [
+          [
+            115,
+            577
+          ],
+          [
+            219,
+            579
+          ],
+          [
+            219,
+            603
+          ],
+          [
+            115,
+            601
+          ]
+        ]
+      },
+      {
+        "name": "results[3].value",
+        "value": "44.1",
+        "quad": [
+          [
+            589,
+            586
+          ],
+          [
+            630,
+            587
+          ],
+          [
+            630,
+            611
+          ],
+          [
+            589,
+            610
+          ]
+        ]
+      },
+      {
+        "name": "results[3].unit",
+        "value": "%",
+        "quad": [
+          [
+            735,
+            589
+          ],
+          [
+            756,
+            590
+          ],
+          [
+            756,
+            614
+          ],
+          [
+            735,
+            613
+          ]
+        ]
+      },
+      {
+        "name": "results[3].reference_range",
+        "value": "36 – 46",
+        "quad": [
+          [
+            933,
+            593
+          ],
+          [
+            1002,
+            594
+          ],
+          [
+            1002,
+            618
+          ],
+          [
+            933,
+            617
+          ]
+        ]
+      },
+      {
+        "name": "results[4].test",
+        "value": "Glucose, fasting",
+        "quad": [
+          [
+            114,
+            630
+          ],
+          [
+            266,
+            633
+          ],
+          [
+            266,
+            657
+          ],
+          [
+            114,
+            654
+          ]
+        ]
+      },
+      {
+        "name": "results[4].value",
+        "value": "93.9",
+        "quad": [
+          [
+            588,
+            639
+          ],
+          [
+            629,
+            640
+          ],
+          [
+            629,
+            664
+          ],
+          [
+            588,
+            663
+          ]
+        ]
+      },
+      {
+        "name": "results[4].unit",
+        "value": "mg/dL",
+        "quad": [
+          [
+            734,
+            642
+          ],
+          [
+            795,
+            643
+          ],
+          [
+            795,
+            667
+          ],
+          [
+            734,
+            666
+          ]
+        ]
+      },
+      {
+        "name": "results[4].reference_range",
+        "value": "70 – 99",
+        "quad": [
+          [
+            932,
+            646
+          ],
+          [
+            1001,
+            647
+          ],
+          [
+            1001,
+            671
+          ],
+          [
+            932,
+            670
+          ]
+        ]
+      },
+      {
+        "name": "results[5].test",
+        "value": "Creatinine",
+        "quad": [
+          [
+            113,
+            683
+          ],
+          [
+            208,
+            685
+          ],
+          [
+            208,
+            709
+          ],
+          [
+            113,
+            707
+          ]
+        ]
+      },
+      {
+        "name": "results[5].value",
+        "value": "0.6",
+        "quad": [
+          [
+            599,
+            692
+          ],
+          [
+            628,
+            693
+          ],
+          [
+            628,
+            717
+          ],
+          [
+            599,
+            716
+          ]
+        ]
+      },
+      {
+        "name": "results[5].unit",
+        "value": "mg/dL",
+        "quad": [
+          [
+            733,
+            695
+          ],
+          [
+            794,
+            696
+          ],
+          [
+            794,
+            720
+          ],
+          [
+            733,
+            719
+          ]
+        ]
+      },
+      {
+        "name": "results[5].reference_range",
+        "value": "0.6 – 1.1",
+        "quad": [
+          [
+            931,
+            699
+          ],
+          [
+            1012,
+            701
+          ],
+          [
+            1012,
+            725
+          ],
+          [
+            931,
+            723
+          ]
+        ]
+      },
+      {
+        "name": "results[6].test",
+        "value": "Sodium",
+        "quad": [
+          [
+            112,
+            736
+          ],
+          [
+            184,
+            737
+          ],
+          [
+            184,
+            761
+          ],
+          [
+            112,
+            760
+          ]
+        ]
+      },
+      {
+        "name": "results[6].value",
+        "value": "141",
+        "quad": [
+          [
+            592,
+            745
+          ],
+          [
+            627,
+            746
+          ],
+          [
+            627,
+            770
+          ],
+          [
+            592,
+            769
+          ]
+        ]
+      },
+      {
+        "name": "results[6].unit",
+        "value": "mmol/L",
+        "quad": [
+          [
+            732,
+            748
+          ],
+          [
+            803,
+            749
+          ],
+          [
+            803,
+            773
+          ],
+          [
+            732,
+            772
+          ]
+        ]
+      },
+      {
+        "name": "results[6].reference_range",
+        "value": "135 – 145",
+        "quad": [
+          [
+            930,
+            752
+          ],
+          [
+            1022,
+            754
+          ],
+          [
+            1021,
+            778
+          ],
+          [
+            929,
+            776
+          ]
+        ]
+      },
+      {
+        "name": "results[7].test",
+        "value": "Potassium",
+        "quad": [
+          [
+            111,
+            789
+          ],
+          [
+            210,
+            791
+          ],
+          [
+            210,
+            815
+          ],
+          [
+            111,
+            813
+          ]
+        ]
+      },
+      {
+        "name": "results[7].value",
+        "value": "3.8",
+        "quad": [
+          [
+            597,
+            798
+          ],
+          [
+            626,
+            799
+          ],
+          [
+            626,
+            823
+          ],
+          [
+            597,
+            822
+          ]
+        ]
+      },
+      {
+        "name": "results[7].unit",
+        "value": "mmol/L",
+        "quad": [
+          [
+            731,
+            801
+          ],
+          [
+            802,
+            802
+          ],
+          [
+            801,
+            826
+          ],
+          [
+            730,
+            825
+          ]
+        ]
+      },
+      {
+        "name": "results[7].reference_range",
+        "value": "3.5 – 5.1",
+        "quad": [
+          [
+            929,
+            805
+          ],
+          [
+            1010,
+            807
+          ],
+          [
+            1009,
+            831
+          ],
+          [
+            928,
+            829
+          ]
+        ]
+      },
+      {
+        "name": "verified_by",
+        "value": "S. Lindqvist, MLS(ASCP)",
+        "quad": [
+          [
+            186,
+            873
+          ],
+          [
+            385,
+            877
+          ],
+          [
+            385,
+            898
+          ],
+          [
+            186,
+            894
+          ]
+        ]
+      }
+    ]
+  }
+}

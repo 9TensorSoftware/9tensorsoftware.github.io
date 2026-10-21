@@ -1,0 +1,441 @@
+{
+  "id": "hlt-002",
+  "dataset": "health-records",
+  "document_type": "prescription",
+  "language": "es-ES",
+  "script": "Latn",
+  "direction": "ltr",
+  "synthetic": true,
+  "title": "Prescription · Spanish",
+  "image": {
+    "file": "hlt-002.png",
+    "width": 1350,
+    "height": 1905
+  },
+  "fields": [
+    {
+      "name": "clinic_name",
+      "value": "Clínica San Telmo",
+      "bbox": [
+        96,
+        45,
+        280,
+        39
+      ]
+    },
+    {
+      "name": "clinic_address",
+      "value": "Calle del Prado 21, 41001 Sevilla",
+      "bbox": [
+        96,
+        90,
+        280,
+        26
+      ]
+    },
+    {
+      "name": "patient_name",
+      "value": "Lucía Fernández Ortega",
+      "bbox": [
+        125,
+        258,
+        1101,
+        30
+      ]
+    },
+    {
+      "name": "date_of_birth",
+      "value": "13/03/1958",
+      "bbox": [
+        303,
+        290,
+        92,
+        21
+      ]
+    },
+    {
+      "name": "record_number",
+      "value": "9903957",
+      "bbox": [
+        503,
+        290,
+        70,
+        21
+      ]
+    },
+    {
+      "name": "medication",
+      "value": "Amoxicilina 500 mg cápsulas",
+      "bbox": [
+        125,
+        492,
+        1101,
+        30
+      ]
+    },
+    {
+      "name": "dosage",
+      "value": "1 cápsula cada 8 horas durante 7 días",
+      "bbox": [
+        125,
+        570,
+        1101,
+        30
+      ]
+    },
+    {
+      "name": "quantity",
+      "value": "1 envase (21 cápsulas)",
+      "bbox": [
+        125,
+        648,
+        1101,
+        30
+      ]
+    },
+    {
+      "name": "medication_2",
+      "value": "Ibuprofeno 600 mg comprimidos",
+      "bbox": [
+        125,
+        784,
+        1101,
+        30
+      ]
+    },
+    {
+      "name": "dosage_2",
+      "value": "1 comprimido cada 8 horas si dolor, máximo 3 días",
+      "bbox": [
+        125,
+        862,
+        1101,
+        30
+      ]
+    },
+    {
+      "name": "date",
+      "value": "12/10/2026",
+      "bbox": [
+        165,
+        975,
+        107,
+        24
+      ]
+    },
+    {
+      "name": "physician",
+      "value": "Dra. Elena Prieto Vázquez",
+      "bbox": [
+        1011,
+        972,
+        243,
+        30
+      ]
+    },
+    {
+      "name": "license_number",
+      "value": "41/49747",
+      "bbox": [
+        1178,
+        1004,
+        76,
+        21
+      ]
+    }
+  ],
+  "scan": {
+    "file": "hlt-002-scan.jpg",
+    "width": 1350,
+    "height": 1905,
+    "rotation_deg": 0.154,
+    "fields": [
+      {
+        "name": "clinic_name",
+        "value": "Clínica San Telmo",
+        "quad": [
+          [
+            94,
+            47
+          ],
+          [
+            374,
+            46
+          ],
+          [
+            374,
+            85
+          ],
+          [
+            94,
+            86
+          ]
+        ]
+      },
+      {
+        "name": "clinic_address",
+        "value": "Calle del Prado 21, 41001 Sevilla",
+        "quad": [
+          [
+            94,
+            92
+          ],
+          [
+            374,
+            91
+          ],
+          [
+            374,
+            117
+          ],
+          [
+            94,
+            118
+          ]
+        ]
+      },
+      {
+        "name": "patient_name",
+        "value": "Lucía Fernández Ortega",
+        "quad": [
+          [
+            123,
+            259
+          ],
+          [
+            1224,
+            257
+          ],
+          [
+            1224,
+            287
+          ],
+          [
+            123,
+            289
+          ]
+        ]
+      },
+      {
+        "name": "date_of_birth",
+        "value": "13/03/1958",
+        "quad": [
+          [
+            301,
+            291
+          ],
+          [
+            393,
+            291
+          ],
+          [
+            393,
+            312
+          ],
+          [
+            301,
+            312
+          ]
+        ]
+      },
+      {
+        "name": "record_number",
+        "value": "9903957",
+        "quad": [
+          [
+            501,
+            290
+          ],
+          [
+            571,
+            290
+          ],
+          [
+            571,
+            311
+          ],
+          [
+            501,
+            311
+          ]
+        ]
+      },
+      {
+        "name": "medication",
+        "value": "Amoxicilina 500 mg cápsulas",
+        "quad": [
+          [
+            124,
+            493
+          ],
+          [
+            1225,
+            491
+          ],
+          [
+            1225,
+            521
+          ],
+          [
+            124,
+            523
+          ]
+        ]
+      },
+      {
+        "name": "dosage",
+        "value": "1 cápsula cada 8 horas durante 7 días",
+        "quad": [
+          [
+            124,
+            571
+          ],
+          [
+            1225,
+            569
+          ],
+          [
+            1225,
+            599
+          ],
+          [
+            124,
+            601
+          ]
+        ]
+      },
+      {
+        "name": "quantity",
+        "value": "1 envase (21 cápsulas)",
+        "quad": [
+          [
+            124,
+            649
+          ],
+          [
+            1225,
+            647
+          ],
+          [
+            1225,
+            677
+          ],
+          [
+            124,
+            679
+          ]
+        ]
+      },
+      {
+        "name": "medication_2",
+        "value": "Ibuprofeno 600 mg comprimidos",
+        "quad": [
+          [
+            125,
+            785
+          ],
+          [
+            1226,
+            783
+          ],
+          [
+            1226,
+            813
+          ],
+          [
+            125,
+            815
+          ]
+        ]
+      },
+      {
+        "name": "dosage_2",
+        "value": "1 comprimido cada 8 horas si dolor, máximo 3 días",
+        "quad": [
+          [
+            125,
+            863
+          ],
+          [
+            1226,
+            861
+          ],
+          [
+            1226,
+            891
+          ],
+          [
+            125,
+            893
+          ]
+        ]
+      },
+      {
+        "name": "date",
+        "value": "12/10/2026",
+        "quad": [
+          [
+            165,
+            976
+          ],
+          [
+            272,
+            976
+          ],
+          [
+            272,
+            1000
+          ],
+          [
+            165,
+            1000
+          ]
+        ]
+      },
+      {
+        "name": "physician",
+        "value": "Dra. Elena Prieto Vázquez",
+        "quad": [
+          [
+            1011,
+            971
+          ],
+          [
+            1254,
+            970
+          ],
+          [
+            1254,
+            1000
+          ],
+          [
+            1011,
+            1001
+          ]
+        ]
+      },
+      {
+        "name": "license_number",
+        "value": "41/49747",
+        "quad": [
+          [
+            1178,
+            1003
+          ],
+          [
+            1254,
+            1002
+          ],
+          [
+            1254,
+            1023
+          ],
+          [
+            1178,
+            1024
+          ]
+        ]
+      }
+    ]
+  }
+}

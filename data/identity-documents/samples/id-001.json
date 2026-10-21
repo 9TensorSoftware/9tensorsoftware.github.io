@@ -1,0 +1,473 @@
+{
+  "id": "id-001",
+  "dataset": "identity-documents",
+  "document_type": "id_card",
+  "language": "en/fr",
+  "script": "Latn",
+  "direction": "ltr",
+  "synthetic": true,
+  "title": "ID card · English / French",
+  "image": {
+    "file": "id-001.png",
+    "width": 1410,
+    "height": 930
+  },
+  "fields": [
+    {
+      "name": "issuing_state",
+      "value": "REPUBLIC OF UTOPIA · RÉPUBLIQUE D'UTOPIE",
+      "bbox": [
+        93,
+        84,
+        1224,
+        41
+      ]
+    },
+    {
+      "name": "signature",
+      "value": "T. Eriksson",
+      "bbox": [
+        99,
+        615,
+        184,
+        53
+      ]
+    },
+    {
+      "name": "surname",
+      "value": "ERIKSSON",
+      "bbox": [
+        435,
+        234,
+        148,
+        35
+      ]
+    },
+    {
+      "name": "given_names",
+      "value": "THOMAS",
+      "bbox": [
+        891,
+        234,
+        125,
+        35
+      ]
+    },
+    {
+      "name": "nationality",
+      "value": "UTO",
+      "bbox": [
+        435,
+        311,
+        61,
+        35
+      ]
+    },
+    {
+      "name": "sex",
+      "value": "F",
+      "bbox": [
+        891,
+        311,
+        17,
+        35
+      ]
+    },
+    {
+      "name": "date_of_birth",
+      "value": "15.08.1984",
+      "bbox": [
+        435,
+        387,
+        143,
+        35
+      ]
+    },
+    {
+      "name": "document_number",
+      "value": "L32987471",
+      "bbox": [
+        891,
+        387,
+        144,
+        35
+      ]
+    },
+    {
+      "name": "date_of_expiry",
+      "value": "14.09.2036",
+      "bbox": [
+        435,
+        464,
+        143,
+        35
+      ]
+    },
+    {
+      "name": "place_of_birth",
+      "value": "NEW HAVENPORT",
+      "bbox": [
+        891,
+        464,
+        250,
+        35
+      ]
+    },
+    {
+      "name": "mrz_line_1",
+      "value": "I<UTOL329874712<<<<<<<<<<<<<<<",
+      "bbox": [
+        93,
+        704,
+        1224,
+        50
+      ]
+    },
+    {
+      "name": "mrz_line_2",
+      "value": "8408152F3609149UTO<<<<<<<<<<<2",
+      "bbox": [
+        93,
+        753,
+        1224,
+        50
+      ]
+    },
+    {
+      "name": "mrz_line_3",
+      "value": "ERIKSSON<<THOMAS<<<<<<<<<<<<<<",
+      "bbox": [
+        93,
+        803,
+        1224,
+        50
+      ]
+    },
+    {
+      "name": "watermark",
+      "value": "SPECIMEN",
+      "bbox": [
+        242,
+        188,
+        925,
+        452
+      ]
+    }
+  ],
+  "scan": {
+    "file": "id-001-scan.jpg",
+    "width": 1410,
+    "height": 930,
+    "rotation_deg": -0.592,
+    "fields": [
+      {
+        "name": "issuing_state",
+        "value": "REPUBLIC OF UTOPIA · RÉPUBLIQUE D'UTOPIE",
+        "quad": [
+          [
+            97,
+            78
+          ],
+          [
+            1321,
+            90
+          ],
+          [
+            1320,
+            131
+          ],
+          [
+            97,
+            119
+          ]
+        ]
+      },
+      {
+        "name": "signature",
+        "value": "T. Eriksson",
+        "quad": [
+          [
+            97,
+            609
+          ],
+          [
+            281,
+            611
+          ],
+          [
+            281,
+            664
+          ],
+          [
+            97,
+            662
+          ]
+        ]
+      },
+      {
+        "name": "surname",
+        "value": "ERIKSSON",
+        "quad": [
+          [
+            437,
+            231
+          ],
+          [
+            585,
+            233
+          ],
+          [
+            585,
+            268
+          ],
+          [
+            437,
+            266
+          ]
+        ]
+      },
+      {
+        "name": "given_names",
+        "value": "THOMAS",
+        "quad": [
+          [
+            893,
+            236
+          ],
+          [
+            1018,
+            237
+          ],
+          [
+            1018,
+            272
+          ],
+          [
+            893,
+            271
+          ]
+        ]
+      },
+      {
+        "name": "nationality",
+        "value": "UTO",
+        "quad": [
+          [
+            437,
+            308
+          ],
+          [
+            498,
+            309
+          ],
+          [
+            497,
+            344
+          ],
+          [
+            436,
+            343
+          ]
+        ]
+      },
+      {
+        "name": "sex",
+        "value": "F",
+        "quad": [
+          [
+            893,
+            313
+          ],
+          [
+            910,
+            313
+          ],
+          [
+            909,
+            348
+          ],
+          [
+            892,
+            348
+          ]
+        ]
+      },
+      {
+        "name": "date_of_birth",
+        "value": "15.08.1984",
+        "quad": [
+          [
+            436,
+            384
+          ],
+          [
+            579,
+            386
+          ],
+          [
+            578,
+            421
+          ],
+          [
+            435,
+            419
+          ]
+        ]
+      },
+      {
+        "name": "document_number",
+        "value": "L32987471",
+        "quad": [
+          [
+            892,
+            389
+          ],
+          [
+            1036,
+            390
+          ],
+          [
+            1035,
+            425
+          ],
+          [
+            891,
+            424
+          ]
+        ]
+      },
+      {
+        "name": "date_of_expiry",
+        "value": "14.09.2036",
+        "quad": [
+          [
+            435,
+            461
+          ],
+          [
+            578,
+            463
+          ],
+          [
+            578,
+            498
+          ],
+          [
+            435,
+            496
+          ]
+        ]
+      },
+      {
+        "name": "place_of_birth",
+        "value": "NEW HAVENPORT",
+        "quad": [
+          [
+            891,
+            466
+          ],
+          [
+            1141,
+            469
+          ],
+          [
+            1141,
+            504
+          ],
+          [
+            891,
+            501
+          ]
+        ]
+      },
+      {
+        "name": "mrz_line_1",
+        "value": "I<UTOL329874712<<<<<<<<<<<<<<<",
+        "quad": [
+          [
+            91,
+            698
+          ],
+          [
+            1314,
+            710
+          ],
+          [
+            1314,
+            760
+          ],
+          [
+            90,
+            748
+          ]
+        ]
+      },
+      {
+        "name": "mrz_line_2",
+        "value": "8408152F3609149UTO<<<<<<<<<<<2",
+        "quad": [
+          [
+            90,
+            747
+          ],
+          [
+            1314,
+            759
+          ],
+          [
+            1313,
+            809
+          ],
+          [
+            90,
+            797
+          ]
+        ]
+      },
+      {
+        "name": "mrz_line_3",
+        "value": "ERIKSSON<<THOMAS<<<<<<<<<<<<<<",
+        "quad": [
+          [
+            90,
+            797
+          ],
+          [
+            1313,
+            809
+          ],
+          [
+            1313,
+            859
+          ],
+          [
+            89,
+            847
+          ]
+        ]
+      },
+      {
+        "name": "watermark",
+        "value": "SPECIMEN",
+        "quad": [
+          [
+            245,
+            183
+          ],
+          [
+            1170,
+            193
+          ],
+          [
+            1165,
+            645
+          ],
+          [
+            240,
+            635
+          ]
+        ]
+      }
+    ]
+  }
+}
