@@ -424,148 +424,269 @@ h1 {
   color: var(--ink);
 }
 
-.group + .group {
-  margin-top: 56px;
-}
-
-.home .label {
-  padding-bottom: 0;
-  border-bottom: 0;
-}
-
-.cards {
+/* Software and data as tiles of different sizes, each with a small live preview of what it does. */
+.bento {
   display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 16px;
-  margin: 18px 0 0;
-  padding: 0;
-  list-style: none;
 }
 
-.cards--3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-/* Cards stay grey; on hover the border brightens and a faint glow comes up from the corner. */
-.card,
-.data {
+.tile {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  padding: 22px 22px 24px;
+  padding: 8px;
   overflow: hidden;
   isolation: isolate;
   border: 1px solid var(--line);
-  border-radius: 18px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
-  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.015));
+  transition: transform 0.3s, border-color 0.3s;
 }
 
-.card::before,
-.data::before {
+.tile--retouch {
+  grid-column: span 7;
+  grid-row: span 2;
+}
+
+.tile--lien,
+.tile--carte {
+  grid-column: span 5;
+}
+
+.tile--data {
+  grid-column: span 12;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+/* A light that follows the cursor (site.js sets --mx and --my), inside the tile and along its edge. */
+.tile::before,
+.tile::after {
   content: "";
   position: absolute;
-  z-index: -1;
   inset: 0;
-  background: radial-gradient(120% 80% at 0% 0%, rgba(140, 150, 255, 0.12), transparent 60%);
+  border-radius: inherit;
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.3s;
 }
 
-.card::after {
-  content: "→";
-  position: absolute;
-  top: 22px;
-  right: 22px;
-  color: var(--ink-3);
-  transition: transform 0.25s, color 0.25s;
+.tile::before {
+  z-index: 1;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.06), transparent 45%);
 }
 
-.card:hover,
-.data:hover {
+.tile::after {
+  z-index: 2;
+  padding: 1px;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.5), transparent 60%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.tile:hover {
   transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.8);
 }
 
-.card:hover::before,
-.data:hover::before {
+.tile:hover::before,
+.tile:hover::after {
   opacity: 1;
 }
 
-.card:hover::after,
-.data:hover .data__go::after {
-  color: var(--ink);
-  transform: translateX(3px);
+.tile__art {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 15px;
+  background: #0B0D12;
 }
 
-.card__icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 28px;
-  padding: 9px;
+.tile--retouch .tile__art {
+  flex: 1;
+  min-height: 300px;
+}
+
+.tile__art svg {
+  display: block;
+  overflow: visible;
+  width: 100%;
+  height: 100%;
+}
+
+.tile__text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 18px 16px 14px;
+}
+
+/* A round arrow in the corner that fills in on hover. */
+.tile__text::after {
+  content: "→";
+  position: absolute;
+  top: 18px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
   border: 1px solid var(--line);
-  border-radius: 11px;
-  background: rgba(255, 255, 255, 0.04);
-  fill: none;
-  stroke: var(--ink-2);
-  stroke-width: 1.7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  border-radius: 50%;
+  color: var(--ink-2);
+  font-size: 15px;
+  transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.3s;
 }
 
-.card__name {
-  font-size: 20px;
-  font-weight: 650;
-  letter-spacing: -0.02em;
+.tile:hover .tile__text::after {
+  border-color: #fff;
+  background: #fff;
+  color: #07080B;
+  transform: rotate(-45deg);
 }
 
-.card__desc {
-  margin-top: 4px;
+.tile__kicker {
   color: var(--ink-3);
-  font-size: 14.5px;
-  line-height: 1.5;
+  font: 600 11px/1 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.card__name em {
+.tile__name {
+  margin-top: 10px;
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+.tile--retouch .tile__name {
+  font-size: 30px;
+}
+
+.tile__name em {
+  color: #F5753F;
   font-style: normal;
 }
 
-/* Data is one wide card that leads to the full list, so it stays the same size as datasets are added. */
-.data {
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px 48px;
-  margin-top: 18px;
-  padding: 28px;
+.tile__desc {
+  margin-top: 4px;
+  padding-right: 40px;
+  color: var(--ink-3);
+  font-size: 15px;
+  line-height: 1.5;
 }
 
-.data__text {
-  display: flex;
-  flex-direction: column;
-  max-width: 36em;
+/* Lien's flow along the broker's links, Carte's moving route, the broker's pulse. */
+.flow path {
+  fill: none;
+  stroke-dasharray: 3 12;
+  animation: flow 1.6s linear infinite;
 }
 
-.data__go {
-  flex: none;
-  color: var(--ink-2);
+.route {
+  stroke-dasharray: 7 7;
+  animation: flow 1.4s linear infinite;
+}
+
+@keyframes flow {
+  to { stroke-dashoffset: -30; }
+}
+
+.pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: orb-ring 2.4s ease-out infinite;
+}
+
+/* Data: the text on the left, real sample documents fanned out on the right. */
+.tile--data .tile__text {
+  flex: 1 1 50%;
+  min-width: 0;
+  justify-content: center;
+  padding: 28px 28px 26px;
+}
+
+.tile--data .tile__text::after {
+  top: auto;
+  bottom: 24px;
+  right: 24px;
+}
+
+.tile--data .tile__desc {
+  max-width: 30em;
+}
+
+.tile__more {
+  margin-top: 22px;
+  color: var(--ink);
   font-size: 15px;
   font-weight: 600;
+}
+
+.scripts {
+  display: block;
+  margin-top: 22px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+.scripts__track {
+  display: flex;
+  gap: 28px;
+  width: max-content;
+  color: var(--ink-2);
+  font-size: 15px;
   white-space: nowrap;
-  transition: color 0.25s;
+  animation: scripts 40s linear infinite;
 }
 
-.data__go::after {
-  content: "→";
-  display: inline-block;
-  margin-left: 8px;
-  transition: transform 0.25s;
+@keyframes scripts {
+  to { transform: translateX(calc(-50% - 14px)); }
 }
 
-.data:hover .data__go {
-  color: var(--ink);
+.fan {
+  flex: 1 1 50%;
+  min-width: 0;
+  height: auto;
+  min-height: 300px;
+  background:
+    radial-gradient(70% 80% at 50% 100%, rgba(140, 150, 255, 0.18), transparent 70%),
+    #0B0D12;
 }
+
+.fan img {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  width: 160px;
+  margin-left: -80px;
+  border-radius: 6px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transform-origin: 50% 120%;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.fan__doc:nth-child(1) { transform: translateX(-62%) rotate(-21deg); }
+.fan__doc:nth-child(2) { transform: translateX(-22%) rotate(-7deg); }
+.fan__doc:nth-child(3) { transform: translateX(22%) rotate(7deg); }
+.fan__doc:nth-child(4) { transform: translateX(62%) rotate(21deg); }
+
+/* The ID card sits in front, lower down, so the documents behind still show. */
+.fan .fan__card {
+  bottom: 22px;
+  width: 168px;
+  margin-left: -84px;
+  transform: translateY(0) rotate(-4deg);
+}
+
+.tile:hover .fan__doc:nth-child(1) { transform: translateX(-80%) translateY(-10px) rotate(-26deg); }
+.tile:hover .fan__doc:nth-child(2) { transform: translateX(-28%) translateY(-18px) rotate(-9deg); }
+.tile:hover .fan__doc:nth-child(3) { transform: translateX(28%) translateY(-18px) rotate(9deg); }
+.tile:hover .fan__doc:nth-child(4) { transform: translateX(80%) translateY(-10px) rotate(26deg); }
+.tile:hover .fan .fan__card { transform: translateY(-8px) rotate(-1deg); }
 
 .page__title em {
   color: var(--tint, var(--accent));
@@ -937,6 +1058,23 @@ h1 {
   }
 }
 
+@media (max-width: 900px) {
+  .tile--retouch,
+  .tile--data {
+    grid-column: span 12;
+    grid-row: auto;
+  }
+
+  .tile--lien,
+  .tile--carte {
+    grid-column: span 6;
+  }
+
+  .tile--retouch .tile__art {
+    min-height: 260px;
+  }
+}
+
 @media (max-width: 640px) {
   .hero {
     grid-template-columns: minmax(0, 1fr);
@@ -949,13 +1087,37 @@ h1 {
     margin-bottom: 32px;
   }
 
-  .cards--3 {
-    grid-template-columns: minmax(0, 1fr);
+  .tile--lien,
+  .tile--carte {
+    grid-column: span 12;
   }
 
-  .data {
-    flex-direction: column;
-    align-items: flex-start;
+  .tile--data {
+    flex-direction: column-reverse;
+  }
+
+  .tile--data .tile__text {
+    padding: 18px 16px 14px;
+  }
+
+  .tile--data .tile__text::after {
+    top: 18px;
+    bottom: auto;
+    right: 14px;
+  }
+
+  .fan {
+    min-height: 240px;
+  }
+
+  .fan img {
+    width: 120px;
+    margin-left: -60px;
+  }
+
+  .fan .fan__card {
+    width: 140px;
+    margin-left: -70px;
   }
 
   .top__nav {
