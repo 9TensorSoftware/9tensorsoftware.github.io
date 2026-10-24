@@ -740,6 +740,12 @@ h1 {
   transition: background 0.15s, border-color 0.15s;
 }
 
+.btn__icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
 .btn:hover {
   border-color: var(--ink-3);
 }
