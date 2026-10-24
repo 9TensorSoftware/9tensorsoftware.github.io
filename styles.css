@@ -209,10 +209,49 @@ button:focus-visible {
   line-height: 1.45;
 }
 
-/* ── Landing ── */
+/* ── Landing ──
+   The home page is always dark: it keeps the same tokens, so the header, menus and footer follow. */
 
-.hero {
-  padding: clamp(56px, 12vh, 136px) 0 clamp(48px, 9vh, 96px);
+.home {
+  color-scheme: dark;
+  --bg: #07080B;
+  --bg-2: #111319;
+  --hover: rgba(255, 255, 255, 0.06);
+  --ink: #F1F2F5;
+  --ink-2: #A9AEBA;
+  --ink-3: #737885;
+  --line: rgba(255, 255, 255, 0.08);
+  --accent: #8C96FF;
+  --max: 1040px;
+  position: relative;
+  isolation: isolate;
+}
+
+/* Two soft glows and a dot grid behind the hero, fading out before the cards end. */
+.home::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 auto;
+  height: min(1100px, 140vh);
+  pointer-events: none;
+  background:
+    radial-gradient(50% 45% at 78% 8%, rgba(108, 118, 255, 0.24), transparent 70%),
+    radial-gradient(38% 35% at 8% 30%, rgba(47, 185, 143, 0.10), transparent 70%),
+    radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1.2px) 0 0 / 28px 28px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent);
+  mask-image: linear-gradient(to bottom, #000 30%, transparent);
+}
+
+.home .mark__accent {
+  fill: #5FD8B4;
+}
+
+.home .menu__panel {
+  background: rgba(17, 19, 25, 0.88);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
@@ -225,16 +264,126 @@ h1 {
   text-wrap: balance;
 }
 
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 48px;
+  padding: clamp(48px, 11vh, 128px) 0 clamp(56px, 10vh, 112px);
+}
+
+.home h1 {
+  max-width: 13ch;
+  font-size: clamp(44px, 7.2vw, 84px);
+}
+
+.glow {
+  background: linear-gradient(100deg, #B8BFFF 0%, #8C96FF 45%, #5FD8B4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .hero__sub {
   margin: 24px 0 0;
   color: var(--ink-2);
   font-size: 19px;
 }
 
-.index {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 48px;
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding: 7px 14px 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ink-2);
+  font-size: 13.5px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.pill:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--ink);
+}
+
+.pill__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #5FD8B4;
+  box-shadow: 0 0 0 4px rgba(95, 216, 180, 0.15);
+}
+
+/* The big mark: the line draws the 9, the dots come in, and the last dot breathes. */
+.orb {
+  width: clamp(180px, 24vw, 270px);
+  overflow: visible;
+  filter: drop-shadow(0 0 28px rgba(124, 134, 255, 0.35));
+}
+
+.orb__line {
+  fill: none;
+  stroke: url(#orb-ink);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  opacity: 0.55;
+  animation: orb-draw 1.6s 0.3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.orb__dot {
+  fill: url(#orb-ink);
+  animation: orb-in 0.6s backwards;
+}
+
+.orb__dot:nth-of-type(2) { animation-delay: 0.08s; }
+.orb__dot:nth-of-type(3) { animation-delay: 0.16s; }
+.orb__dot:nth-of-type(4) { animation-delay: 0.24s; }
+.orb__dot:nth-of-type(5) { animation-delay: 0.32s; }
+.orb__dot:nth-of-type(6) { animation-delay: 0.4s; }
+
+.orb__off {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.14);
+  stroke-width: 1.5;
+}
+
+.orb__accent {
+  fill: #5FD8B4;
+  animation: orb-in 0.6s 0.5s backwards;
+}
+
+.orb__ring {
+  fill: none;
+  stroke: #5FD8B4;
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: orb-ring 2.8s 1.8s ease-out infinite backwards;
+}
+
+@keyframes orb-draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes orb-in {
+  from { opacity: 0; transform: scale(0.6); }
+}
+
+@keyframes orb-ring {
+  from { opacity: 0.7; transform: scale(1); }
+  to { opacity: 0; transform: scale(2.6); }
+}
+
+.orb__dot,
+.orb__accent {
+  transform-box: fill-box;
+  transform-origin: center;
 }
 
 .label {
@@ -260,50 +409,112 @@ h1 {
   color: var(--ink);
 }
 
-.index__list {
-  margin: 0;
+.group + .group {
+  margin-top: 56px;
+}
+
+.home .label {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.cards {
+  display: grid;
+  gap: 16px;
+  margin: 18px 0 0;
   padding: 0;
   list-style: none;
 }
 
-.index__list a {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 2px 16px;
-  padding: 18px 0;
-  border-bottom: 1px solid var(--line);
+.cards--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.index__name {
-  font-size: 22px;
+.cards--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* A card lights up in its own colour on hover. */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 22px 22px 24px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: radial-gradient(120% 80% at 0% 0%, color-mix(in srgb, var(--tint) 22%, transparent), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card::after {
+  content: "→";
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  color: var(--ink-3);
+  transition: transform 0.25s, color 0.25s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--tint) 45%, transparent);
+  box-shadow: 0 18px 40px -18px color-mix(in srgb, var(--tint) 55%, transparent);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover::after {
+  color: var(--ink);
+  transform: translateX(3px);
+}
+
+.card__icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 28px;
+  padding: 9px;
+  border: 1px solid color-mix(in srgb, var(--tint) 35%, transparent);
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--tint) 14%, transparent);
+  fill: none;
+  stroke: color-mix(in srgb, var(--tint) 75%, white);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.card__name {
+  font-size: 20px;
   font-weight: 650;
   letter-spacing: -0.02em;
 }
 
-.index__name em,
+.card__desc {
+  margin-top: 4px;
+  color: var(--ink-3);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+.card__name em,
 .page__title em {
   color: var(--tint, var(--accent));
   font-style: normal;
-}
-
-.index__desc {
-  grid-column: 1;
-  color: var(--ink-3);
-  font-size: 15px;
-}
-
-.index__list a::after {
-  content: "→";
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  color: var(--ink-3);
-  transition: transform 0.15s, color 0.15s;
-}
-
-.index__list a:hover::after {
-  color: var(--ink);
-  transform: translateX(4px);
 }
 
 /* ── Product and data pages ── */
@@ -667,10 +878,27 @@ h1 {
   }
 }
 
+@media (max-width: 900px) {
+  .cards--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 640px) {
-  .index {
+  .hero {
     grid-template-columns: minmax(0, 1fr);
-    gap: 40px;
+    gap: 0;
+  }
+
+  .orb {
+    order: -1;
+    width: 96px;
+    margin-bottom: 32px;
+  }
+
+  .cards--3,
+  .cards--4 {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .top__nav {
@@ -694,5 +922,10 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
+    animation: none !important;
+  }
+
+  .orb__line {
+    stroke-dashoffset: 0;
   }
 }

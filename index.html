@@ -6,9 +6,8 @@
   <title>9Tensor — Analysis software and multilingual data</title>
   <meta name="description" content="9Tensor makes free analysis software — Rétouch, Lien and Carte — and multilingual datasets with free samples.">
   <link rel="canonical" href="https://9tensor.com/">
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#F6F6F3" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0D0E10" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#07080B">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -25,7 +24,7 @@
   <link rel="stylesheet" href="/styles.css">
   <script src="/site.js" defer></script>
 </head>
-<body>
+<body class="home">
   <header class="wrap top">
     <a class="brand" href="/" aria-label="9Tensor, home">
       <!-- The mark: a 3 × 3 grid of dots (a tensor of nine) whose lit dots draw a 9. -->
@@ -60,28 +59,86 @@
 
   <main class="wrap">
     <section class="hero">
-      <h1>Analysis software and multilingual&nbsp;data.</h1>
-      <p class="hero__sub">Free tools that run in your browser. Free samples of every dataset.</p>
+      <div class="hero__text">
+        <a class="pill" href="/lien/"><span class="pill__dot"></span>Lien and Carte are free in your browser<span aria-hidden="true">→</span></a>
+        <h1>Analysis software and <span class="glow">multilingual&nbsp;data.</span></h1>
+        <p class="hero__sub">Free tools that run in your browser. Free samples of every dataset.</p>
+      </div>
+      <!-- The mark, large: nine dots, and a line through the lit ones that draws the 9. -->
+      <svg class="orb" viewBox="0 0 120 120" aria-hidden="true">
+        <defs>
+          <linearGradient id="orb-ink" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#E4E7FF"/>
+            <stop offset="1" stop-color="#9AA3FF"/>
+          </linearGradient>
+        </defs>
+        <path class="orb__line" pathLength="1" d="M100 60H20V20h80v80"/>
+        <circle class="orb__dot" cx="20" cy="20" r="9"/><circle class="orb__dot" cx="60" cy="20" r="9"/><circle class="orb__dot" cx="100" cy="20" r="9"/>
+        <circle class="orb__dot" cx="20" cy="60" r="9"/><circle class="orb__dot" cx="60" cy="60" r="9"/><circle class="orb__dot" cx="100" cy="60" r="9"/>
+        <circle class="orb__off" cx="20" cy="100" r="9"/><circle class="orb__off" cx="60" cy="100" r="9"/>
+        <circle class="orb__ring" cx="100" cy="100" r="9"/><circle class="orb__accent" cx="100" cy="100" r="9"/>
+      </svg>
     </section>
 
-    <section class="index">
-      <div>
-        <h2 class="label">Software</h2>
-        <ul class="index__list">
-          <li><a href="https://retouch.9tensor.com" style="--tint: #D4572A"><span class="index__name">R<em>é</em>touch</span><span class="index__desc">Image and video editing and analysis</span></a></li>
-          <li><a href="/lien/" style="--tint: #1F8A70"><span class="index__name">Lien</span><span class="index__desc">Network analysis on a free canvas</span></a></li>
-          <li><a href="/carte/" style="--tint: #2F6FD0"><span class="index__name">Carte</span><span class="index__desc">Map analysis for KML, GeoJSON and GPX</span></a></li>
-        </ul>
-      </div>
-      <div>
-        <h2 class="label">Data</h2>
-        <ul class="index__list">
-          <li><a href="/data/media-outlets/"><span class="index__name">Media outlets</span><span class="index__desc">News outlets around the world</span></a></li>
-          <li><a href="/data/financial-documents/"><span class="index__name">Financial documents</span><span class="index__desc">Synthetic statements, invoices and receipts</span></a></li>
-          <li><a href="/data/health-records/"><span class="index__name">Health records</span><span class="index__desc">Synthetic lab reports and prescriptions</span></a></li>
-          <li><a href="/data/identity-documents/"><span class="index__name">Identity documents</span><span class="index__desc">Synthetic ID cards, marked as specimens</span></a></li>
-        </ul>
-      </div>
+    <section class="group">
+      <h2 class="label">Software <span class="label__note">Runs in your browser</span></h2>
+      <ul class="cards cards--3">
+          <li>
+            <a class="card" href="https://retouch.9tensor.com" style="--tint: #E8693A">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.6"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>
+              <span class="card__name">R<em>é</em>touch</span>
+              <span class="card__desc">Image and video editing and analysis</span>
+            </a>
+          </li>
+          <li>
+            <a class="card" href="/lien/" style="--tint: #2FB98F">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="8" r="2.5"/><circle cx="10" cy="18" r="2.5"/><path d="m8.5 6.4 7 1.2M6.9 8.4l2.2 7.2M16.4 10l-4.8 6"/></svg>
+              <span class="card__name">Lien</span>
+              <span class="card__desc">Network analysis on a free canvas</span>
+            </a>
+          </li>
+          <li>
+            <a class="card" href="/carte/" style="--tint: #4C8DF6">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6.5V20l6-2.5 6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></svg>
+              <span class="card__name">Carte</span>
+              <span class="card__desc">Map analysis for KML, GeoJSON and GPX</span>
+            </a>
+          </li>
+      </ul>
+    </section>
+
+    <section class="group">
+      <h2 class="label">Data <span class="label__note">A free sample with each</span></h2>
+      <ul class="cards cards--4">
+          <li>
+            <a class="card" href="/data/media-outlets/" style="--tint: #8C96FF">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+              <span class="card__name">Media outlets</span>
+              <span class="card__desc">News outlets around the world</span>
+            </a>
+          </li>
+          <li>
+            <a class="card" href="/data/financial-documents/" style="--tint: #E3B341">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+              <span class="card__name">Financial documents</span>
+              <span class="card__desc">Synthetic statements, invoices and receipts</span>
+            </a>
+          </li>
+          <li>
+            <a class="card" href="/data/health-records/" style="--tint: #EC6F96">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg>
+              <span class="card__name">Health records</span>
+              <span class="card__desc">Synthetic lab reports and prescriptions</span>
+            </a>
+          </li>
+          <li>
+            <a class="card" href="/data/identity-documents/" style="--tint: #4FC3E8">
+              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="11" r="2"/><path d="M5.8 16c.6-1.4 1.8-2.1 3.2-2.1s2.6.7 3.2 2.1M14.5 10H18M14.5 13.5H18"/></svg>
+              <span class="card__name">Identity documents</span>
+              <span class="card__desc">Synthetic ID cards, marked as specimens</span>
+            </a>
+          </li>
+      </ul>
     </section>
   </main>
 
