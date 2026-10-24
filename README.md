@@ -6,9 +6,10 @@ It's plain HTML, CSS and a little JavaScript. There's no build step, and nothing
 servers except the background map in Carte.
 
 ```
-index.html              the landing page: two short lists, Software and Data
+index.html              the landing page, always dark: a card per tool and one card for all data
 lien/ carte/            a page for Lien and for Carte (Rétouch has its own site)
 lien/app/ carte/app/    the free apps: a network canvas and a map
+data/                   the list of every dataset
 data/<name>/            a page for each dataset, with its free sample next to it
 styles.css              the site's styles (light and dark follow the system)
 app.css                 the frame shared by the two apps
@@ -41,7 +42,8 @@ including `404.html` (search for `menu__panel`).
 
 Copy the nearest page (`lien/` for software, `data/health-records/` for data) into a new folder,
 then change its title, description, `canonical` and `og:url`, and its text. Add it to the menu on
-every page, to the lists in `index.html`, and to `sitemap.xml`.
+every page and to `sitemap.xml`. A tool also gets a card in `index.html`; a dataset goes on the
+list in `data/index.html` instead, so the landing page stays the same size.
 
 Every page offers something free:
 
