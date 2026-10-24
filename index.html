@@ -81,41 +81,130 @@
       </svg>
     </section>
 
-    <section class="group">
-      <h2 class="label">Software <span class="label__note">Runs in your browser</span></h2>
-      <ul class="cards cards--3">
-          <li>
-            <a class="card" href="https://retouch.9tensor.com">
-              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.6"/><path d="m4 18 5-5 4 4 3-3 4 4"/></svg>
-              <span class="card__name">R<em>é</em>touch</span>
-              <span class="card__desc">Image and video editing and analysis</span>
-            </a>
-          </li>
-          <li>
-            <a class="card" href="/lien/">
-              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="8" r="2.5"/><circle cx="10" cy="18" r="2.5"/><path d="m8.5 6.4 7 1.2M6.9 8.4l2.2 7.2M16.4 10l-4.8 6"/></svg>
-              <span class="card__name">Lien</span>
-              <span class="card__desc">Network analysis on a free canvas</span>
-            </a>
-          </li>
-          <li>
-            <a class="card" href="/carte/">
-              <svg class="card__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6.5V20l6-2.5 6 2.5 6-2.5V4l-6 2.5z"/><path d="M9 4v13.5M15 6.5V20"/></svg>
-              <span class="card__name">Carte</span>
-              <span class="card__desc">Map analysis for KML, GeoJSON and GPX</span>
-            </a>
-          </li>
-      </ul>
-    </section>
+    <section class="bento" aria-label="Software and data">
+      <a class="tile tile--retouch" href="https://retouch.9tensor.com">
+        <div class="tile__art">
+          <!-- Before and after: the same scene, flat on the left and graded on the right, with a handle sweeping between. -->
+          <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <linearGradient id="rt-sky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1B1433"/><stop offset=".5" stop-color="#6E3550"/><stop offset=".78" stop-color="#F5753F"/><stop offset="1" stop-color="#FFC457"/>
+              </linearGradient>
+              <radialGradient id="rt-sun"><stop offset="0" stop-color="#FFF1D0"/><stop offset=".45" stop-color="#FFC457" stop-opacity=".8"/><stop offset="1" stop-color="#FFC457" stop-opacity="0"/></radialGradient>
+              <linearGradient id="rt-water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5753F" stop-opacity=".6"/><stop offset="1" stop-color="#120B1C"/></linearGradient>
+              <g id="rt-scene">
+                <rect width="600" height="272" fill="url(#rt-sky)"/>
+                <circle cx="380" cy="236" r="110" fill="url(#rt-sun)"/>
+                <circle cx="380" cy="240" r="34" fill="#FFE2A8"/>
+                <path d="M0 222 70 168l50 30 70-70 70 76 60-30 80 60 70-74 70 50 60-30v110H0z" fill="#4A2442"/>
+                <path d="m0 252 90-46 80 34 70-40 90 50 90-36 80 30 100-26v54H0z" fill="#2A1530"/>
+                <rect y="272" width="600" height="128" fill="url(#rt-water)"/>
+                <path d="M350 290h60M334 306h92M358 322h44M344 340h72M368 358h24" stroke="#FFD08A" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+              </g>
+              <filter id="rt-flat"><feColorMatrix type="saturate" values=".08"/><feComponentTransfer><feFuncR type="linear" slope=".7" intercept=".05"/><feFuncG type="linear" slope=".7" intercept=".05"/><feFuncB type="linear" slope=".78" intercept=".07"/></feComponentTransfer></filter>
+              <clipPath id="rt-graded"><rect x="300" width="600" height="400"><animate attributeName="x" values="300;170;430;300" dur="10s" repeatCount="indefinite" keyTimes="0;.33;.66;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"/></rect></clipPath>
+            </defs>
+            <use href="#rt-scene" filter="url(#rt-flat)"/>
+            <use href="#rt-scene" clip-path="url(#rt-graded)"/>
+            <g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".9">
+              <path d="M332 210v-16h16M412 194h16v16M428 270v16h-16M348 286h-16v-16"/>
+            </g>
+            <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">
+              <rect x="332" y="164" width="96" height="22" rx="6" fill="rgba(0,0,0,.55)"/>
+              <text x="342" y="179" fill="#fff">sun · 0.98</text>
+            </g>
+            <g>
+              <animateTransform attributeName="transform" type="translate" values="300 0;170 0;430 0;300 0" dur="10s" repeatCount="indefinite" keyTimes="0;.33;.66;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"/>
+              <line y2="400" stroke="#fff" stroke-width="2"/>
+              <circle cy="200" r="17" fill="#fff"/>
+              <path d="m-4 194-6 6 6 6m8-12 6 6-6 6" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </div>
+        <div class="tile__text">
+          <span class="tile__kicker">Software</span>
+          <span class="tile__name">R<em>é</em>touch</span>
+          <span class="tile__desc">Image and video editing and analysis</span>
+        </div>
+      </a>
 
-    <section class="group">
-      <h2 class="label">Data <span class="label__note">A free sample with each</span></h2>
-      <a class="data" href="/data/">
-        <span class="data__text">
-          <span class="card__name">Multilingual datasets</span>
-          <span class="card__desc">Synthetic documents for OCR and text analysis in more than 100 languages, and a registry of news outlets around the world.</span>
-        </span>
-        <span class="data__go">Browse all data</span>
+      <a class="tile tile--lien" href="/lien/">
+        <div class="tile__art">
+          <svg viewBox="0 0 400 220" aria-hidden="true">
+            <g fill="none" stroke="rgba(255,255,255,.16)" stroke-width="1.2">
+              <path d="M90 66 58 132l62 32 20-74zM90 66 30 50M140 90 90 66M120 164l80 46M300 56l40 70-60 40-30-88zM250 78l90 48M280 166l90 34M200 30l50 48M200 30l-60 60"/>
+            </g>
+            <g fill="none" stroke="#5FD8B4" stroke-width="1.6" opacity=".75">
+              <path d="M200 112 140 90M200 112l-80 52M200 112l50-34M200 112l80 54M200 112v98M200 112V30"/>
+            </g>
+            <g class="flow" stroke="#5FD8B4" stroke-width="2.4" stroke-linecap="round">
+              <path d="M140 90 200 112l50-34"/>
+              <path d="m120 164 80-52 80 54"/>
+            </g>
+            <g fill="#14171E" stroke="rgba(255,255,255,.55)" stroke-width="1.5">
+              <circle cx="90" cy="66" r="6"/><circle cx="58" cy="132" r="5"/><circle cx="120" cy="164" r="6"/><circle cx="140" cy="90" r="7"/>
+              <circle cx="30" cy="50" r="4"/><circle cx="300" cy="56" r="6"/><circle cx="340" cy="126" r="7"/><circle cx="280" cy="166" r="6"/>
+              <circle cx="250" cy="78" r="6"/><circle cx="370" cy="200" r="4"/><circle cx="200" cy="210" r="5"/><circle cx="200" cy="30" r="5"/>
+            </g>
+            <circle class="pulse" cx="200" cy="112" r="10" fill="none" stroke="#5FD8B4" stroke-width="1.5"/>
+            <circle cx="200" cy="112" r="10" fill="#5FD8B4"/>
+          </svg>
+        </div>
+        <div class="tile__text">
+          <span class="tile__kicker">Software</span>
+          <span class="tile__name">Lien</span>
+          <span class="tile__desc">Network analysis on a free canvas</span>
+        </div>
+      </a>
+
+      <a class="tile tile--carte" href="/carte/">
+        <div class="tile__art">
+          <svg viewBox="0 0 400 220" aria-hidden="true">
+            <g fill="none" stroke="rgba(255,255,255,.07)">
+              <path d="M-400 55h1200M-400 110h1200M-400 165h1200M-400 0v220M-320 0v220M-240 0v220M-160 0v220M-80 0v220M0 0v220M80 0v220M160 0v220M240 0v220M320 0v220M400 0v220M480 0v220M560 0v220M640 0v220M720 0v220"/>
+            </g>
+            <g fill="none" stroke="rgba(255,255,255,.14)">
+              <ellipse cx="120" cy="120" rx="96" ry="62" transform="rotate(-18 120 120)"/>
+              <ellipse cx="124" cy="116" rx="70" ry="44" transform="rotate(-14 124 116)"/>
+              <ellipse cx="128" cy="112" rx="44" ry="27" transform="rotate(-10 128 112)"/>
+              <ellipse cx="130" cy="110" rx="18" ry="11" transform="rotate(-8 130 110)"/>
+              <ellipse cx="300" cy="80" rx="80" ry="50" transform="rotate(12 300 80)"/>
+              <ellipse cx="304" cy="78" rx="52" ry="32" transform="rotate(16 304 78)"/>
+              <ellipse cx="308" cy="76" rx="24" ry="15" transform="rotate(20 308 76)"/>
+            </g>
+            <path d="M54 186c50-10 70-60 120-56s60 40 110 10 40-70 70-86" fill="none" stroke="rgba(140,150,255,.25)" stroke-width="6" stroke-linecap="round"/>
+            <path class="route" d="M54 186c50-10 70-60 120-56s60 40 110 10 40-70 70-86" fill="none" stroke="#8C96FF" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="54" cy="186" r="6" fill="#07080B" stroke="#fff" stroke-width="2"/>
+            <path d="M354 54c-10 0-17-7-17-16 0-12 17-28 17-28s17 16 17 28c0 9-7 16-17 16z" fill="#8C96FF"/>
+            <circle cx="354" cy="37" r="5.5" fill="#07080B"/>
+            <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">
+              <rect x="186" y="150" width="64" height="22" rx="6" fill="rgba(0,0,0,.6)" stroke="rgba(255,255,255,.15)"/>
+              <text x="196" y="165" fill="#fff">412 km</text>
+            </g>
+          </svg>
+        </div>
+        <div class="tile__text">
+          <span class="tile__kicker">Software</span>
+          <span class="tile__name">Carte</span>
+          <span class="tile__desc">Map analysis for KML, GeoJSON and GPX</span>
+        </div>
+      </a>
+
+      <a class="tile tile--data" href="/data/">
+        <div class="tile__text">
+          <span class="tile__kicker">Data</span>
+          <span class="tile__name">Multilingual datasets</span>
+          <span class="tile__desc">Synthetic documents for OCR and text analysis in more than 100 languages, and a registry of news outlets around the world. A free sample with each.</span>
+          <span class="scripts" aria-hidden="true"><span class="scripts__track"><span>English</span><span>Türkçe</span><span>العربية</span><span>日本語</span><span>हिन्दी</span><span>Русский</span><span>Español</span><span>中文</span><span>한국어</span><span>Ελληνικά</span><span>ไทย</span><span>עברית</span><span>Français</span><span>Kiswahili</span><span>Tiếng Việt</span><span>বাংলা</span><span>Deutsch</span><span>فارسی</span><span>English</span><span>Türkçe</span><span>العربية</span><span>日本語</span><span>हिन्दी</span><span>Русский</span><span>Español</span><span>中文</span><span>한국어</span><span>Ελληνικά</span><span>ไทย</span><span>עברית</span><span>Français</span><span>Kiswahili</span><span>Tiếng Việt</span><span>বাংলা</span><span>Deutsch</span><span>فارسی</span></span></span>
+          <span class="tile__more">Browse all data</span>
+        </div>
+        <div class="tile__art fan">
+            <img class="fan__doc" src="/data/financial-documents/samples/fin-003-thumb.jpg" alt="" decoding="async">
+            <img class="fan__doc" src="/data/health-records/samples/hlt-003-thumb.jpg" alt="" decoding="async">
+            <img class="fan__doc" src="/data/financial-documents/samples/fin-004-thumb.jpg" alt="" decoding="async">
+            <img class="fan__doc" src="/data/financial-documents/samples/fin-002-thumb.jpg" alt="" decoding="async">
+            <img class="fan__card" src="/data/identity-documents/samples/id-001-thumb.jpg" alt="" decoding="async">
+        </div>
       </a>
     </section>
   </main>
