@@ -155,10 +155,11 @@ button:focus-visible {
   transform: rotate(-135deg);
 }
 
+/* The nav sits at the right edge, so the panels open leftwards. */
 .menu__panel {
   position: absolute;
   top: calc(100% + 12px);
-  left: -14px;
+  right: -14px;
   width: 300px;
   padding: 6px;
   border: 1px solid var(--line);
@@ -167,12 +168,6 @@ button:focus-visible {
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
-}
-
-/* The second menu sits near the right edge, so its panel opens leftwards. */
-.menu + .menu .menu__panel {
-  left: auto;
-  right: -14px;
 }
 
 .menu__item {
@@ -1110,8 +1105,7 @@ h1 {
     position: static;
   }
 
-  .menu__panel,
-  .menu + .menu .menu__panel {
+  .menu__panel {
     left: var(--gutter);
     right: var(--gutter);
     top: calc(100% - 12px);
