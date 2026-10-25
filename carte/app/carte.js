@@ -2,7 +2,7 @@
 (() => {
   const $ = (id) => document.getElementById(id);
   const KEY = "carte.layers.v1";
-  const PALETTE = ["#2F6FD0", "#D4572A", "#1F8A70", "#8E5BC9", "#C2185B", "#B7950B", "#00838F", "#5D6D7E"];
+  const PALETTE = ["#8C96FF", "#F5753F", "#5FD8B4", "#C49BFF", "#FF7EB0", "#F2C14E", "#4FC3D9", "#A9AEBA"];
 
   const map = L.map("map", { zoomControl: true, worldCopyJump: true, minZoom: 2 }).setView([30, 10], 2);
   const bases = {
@@ -14,7 +14,14 @@
     }),
   };
   let base = bases.streets.addTo(map);
-  $("basemap").addEventListener("change", (e) => { map.removeLayer(base); base = bases[e.target.value].addTo(map); base.bringToBack(); });
+  // Street tiles are drawn dark to sit with the rest of the site; satellite stays as it is.
+  map.getContainer().classList.add("is-streets");
+  $("basemap").addEventListener("change", (e) => {
+    map.removeLayer(base);
+    base = bases[e.target.value].addTo(map);
+    base.bringToBack();
+    map.getContainer().classList.toggle("is-streets", e.target.value === "streets");
+  });
 
   const hint = (text, ms) => { $("hint").textContent = text; if (ms) setTimeout(() => { if ($("hint").textContent === text) $("hint").textContent = ""; }, ms); };
   map.on("mousemove", (e) => { $("coords").textContent = `${e.latlng.lat.toFixed(5)}, ${e.latlng.lng.toFixed(5)}`; });
@@ -217,7 +224,7 @@
   map.on("click", (e) => {
     if (mode === "point") {
       if (!mine) {
-        mine = { id: ++seq, name: "My points", color: "#C2185B", data: { type: "FeatureCollection", features: [] }, visible: true };
+        mine = { id: ++seq, name: "My points", color: "#FF7EB0", data: { type: "FeatureCollection", features: [] }, visible: true };
         layers.push(mine);
       }
       const n = mine.data.features.length + 1;
@@ -227,7 +234,7 @@
       save();
     } else if (mode === "measure") {
       measurePts.push(e.latlng);
-      if (!measureLine) measureLine = L.polyline(measurePts, { color: "#111214", weight: 3, dashArray: "6 6" }).addTo(map);
+      if (!measureLine) measureLine = L.polyline(measurePts, { color: "#F1F2F5", weight: 3, dashArray: "6 6" }).addTo(map);
       else measureLine.setLatLngs(measurePts);
       if (measureTip) map.removeLayer(measureTip);
       measureTip = L.tooltip({ permanent: true, direction: "right", className: "measure-label", offset: [10, 0] }).setLatLng(e.latlng).setContent(fmtDist(total())).addTo(map);

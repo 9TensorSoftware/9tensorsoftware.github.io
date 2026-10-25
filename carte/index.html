@@ -6,9 +6,8 @@
   <title>Carte — 9Tensor</title>
   <meta name="description" content="Carte opens KML, KMZ, GeoJSON and GPX files on a free map, so you can layer, inspect and measure. Use it online, or add it to your own app as an MIT-licensed plug-in.">
   <link rel="canonical" href="https://9tensor.com/carte/">
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#F6F6F3" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0D0E10" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#07080B">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -28,7 +27,7 @@
 <body>
   <header class="wrap top">
     <a class="brand" href="/" aria-label="9Tensor, home">
-      <!-- The mark: a 3 × 3 grid of dots (a tensor of nine) whose lit dots draw a 9. -->
+      <!-- The mark: a disc cut on the diagonal, its halves slid apart. -->
       <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
         <defs>
           <linearGradient id="mark-fill" x1="0" y1="0" x2="1" y2="1"><stop class="mark__from" offset="0"/><stop class="mark__to" offset="1"/></linearGradient>
@@ -64,14 +63,44 @@
   </header>
 
   <main class="wrap">
-    <section class="page" style="--tint: #2F6FD0">
-      <p class="crumb">Software</p>
-      <h1 class="page__title">Carte</h1>
-      <p class="page__lead">Open KML, KMZ, GeoJSON and GPX files on a map, layer them and explore. Free to use online, or add it to your own app as an MIT-licensed plug-in.</p>
-      <div class="actions">
-        <a class="btn btn--primary" href="/carte/app/">Open the map, free →</a>
-        <a class="btn" href="https://github.com/9TensorSoftware/carte"><svg class="btn__icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Get it on GitHub</a>
+    <section class="page page--split">
+      <div class="page__text">
+        <p class="crumb">Software</p>
+        <h1 class="page__title">Carte</h1>
+        <p class="page__lead">Open KML, KMZ, GeoJSON and GPX files on a map, layer them and explore. Free to use online, or add it to your own app as an MIT-licensed plug-in.</p>
+        <div class="actions">
+          <a class="btn btn--primary" href="/carte/app/">Open the map, free →</a>
+          <a class="btn" href="https://github.com/9TensorSoftware/carte"><svg class="btn__icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.48-2.7-1.07-2.7-1.07-.36-.92-.89-1.17-.89-1.17-.73-.5.06-.49.06-.49.8.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.65-.89-3.65-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Get it on GitHub</a>
+        </div>
       </div>
+      <!-- The same live preview as on the home page; it opens the app. -->
+      <a class="tile page__art" href="/carte/app/" aria-label="Open the map">
+        <div class="tile__art">
+          <svg viewBox="0 0 400 220" aria-hidden="true">
+            <g fill="none" stroke="rgba(255,255,255,.07)">
+              <path d="M-400 55h1200M-400 110h1200M-400 165h1200M-400 0v220M-320 0v220M-240 0v220M-160 0v220M-80 0v220M0 0v220M80 0v220M160 0v220M240 0v220M320 0v220M400 0v220M480 0v220M560 0v220M640 0v220M720 0v220"/>
+            </g>
+            <g fill="none" stroke="rgba(255,255,255,.14)">
+              <ellipse cx="120" cy="120" rx="96" ry="62" transform="rotate(-18 120 120)"/>
+              <ellipse cx="124" cy="116" rx="70" ry="44" transform="rotate(-14 124 116)"/>
+              <ellipse cx="128" cy="112" rx="44" ry="27" transform="rotate(-10 128 112)"/>
+              <ellipse cx="130" cy="110" rx="18" ry="11" transform="rotate(-8 130 110)"/>
+              <ellipse cx="300" cy="80" rx="80" ry="50" transform="rotate(12 300 80)"/>
+              <ellipse cx="304" cy="78" rx="52" ry="32" transform="rotate(16 304 78)"/>
+              <ellipse cx="308" cy="76" rx="24" ry="15" transform="rotate(20 308 76)"/>
+            </g>
+            <path d="M54 186c50-10 70-60 120-56s60 40 110 10 40-70 70-86" fill="none" stroke="rgba(140,150,255,.25)" stroke-width="6" stroke-linecap="round"/>
+            <path class="route" d="M54 186c50-10 70-60 120-56s60 40 110 10 40-70 70-86" fill="none" stroke="#8C96FF" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="54" cy="186" r="6" fill="#07080B" stroke="#fff" stroke-width="2"/>
+            <path d="M354 54c-10 0-17-7-17-16 0-12 17-28 17-28s17 16 17 28c0 9-7 16-17 16z" fill="#8C96FF"/>
+            <circle cx="354" cy="37" r="5.5" fill="#07080B"/>
+            <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">
+              <rect x="186" y="150" width="64" height="22" rx="6" fill="rgba(0,0,0,.6)" stroke="rgba(255,255,255,.15)"/>
+              <text x="196" y="165" fill="#fff">412 km</text>
+            </g>
+          </svg>
+        </div>
+      </a>
     </section>
 
     <section class="section" id="what">

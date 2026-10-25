@@ -1,36 +1,21 @@
-/* 9Tensor — plain pages, no build step. Light and dark follow the system. */
+/* 9Tensor — plain pages, no build step. Every page is dark, on the same palette. */
 
 :root {
-  color-scheme: light dark;
-  --bg: #F6F6F3;
-  --bg-2: #FFFFFF;
-  --hover: rgba(17, 18, 20, 0.05);
-  --ink: #111214;
-  --ink-2: #474A51;
-  --ink-3: #6B6F77;
-  --line: #E2E2DD;
-  --accent: #3E4BF0;
-  --mark-from: #17A57D;
-  --mark-to: #3E4BF0;
+  color-scheme: dark;
+  --bg: #07080B;
+  --bg-2: #111319;
+  --hover: rgba(255, 255, 255, 0.06);
+  --ink: #F1F2F5;
+  --ink-2: #A9AEBA;
+  --ink-3: #737885;
+  --line: rgba(255, 255, 255, 0.08);
+  --accent: #8C96FF;
+  --mark-from: #5FD8B4;
+  --mark-to: #8C96FF;
   --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
-  --max: 920px;
+  --max: 1040px;
   --gutter: clamp(20px, 5vw, 40px);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0D0E10;
-    --bg-2: #16171A;
-    --hover: rgba(237, 238, 240, 0.07);
-    --ink: #EDEEF0;
-    --ink-2: #B3B7BF;
-    --ink-3: #8A8F98;
-    --line: #25272D;
-    --accent: #8C96FF;
-    --mark-from: #5FD8B4;
-    --mark-to: #8C96FF;
-  }
 }
 
 *,
@@ -178,8 +163,10 @@ button:focus-visible {
   padding: 6px;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: var(--bg-2);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  background: rgba(17, 19, 25, 0.88);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
 }
 
 /* The second menu sits near the right edge, so its panel opens leftwards. */
@@ -227,28 +214,15 @@ button:focus-visible {
   line-height: 1.45;
 }
 
-/* ── Landing ──
-   The home page is always dark: it keeps the same tokens, so the header, menus and footer follow. */
+/* ── Backdrop ──
+   Two soft glows and a dot grid behind the top of every page, fading out further down. */
 
-.home {
-  color-scheme: dark;
-  --bg: #07080B;
-  --bg-2: #111319;
-  --hover: rgba(255, 255, 255, 0.06);
-  --ink: #F1F2F5;
-  --ink-2: #A9AEBA;
-  --ink-3: #737885;
-  --line: rgba(255, 255, 255, 0.08);
-  --accent: #8C96FF;
-  --mark-from: #5FD8B4;
-  --mark-to: #8C96FF;
-  --max: 1040px;
+body:not(.app) {
   position: relative;
   isolation: isolate;
 }
 
-/* Two soft glows and a dot grid behind the hero, fading out before the cards end. */
-.home::before {
+body:not(.app)::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -263,12 +237,7 @@ button:focus-visible {
   mask-image: linear-gradient(to bottom, #000 30%, transparent);
 }
 
-.home .menu__panel {
-  background: rgba(17, 19, 25, 0.88);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
-}
+/* ── Landing ── */
 
 h1 {
   max-width: 12ch;
@@ -683,6 +652,23 @@ h1 {
   text-transform: uppercase;
 }
 
+/* Lien and Carte: the text beside the live preview from their home page tile. */
+.page--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: 56px;
+}
+
+.page__art {
+  min-height: 300px;
+}
+
+.page__art .tile__art {
+  flex: 1;
+  height: auto;
+}
+
 .page__title {
   max-width: none;
   font-size: clamp(40px, 6.4vw, 68px);
@@ -1045,6 +1031,15 @@ h1 {
 }
 
 @media (max-width: 900px) {
+  .page--split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .page__art {
+    min-height: 240px;
+  }
+
   .tile--retouch,
   .tile--data {
     grid-column: span 12;
