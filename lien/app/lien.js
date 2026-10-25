@@ -2,7 +2,7 @@
 (() => {
   const $ = (id) => document.getElementById(id);
   const KEY = "lien.graph.v1";
-  const TYPES = { person: "#1F8A70", company: "#2F6FD0", account: "#D4572A", place: "#8E5BC9", other: "#7F858F" };
+  const TYPES = { person: "#5FD8B4", company: "#8C96FF", account: "#F5753F", place: "#C49BFF", other: "#8A8F99" };
   const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   let nextId = 1;
   const newId = () => {
@@ -53,7 +53,6 @@
   ];
 
   const cy = cytoscape({ container: $("cy"), style: style(), wheelSensitivity: 0.3, minZoom: 0.1, maxZoom: 4 });
-  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => cy.style(style()));
 
   // ── Saving and loading ──
 
