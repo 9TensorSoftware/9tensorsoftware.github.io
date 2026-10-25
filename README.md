@@ -16,7 +16,7 @@ app.css                 the frame shared by the two apps
 site.js                 makes the menus close on an outside click or Escape
 vendor/                 Leaflet, Cytoscape.js, JSZip and toGeoJSON (see vendor/README.md)
 404.html                what GitHub Pages serves for a missing page
-favicon.svg/.ico        icons: a 3 × 3 grid of dots whose lit ones draw a 9
+favicon.svg/.ico        icons: a disc cut on the diagonal, its halves slid apart
 apple-touch-icon.png
 og.png                  the preview shown when the site is linked (1200 × 630)
 CNAME                   the custom domain, 9tensor.com

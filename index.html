@@ -29,9 +29,13 @@
     <a class="brand" href="/" aria-label="9Tensor, home">
       <!-- The mark: a 3 × 3 grid of dots (a tensor of nine) whose lit dots draw a 9. -->
       <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
-        <circle cx="7" cy="7" r="3.3"/><circle cx="16" cy="7" r="3.3"/><circle cx="25" cy="7" r="3.3"/>
-        <circle cx="7" cy="16" r="3.3"/><circle cx="16" cy="16" r="3.3"/><circle cx="25" cy="16" r="3.3"/>
-        <circle class="mark__off" cx="7" cy="25" r="3.3"/><circle class="mark__off" cx="16" cy="25" r="3.3"/><circle class="mark__accent" cx="25" cy="25" r="3.3"/>
+        <defs>
+          <linearGradient id="mark-fill" x1="0" y1="0" x2="1" y2="1"><stop class="mark__from" offset="0"/><stop class="mark__to" offset="1"/></linearGradient>
+          <clipPath id="mark-a"><path d="M0 0H32L0 32Z"/></clipPath>
+          <clipPath id="mark-b"><path d="M32 0V32H0Z"/></clipPath>
+        </defs>
+        <circle cx="16" cy="16" r="12" fill="url(#mark-fill)" clip-path="url(#mark-a)" transform="translate(1.2 -2.6)"/>
+        <circle cx="16" cy="16" r="12" fill="url(#mark-fill)" clip-path="url(#mark-b)" transform="translate(-1.2 2.6)"/>
       </svg>
       <span class="brand__name">9Tensor</span>
     </a>
@@ -65,19 +69,30 @@
         <h1>Analysis software and <span class="glow">multilingual&nbsp;data.</span></h1>
         <p class="hero__sub">Free to use online, or add to your own app as MIT-licensed plug-ins. Free samples of every dataset.</p>
       </div>
-      <!-- The mark, large: nine dots, and a line through the lit ones that draws the 9. -->
+      <!-- The mark, large: a disc cut on the diagonal, its halves sliding apart. -->
       <svg class="orb" viewBox="0 0 120 120" aria-hidden="true">
         <defs>
-          <linearGradient id="orb-ink" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#E4E7FF"/>
-            <stop offset="1" stop-color="#9AA3FF"/>
+          <linearGradient id="orb-fill" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#7BEBC8"/><stop offset=".45" stop-color="#5FD8B4"/><stop offset="1" stop-color="#8C96FF"/>
           </linearGradient>
+          <radialGradient id="orb-shine" cx=".3" cy=".22" r=".75">
+            <stop offset="0" stop-color="#fff" stop-opacity=".32"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+          </radialGradient>
+          <clipPath id="orb-a"><path d="M0 0H120L0 120Z"/></clipPath>
+          <clipPath id="orb-b"><path d="M120 0V120H0Z"/></clipPath>
         </defs>
-        <path class="orb__line" pathLength="1" d="M100 60H20V20h80v80"/>
-        <circle class="orb__dot" cx="20" cy="20" r="9"/><circle class="orb__dot" cx="60" cy="20" r="9"/><circle class="orb__dot" cx="100" cy="20" r="9"/>
-        <circle class="orb__dot" cx="20" cy="60" r="9"/><circle class="orb__dot" cx="60" cy="60" r="9"/><circle class="orb__dot" cx="100" cy="60" r="9"/>
-        <circle class="orb__off" cx="20" cy="100" r="9"/><circle class="orb__off" cx="60" cy="100" r="9"/>
-        <circle class="orb__ring" cx="100" cy="100" r="9"/><circle class="orb__accent" cx="100" cy="100" r="9"/>
+        <g class="orb__sway orb__sway--a">
+          <g class="orb__half orb__half--a" clip-path="url(#orb-a)">
+            <circle cx="60" cy="60" r="45" fill="url(#orb-fill)"/>
+            <circle cx="60" cy="60" r="45" fill="url(#orb-shine)"/>
+          </g>
+        </g>
+        <g class="orb__sway orb__sway--b">
+          <g class="orb__half orb__half--b" clip-path="url(#orb-b)">
+            <circle cx="60" cy="60" r="45" fill="url(#orb-fill)"/>
+            <circle cx="60" cy="60" r="45" fill="url(#orb-shine)"/>
+          </g>
+        </g>
       </svg>
     </section>
 
@@ -210,7 +225,10 @@
   </main>
 
   <footer class="wrap foot">
-    <p>© 2026 9Tensor LLC</p>
+    <div class="foot__id">
+      <p>© 2026 9Tensor LLC</p>
+      <address>10770 Columbia Pike, Suite 300 #1283, Silver Spring, MD 20901</address>
+    </div>
     <p class="foot__links">
       <a href="mailto:hello@9tensor.com">hello@9tensor.com</a>
       <a href="https://github.com/9tensorsoftware">GitHub</a>
