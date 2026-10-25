@@ -11,7 +11,7 @@ lien/ carte/            a page for Lien and for Carte (Rétouch has its own site
 lien/app/ carte/app/    the free apps: a network canvas and a map
 data/                   the list of every dataset
 data/<name>/            a page for each dataset, with its free sample next to it
-styles.css              the site's styles (light and dark follow the system)
+styles.css              the site's styles: one dark palette for every page
 app.css                 the frame shared by the two apps
 site.js                 makes the menus close on an outside click or Escape
 vendor/                 Leaflet, Cytoscape.js, JSZip and toGeoJSON (see vendor/README.md)
