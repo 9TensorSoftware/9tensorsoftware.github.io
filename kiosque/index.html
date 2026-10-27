@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kiosque, the media outlet registry — 9Tensor</title>
+  <meta name="description" content="Kiosque is a registry of news outlets around the world: newspapers, TV, radio, online news, magazines and press agencies. Free sample of 3,000+ outlets.">
+  <link rel="canonical" href="https://9tensor.com/kiosque/">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#07080B">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="9Tensor">
+  <meta property="og:url" content="https://9tensor.com/kiosque/">
+  <meta property="og:title" content="Kiosque, the media outlet registry">
+  <meta property="og:description" content="Kiosque is a registry of news outlets around the world: newspapers, TV, radio, online news, magazines and press agencies. Free sample of 3,000+ outlets.">
+  <meta property="og:image" content="https://9tensor.com/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="9Tensor: open-source software and data">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/site.js" defer></script>
+</head>
+<body>
+  <header class="wrap top">
+    <a class="brand" href="/" aria-label="9Tensor, home">
+      <!-- The mark: a disc cut on the diagonal, its halves slid apart. -->
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <linearGradient id="mark-fill" x1="0" y1="0" x2="1" y2="1"><stop class="mark__from" offset="0"/><stop class="mark__to" offset="1"/></linearGradient>
+          <clipPath id="mark-a"><path d="M0 0H32L0 32Z"/></clipPath>
+          <clipPath id="mark-b"><path d="M32 0V32H0Z"/></clipPath>
+        </defs>
+        <circle cx="16" cy="16" r="12" fill="url(#mark-fill)" clip-path="url(#mark-a)" transform="translate(1.2 -2.6)"/>
+        <circle cx="16" cy="16" r="12" fill="url(#mark-fill)" clip-path="url(#mark-b)" transform="translate(-1.2 2.6)"/>
+      </svg>
+      <span class="brand__name">9Tensor</span>
+    </a>
+    <nav class="top__nav" aria-label="Main">
+      <details class="menu">
+        <summary class="top__link">Software</summary>
+        <div class="menu__panel">
+          <a class="menu__item" href="https://retouch.9tensor.com"><strong>R<em>é</em>touch</strong><span>Image and video editing and analysis</span></a>
+          <a class="menu__item" href="/lien/"><strong>Lien</strong><span>Network analysis on a free canvas</span></a>
+          <a class="menu__item" href="/carte/"><strong>Carte</strong><span>Map analysis for KML, GeoJSON and GPX</span></a>
+        </div>
+      </details>
+      <details class="menu">
+        <summary class="top__link">Kiosque</summary>
+        <div class="menu__panel">
+          <a class="menu__item" href="/kiosque/" aria-current="page"><strong>Kiosque</strong><span>The registry of news outlets around the world</span></a>
+          <a class="menu__item" href="/kiosque/#sample"><strong>Free sample</strong><span>3,076 outlets to search and download</span></a>
+          <a class="menu__item" href="/kiosque/#coverage"><strong>Coverage</strong><span>Every country and territory</span></a>
+          <a class="menu__item" href="/kiosque/#full"><strong>The full registry</strong><span>168,000+ outlets, with tags and sources</span></a>
+        </div>
+      </details>
+      <details class="menu">
+        <summary class="top__link">Data</summary>
+        <div class="menu__panel">
+          <a class="menu__item" href="/data/financial-documents/"><strong>Financial documents</strong><span>Synthetic statements, invoices and receipts</span></a>
+          <a class="menu__item" href="/data/health-records/"><strong>Health records</strong><span>Synthetic lab reports and prescriptions</span></a>
+          <a class="menu__item" href="/data/identity-documents/"><strong>Identity documents</strong><span>Synthetic ID cards, marked as specimens</span></a>
+        <a class="menu__item menu__all" href="/data/">All data <span aria-hidden="true">→</span></a>
+        </div>
+      </details>
+      <a class="top__link" href="mailto:hello@9tensor.com">Contact</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="page page--split">
+      <div class="page__text">
+        <p class="crumb">Media registry</p>
+        <h1 class="page__title">Kiosque</h1>
+        <p class="page__lead">The registry of news outlets around the world: newspapers, TV, radio, online news, magazines and press agencies, in every country and territory.</p>
+        <div class="actions">
+          <a class="btn btn--primary" href="#sample">Browse the free sample ↓</a>
+          <a class="btn" href="/kiosque/media-outlets-sample.csv">Download CSV (202 KB)</a>
+        </div>
+      </div>
+      <a class="tile page__art" href="#sample" aria-label="Browse the free sample">
+        <div class="tile__art">
+          <!-- Outlets from the free sample, scrolling past; the list repeats once so the loop is seamless. -->
+          <div class="board" aria-hidden="true">
+            <div class="board__head"><span>Outlet</span><span>Type</span><span>Country</span></div>
+            <div class="board__window">
+              <ul class="board__track">
+                <li><span class="board__name">Le Monde</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">FR</span></li>
+                <li><span class="board__name">Asahi Shimbun <small lang="ja">朝日新聞</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">JP</span></li>
+                <li><span class="board__name">Al-Ahram <small lang="ar">الأهرام</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">EG</span></li>
+                <li><span class="board__name">The Hindu</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">IN</span></li>
+                <li><span class="board__name">Al Jazeera Mubasher</span><span class="board__type board__type--tv">TV</span><span class="board__cc">QA</span></li>
+                <li><span class="board__name">Haaretz <small lang="he">הארץ</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">IL</span></li>
+                <li><span class="board__name">Clarín</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">AR</span></li>
+                <li><span class="board__name">NHK World-Japan</span><span class="board__type board__type--radio">Radio</span><span class="board__cc">JP</span></li>
+                <li><span class="board__name">Kathimerini <small lang="el">Καθημερινή</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">CY</span></li>
+                <li><span class="board__name">Rappler</span><span class="board__type board__type--online">Online</span><span class="board__cc">PH</span></li>
+                <li><span class="board__name">Mail &amp; Guardian</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ZA</span></li>
+                <li><span class="board__name">Gazeta Wyborcza</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">PL</span></li>
+                <li><span class="board__name">Dawn</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">PK</span></li>
+                <li><span class="board__name">Kompas</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ID</span></li>
+                <li><span class="board__name">The Punch</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">NG</span></li>
+                <li><span class="board__name">Aftenposten</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">NO</span></li>
+                <li><span class="board__name">Hürriyet</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">TR</span></li>
+                <li><span class="board__name">El País</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ES</span></li>
+                <li><span class="board__name">The Straits Times</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">SG</span></li>
+                <li><span class="board__name">Der Spiegel</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">DE</span></li>
+                <li><span class="board__name">Le Monde</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">FR</span></li>
+                <li><span class="board__name">Asahi Shimbun <small lang="ja">朝日新聞</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">JP</span></li>
+                <li><span class="board__name">Al-Ahram <small lang="ar">الأهرام</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">EG</span></li>
+                <li><span class="board__name">The Hindu</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">IN</span></li>
+                <li><span class="board__name">Al Jazeera Mubasher</span><span class="board__type board__type--tv">TV</span><span class="board__cc">QA</span></li>
+                <li><span class="board__name">Haaretz <small lang="he">הארץ</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">IL</span></li>
+                <li><span class="board__name">Clarín</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">AR</span></li>
+                <li><span class="board__name">NHK World-Japan</span><span class="board__type board__type--radio">Radio</span><span class="board__cc">JP</span></li>
+                <li><span class="board__name">Kathimerini <small lang="el">Καθημερινή</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">CY</span></li>
+                <li><span class="board__name">Rappler</span><span class="board__type board__type--online">Online</span><span class="board__cc">PH</span></li>
+                <li><span class="board__name">Mail &amp; Guardian</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ZA</span></li>
+                <li><span class="board__name">Gazeta Wyborcza</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">PL</span></li>
+                <li><span class="board__name">Dawn</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">PK</span></li>
+                <li><span class="board__name">Kompas</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ID</span></li>
+                <li><span class="board__name">The Punch</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">NG</span></li>
+                <li><span class="board__name">Aftenposten</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">NO</span></li>
+                <li><span class="board__name">Hürriyet</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">TR</span></li>
+                <li><span class="board__name">El País</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ES</span></li>
+                <li><span class="board__name">The Straits Times</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">SG</span></li>
+                <li><span class="board__name">Der Spiegel</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">DE</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+    </section>
+
+      <dl class="facts">
+        <div><dt>Outlets</dt><dd>168,000+</dd></div>
+        <div><dt>Countries</dt><dd>245</dd></div>
+        <div><dt>Media types</dt><dd>6</dd></div>
+        <div><dt>Free sample</dt><dd>3,076</dd></div>
+      </dl>
+
+    <section class="section" id="sample">
+      <h2 class="label">Free sample</h2>
+      <p class="section__intro">Search and filter, or download the whole sample.</p>
+      <div class="filters">
+        <input id="q" type="search" placeholder="Search by name or website" aria-label="Search outlets">
+        <select id="country" aria-label="Country"><option value="">All countries</option></select>
+        <select id="type" aria-label="Media type"><option value="">All types</option></select>
+      </div>
+      <p class="note" id="count">Loading the sample…</p>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Name</th><th>Type</th><th>Country</th><th>Website</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <div class="actions"><button class="btn" id="more" type="button" hidden>Show more</button></div>
+      <p class="note">Up to 25 well-known outlets per country, from 216 countries. Free to use for anything: built from <a href="https://www.wikidata.org">Wikidata</a> (CC0). Download as <a href="/kiosque/media-outlets-sample.csv">CSV</a> or <a href="/kiosque/media-outlets-sample.json">JSON</a>.</p>
+      <script src="/kiosque/outlets.js" defer></script>
+    </section>
+
+    <section class="section" id="coverage">
+      <h2 class="label">Coverage</h2>
+      <p class="section__intro">Every country and territory is covered, from national broadcasters down to local papers and stations. These are the ten largest.</p>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>Largest countries</th><th class="num">Outlets</th></tr></thead>
+          <tbody>
+          <tr><td>India</td><td class="num">46,997</td></tr>
+          <tr><td>United States</td><td class="num">39,263</td></tr>
+          <tr><td>Germany</td><td class="num">7,339</td></tr>
+          <tr><td>Canada</td><td class="num">4,633</td></tr>
+          <tr><td>United Kingdom</td><td class="num">4,427</td></tr>
+          <tr><td>Mexico</td><td class="num">4,328</td></tr>
+          <tr><td>Brazil</td><td class="num">3,346</td></tr>
+          <tr><td>Argentina</td><td class="num">3,237</td></tr>
+          <tr><td>Russia</td><td class="num">2,940</td></tr>
+          <tr><td>Australia</td><td class="num">2,933</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="full">
+      <h2 class="label">The full registry</h2>
+      <ul class="features">
+        <li><h3>Every outlet</h3><p>All 168,000+ outlets, not just the best known.</p></li>
+        <li><h3>Location</h3><p>City and region, and county for the United States.</p></li>
+        <li><h3>Language and scope</h3><p>Publishing language, and whether an outlet is local, regional or national.</p></li>
+        <li><h3>Topics</h3><p>Tags such as general news, business, sport and politics.</p></li>
+        <li><h3>Feeds</h3><p>RSS feeds for thousands of outlets.</p></li>
+        <li><h3>State and public media</h3><p>Flags for state-run and public broadcasters, with sources.</p></li>
+      </ul>
+      <p class="note">Each tag records where it came from and when. Ownership is being added. <a href="mailto:hello@9tensor.com?subject=Kiosque">Ask about the full registry</a>.</p>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <div class="foot__id">
+      <p>© 2026 9Tensor LLC</p>
+      <address>10770 Columbia Pike, Suite 300 #1283, Silver Spring, MD 20901</address>
+    </div>
+    <p class="foot__links">
+      <a href="mailto:hello@9tensor.com">hello@9tensor.com</a>
+      <a href="https://github.com/9tensorsoftware">GitHub</a>
+      <a href="https://github.com/9tensorsoftware/9tensorsoftware.github.io">Site source</a>
+    </p>
+  </footer>
+</body>
+</html>

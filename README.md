@@ -6,10 +6,12 @@ It's plain HTML, CSS and a little JavaScript. There's no build step, and nothing
 servers except the background map in Carte.
 
 ```
-index.html              the landing page, always dark: a tile per tool with a live preview, one for all data
+index.html              the landing page: a tile per tool with a live preview, one for Kiosque, one for all data
 lien/ carte/            a page for Lien and for Carte (Rétouch has its own site)
 lien/app/ carte/app/    the free apps: a network canvas and a map
-data/                   the list of every dataset
+kiosque/                Kiosque, the media outlet registry, with its free sample
+data/media-outlets/     forwards the old address to /kiosque/
+data/                   the list of every synthetic dataset
 data/<name>/            a page for each dataset, with its free sample next to it
 styles.css              the site's styles: one dark palette for every page
 app.css                 the frame shared by the two apps
@@ -52,7 +54,7 @@ Every page offers something free:
 - **Data** shows a free sample on the page and lets people download it. The synthetic document
   samples sit in `data/<name>/samples/`: each document has a PNG, a scanned-looking JPG, a JSON
   file of labels and two thumbnails, plus one zip of everything. The media-outlet sample is
-  `data/media-outlets/media-outlets-sample.csv` (and `.json`, which the page's table reads).
+  `kiosque/media-outlets-sample.csv` (and `.json`, which the page's table reads).
 
 ## Deploy
 

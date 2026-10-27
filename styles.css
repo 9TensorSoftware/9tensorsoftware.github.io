@@ -394,6 +394,7 @@ h1 {
   grid-column: span 5;
 }
 
+.tile--kiosque,
 .tile--data {
   grid-column: span 12;
   flex-direction: row;
@@ -541,6 +542,7 @@ h1 {
 }
 
 /* Data: the text on the left, real sample documents fanned out on the right. */
+.tile--kiosque .tile__text,
 .tile--data .tile__text {
   flex: 1 1 50%;
   min-width: 0;
@@ -548,14 +550,145 @@ h1 {
   padding: 28px 28px 26px;
 }
 
+.tile--kiosque .tile__text::after,
 .tile--data .tile__text::after {
   top: auto;
   bottom: 24px;
   right: 24px;
 }
 
+.tile--kiosque .tile__desc,
 .tile--data .tile__desc {
   max-width: 30em;
+}
+
+/* Kiosque: its numbers under the description, and the registry scrolling past beside them. */
+/* Mirrored from Data's tile, so the two full-width tiles don't read as a pair. */
+.tile--kiosque {
+  flex-direction: row-reverse;
+  min-height: 340px;
+}
+
+.tile--kiosque .tile__art {
+  flex: 1 1 50%;
+  height: auto;
+  min-width: 0;
+}
+
+.tile__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  margin: 22px 0 0;
+}
+
+.tile__facts dt {
+  color: var(--ink-3);
+  font: 600 11px/1.3 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tile__facts dd {
+  margin: 4px 0 0;
+  font-size: 24px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.board {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+}
+
+.board__head,
+.board li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 104px 64px;
+  align-items: center;
+  gap: 12px;
+  padding: 0 18px;
+}
+
+.board__head {
+  flex: none;
+  height: 38px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-3);
+  font: 600 10.5px/1 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.board__window {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
+}
+
+.board__track {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  animation: board 48s linear infinite;
+}
+
+.tile:hover .board__track {
+  animation-play-state: paused;
+}
+
+.board li {
+  height: 44px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.board__name {
+  overflow: hidden;
+  color: var(--ink);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.board__name small {
+  margin-left: 8px;
+  color: var(--ink-3);
+  font-size: 13px;
+}
+
+.board__type {
+  justify-self: start;
+  padding: 3px 9px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font: 600 10.5px/1.2 var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.board__type--newspaper { color: #F2C14E; }
+.board__type--tv { color: #8C96FF; }
+.board__type--radio { color: #5FD8B4; }
+.board__type--online { color: #F5753F; }
+
+.board__cc {
+  color: var(--ink-3);
+  font: 12px/1 var(--mono);
+  text-align: right;
+}
+
+.board__head span:last-child {
+  text-align: right;
+}
+
+/* The list is in twice, so moving up by half of it loops without a jump. */
+@keyframes board {
+  to { transform: translateY(-50%); }
 }
 
 .tile__more {
@@ -1036,6 +1169,7 @@ h1 {
   }
 
   .tile--retouch,
+  .tile--kiosque,
   .tile--data {
     grid-column: span 12;
     grid-row: auto;
@@ -1068,14 +1202,46 @@ h1 {
     grid-column: span 12;
   }
 
+  .tile--kiosque,
   .tile--data {
     flex-direction: column-reverse;
   }
 
+  .tile--kiosque .tile__art {
+    flex: none;
+    height: 260px;
+  }
+
+  /* On a phone the country column goes, so the names have room. */
+  .board__head,
+  .board li {
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 0 14px;
+  }
+
+  .board__cc,
+  .board__head span:last-child {
+    display: none;
+  }
+
+  .tile__facts {
+    gap: 8px 16px;
+  }
+
+  .tile__facts dt {
+    letter-spacing: 0.06em;
+  }
+
+  .tile__facts dd {
+    font-size: 19px;
+  }
+
+  .tile--kiosque .tile__text,
   .tile--data .tile__text {
     padding: 18px 16px 14px;
   }
 
+  .tile--kiosque .tile__text::after,
   .tile--data .tile__text::after {
     top: 18px;
     bottom: auto;
@@ -1097,7 +1263,11 @@ h1 {
   }
 
   .top__nav {
-    gap: 18px;
+    gap: 14px;
+  }
+
+  .top__link {
+    font-size: 14px;
   }
 
   /* On a phone the panel spans the header, so it never runs off the screen. */
@@ -1110,6 +1280,12 @@ h1 {
     right: var(--gutter);
     top: calc(100% - 12px);
     width: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .brand__name {
+    display: none;
   }
 }
 
