@@ -8,7 +8,7 @@
 
   let data;
   try {
-    data = await (await fetch("/data/media-outlets/media-outlets-sample.json")).json();
+    data = await (await fetch("/kiosque/media-outlets-sample.json")).json();
   } catch {
     count.textContent = "The sample couldn't load. Download the CSV instead.";
     return;

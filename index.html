@@ -49,9 +49,17 @@
         </div>
       </details>
       <details class="menu">
+        <summary class="top__link">Kiosque</summary>
+        <div class="menu__panel">
+          <a class="menu__item" href="/kiosque/"><strong>Kiosque</strong><span>The registry of news outlets around the world</span></a>
+          <a class="menu__item" href="/kiosque/#sample"><strong>Free sample</strong><span>3,076 outlets to search and download</span></a>
+          <a class="menu__item" href="/kiosque/#coverage"><strong>Coverage</strong><span>Every country and territory</span></a>
+          <a class="menu__item" href="/kiosque/#full"><strong>The full registry</strong><span>168,000+ outlets, with tags and sources</span></a>
+        </div>
+      </details>
+      <details class="menu">
         <summary class="top__link">Data</summary>
         <div class="menu__panel">
-          <a class="menu__item" href="/data/media-outlets/"><strong>Media outlets</strong><span>News outlets around the world</span></a>
           <a class="menu__item" href="/data/financial-documents/"><strong>Financial documents</strong><span>Synthetic statements, invoices and receipts</span></a>
           <a class="menu__item" href="/data/health-records/"><strong>Health records</strong><span>Synthetic lab reports and prescriptions</span></a>
           <a class="menu__item" href="/data/identity-documents/"><strong>Identity documents</strong><span>Synthetic ID cards, marked as specimens</span></a>
@@ -205,11 +213,75 @@
         </div>
       </a>
 
+      <a class="tile tile--kiosque" href="/kiosque/">
+        <div class="tile__text">
+          <span class="tile__kicker">Media registry</span>
+          <span class="tile__name">Kiosque</span>
+          <span class="tile__desc">The registry of news outlets around the world, from national broadcasters to local papers. A free sample of 3,076 to search and download.</span>
+          <dl class="tile__facts">
+            <div><dt>Outlets</dt><dd>168,000+</dd></div>
+            <div><dt>Countries</dt><dd>245</dd></div>
+            <div><dt>Media types</dt><dd>6</dd></div>
+          </dl>
+          <span class="tile__more">Open Kiosque</span>
+        </div>
+        <div class="tile__art">
+          <!-- Outlets from the free sample, scrolling past; the list repeats once so the loop is seamless. -->
+          <div class="board" aria-hidden="true">
+            <div class="board__head"><span>Outlet</span><span>Type</span><span>Country</span></div>
+            <div class="board__window">
+              <ul class="board__track">
+                <li><span class="board__name">Le Monde</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">FR</span></li>
+                <li><span class="board__name">Asahi Shimbun <small lang="ja">朝日新聞</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">JP</span></li>
+                <li><span class="board__name">Al-Ahram <small lang="ar">الأهرام</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">EG</span></li>
+                <li><span class="board__name">The Hindu</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">IN</span></li>
+                <li><span class="board__name">Al Jazeera Mubasher</span><span class="board__type board__type--tv">TV</span><span class="board__cc">QA</span></li>
+                <li><span class="board__name">Haaretz <small lang="he">הארץ</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">IL</span></li>
+                <li><span class="board__name">Clarín</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">AR</span></li>
+                <li><span class="board__name">NHK World-Japan</span><span class="board__type board__type--radio">Radio</span><span class="board__cc">JP</span></li>
+                <li><span class="board__name">Kathimerini <small lang="el">Καθημερινή</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">CY</span></li>
+                <li><span class="board__name">Rappler</span><span class="board__type board__type--online">Online</span><span class="board__cc">PH</span></li>
+                <li><span class="board__name">Mail &amp; Guardian</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ZA</span></li>
+                <li><span class="board__name">Gazeta Wyborcza</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">PL</span></li>
+                <li><span class="board__name">Dawn</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">PK</span></li>
+                <li><span class="board__name">Kompas</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ID</span></li>
+                <li><span class="board__name">The Punch</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">NG</span></li>
+                <li><span class="board__name">Aftenposten</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">NO</span></li>
+                <li><span class="board__name">Hürriyet</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">TR</span></li>
+                <li><span class="board__name">El País</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ES</span></li>
+                <li><span class="board__name">The Straits Times</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">SG</span></li>
+                <li><span class="board__name">Der Spiegel</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">DE</span></li>
+                <li><span class="board__name">Le Monde</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">FR</span></li>
+                <li><span class="board__name">Asahi Shimbun <small lang="ja">朝日新聞</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">JP</span></li>
+                <li><span class="board__name">Al-Ahram <small lang="ar">الأهرام</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">EG</span></li>
+                <li><span class="board__name">The Hindu</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">IN</span></li>
+                <li><span class="board__name">Al Jazeera Mubasher</span><span class="board__type board__type--tv">TV</span><span class="board__cc">QA</span></li>
+                <li><span class="board__name">Haaretz <small lang="he">הארץ</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">IL</span></li>
+                <li><span class="board__name">Clarín</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">AR</span></li>
+                <li><span class="board__name">NHK World-Japan</span><span class="board__type board__type--radio">Radio</span><span class="board__cc">JP</span></li>
+                <li><span class="board__name">Kathimerini <small lang="el">Καθημερινή</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">CY</span></li>
+                <li><span class="board__name">Rappler</span><span class="board__type board__type--online">Online</span><span class="board__cc">PH</span></li>
+                <li><span class="board__name">Mail &amp; Guardian</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ZA</span></li>
+                <li><span class="board__name">Gazeta Wyborcza</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">PL</span></li>
+                <li><span class="board__name">Dawn</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">PK</span></li>
+                <li><span class="board__name">Kompas</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ID</span></li>
+                <li><span class="board__name">The Punch</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">NG</span></li>
+                <li><span class="board__name">Aftenposten</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">NO</span></li>
+                <li><span class="board__name">Hürriyet</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">TR</span></li>
+                <li><span class="board__name">El País</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ES</span></li>
+                <li><span class="board__name">The Straits Times</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">SG</span></li>
+                <li><span class="board__name">Der Spiegel</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">DE</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </a>
+
       <a class="tile tile--data" href="/data/">
         <div class="tile__text">
           <span class="tile__kicker">Data</span>
-          <span class="tile__name">Multilingual datasets</span>
-          <span class="tile__desc">Synthetic documents for OCR and text analysis in more than 100 languages, and a registry of news outlets around the world. A free sample with each.</span>
+          <span class="tile__name">Synthetic documents</span>
+          <span class="tile__desc">Synthetic financial, health and identity documents for OCR and text analysis, in more than 100 languages. A free sample with each.</span>
           <span class="scripts" aria-hidden="true"><span class="scripts__track"><span>English</span><span>Türkçe</span><span>العربية</span><span>日本語</span><span>हिन्दी</span><span>Русский</span><span>Español</span><span>中文</span><span>한국어</span><span>Ελληνικά</span><span>ไทย</span><span>עברית</span><span>Français</span><span>Kiswahili</span><span>Tiếng Việt</span><span>বাংলা</span><span>Deutsch</span><span>فارسی</span><span>English</span><span>Türkçe</span><span>العربية</span><span>日本語</span><span>हिन्दी</span><span>Русский</span><span>Español</span><span>中文</span><span>한국어</span><span>Ελληνικά</span><span>ไทย</span><span>עברית</span><span>Français</span><span>Kiswahili</span><span>Tiếng Việt</span><span>বাংলা</span><span>Deutsch</span><span>فارسی</span></span></span>
           <span class="tile__more">Browse all data</span>
         </div>
