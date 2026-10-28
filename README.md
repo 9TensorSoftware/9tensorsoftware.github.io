@@ -37,8 +37,10 @@ opening the files directly.
 ## The menu
 
 Every page has the same header, with Software and Data menus. Each menu is a `<details>`, so it
-opens even without JavaScript. To add or rename an item, change the header in **every** page,
-including `404.html` (search for `menu__panel`).
+opens even without JavaScript. The Data menu comes in groups, each under a `menu__label`:
+Registries (Kiosque) and Synthetic documents. To add or rename an item, change the header in
+**every** page, including `404.html` (search for `menu__panel`), and in Rétouch's
+`demo/index.html`.
 
 ## Add a page
 
