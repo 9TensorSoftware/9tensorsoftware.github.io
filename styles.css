@@ -202,6 +202,23 @@ button:focus-visible {
   color: inherit;
 }
 
+/* A menu in groups: a small title over each, a rule between them. */
+.menu__label {
+  margin: 0;
+  padding: 10px 12px 4px;
+  color: var(--ink-3);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.menu__item + .menu__label {
+  margin-top: 6px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
 .menu__item span {
   display: block;
   color: var(--ink-3);
@@ -1256,9 +1273,14 @@ h1 {
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 359px) {
   .brand__name {
     display: none;
+  }
+
+  /* "multilingual data." stays on one line, so the headline steps down to fit it. */
+  .home h1 {
+    font-size: 38px;
   }
 }
 
