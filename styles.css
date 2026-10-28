@@ -270,33 +270,6 @@ h1 {
   font-size: 19px;
 }
 
-.pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 28px;
-  padding: 7px 14px 7px 12px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--ink-2);
-  font-size: 13.5px;
-  transition: border-color 0.2s, color 0.2s;
-}
-
-.pill:hover {
-  border-color: rgba(255, 255, 255, 0.2);
-  color: var(--ink);
-}
-
-.pill__dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #5FD8B4;
-  box-shadow: 0 0 0 4px rgba(95, 216, 180, 0.15);
-}
-
 /* The big mark: the halves slide open along the cut, then sway like a before-and-after slider. */
 .orb {
   width: clamp(180px, 24vw, 270px);
