@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://9tensor.com/">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#07080B">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta property="og:type" content="website">
@@ -27,16 +27,7 @@
 <body class="home">
   <header class="wrap top">
     <a class="brand" href="/" aria-label="9Tensor, home">
-      <!-- The mark: a disc cut on the diagonal, its halves slid apart. -->
-      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
-        <defs>
-          <linearGradient id="mark-fill" x1="0" y1="0" x2="1" y2="1"><stop class="mark__from" offset="0"/><stop class="mark__to" offset="1"/></linearGradient>
-          <clipPath id="mark-a"><path d="M0 0H32L0 32Z"/></clipPath>
-          <clipPath id="mark-b"><path d="M32 0V32H0Z"/></clipPath>
-        </defs>
-        <circle cx="16" cy="16" r="12" fill="url(#mark-fill)" clip-path="url(#mark-a)" transform="translate(1.2 -2.6)"/>
-        <circle cx="16" cy="16" r="12" fill="url(#mark-fill)" clip-path="url(#mark-b)" transform="translate(-1.2 2.6)"/>
-      </svg>
+      <img class="mark" src="/mark.png" alt="" width="28" height="28">
       <span class="brand__name">9Tensor</span>
     </a>
     <nav class="top__nav" aria-label="Main">
@@ -55,25 +46,17 @@
       <!-- The mark, large: a disc cut on the diagonal, its halves sliding apart. -->
       <svg class="orb" viewBox="0 0 120 120" aria-hidden="true">
         <defs>
-          <linearGradient id="orb-fill" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#7BEBC8"/><stop offset=".45" stop-color="#5FD8B4"/><stop offset="1" stop-color="#8C96FF"/>
-          </linearGradient>
-          <radialGradient id="orb-shine" cx=".3" cy=".22" r=".75">
-            <stop offset="0" stop-color="#fff" stop-opacity=".32"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
-          </radialGradient>
           <clipPath id="orb-a"><path d="M0 0H120L0 120Z"/></clipPath>
           <clipPath id="orb-b"><path d="M120 0V120H0Z"/></clipPath>
         </defs>
         <g class="orb__sway orb__sway--a">
           <g class="orb__half orb__half--a" clip-path="url(#orb-a)">
-            <circle cx="60" cy="60" r="45" fill="url(#orb-fill)"/>
-            <circle cx="60" cy="60" r="45" fill="url(#orb-shine)"/>
+            <image href="/mark.png" width="120" height="120"/>
           </g>
         </g>
         <g class="orb__sway orb__sway--b">
           <g class="orb__half orb__half--b" clip-path="url(#orb-b)">
-            <circle cx="60" cy="60" r="45" fill="url(#orb-fill)"/>
-            <circle cx="60" cy="60" r="45" fill="url(#orb-shine)"/>
+            <image href="/mark.png" width="120" height="120"/>
           </g>
         </g>
       </svg>

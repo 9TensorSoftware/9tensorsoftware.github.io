@@ -12,7 +12,8 @@ data/media-outlets/     forwards the old address to /kiosque/
 styles.css              the site's styles: one dark palette for every page
 site.js                 the light that follows the cursor on the tiles
 404.html                what GitHub Pages serves for a missing page
-favicon.svg/.ico        icons: a disc cut on the diagonal, its halves slid apart
+mark.png                the 9Tensor mark
+favicon.png/.ico        icons, from the same mark
 apple-touch-icon.png
 og.png                  the preview shown when the site is linked (1200 × 630)
 CNAME                   the custom domain, 9tensor.com
