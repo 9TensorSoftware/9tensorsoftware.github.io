@@ -375,8 +375,10 @@ h1 {
 }
 
 .tile--retouch {
-  grid-column: span 7;
-  grid-row: span 2;
+  grid-column: span 12;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 340px;
 }
 
 .tile--lien,
@@ -532,6 +534,7 @@ h1 {
 }
 
 /* Data: the text on the left, real sample documents fanned out on the right. */
+.tile--retouch .tile__text,
 .tile--kiosque .tile__text,
 .tile--data .tile__text {
   flex: 1 1 50%;
@@ -559,6 +562,7 @@ h1 {
   min-height: 340px;
 }
 
+.tile--retouch .tile__art,
 .tile--kiosque .tile__art {
   flex: 1 1 50%;
   height: auto;
@@ -770,7 +774,7 @@ h1 {
   text-transform: uppercase;
 }
 
-/* Lien and Carte: the text beside the live preview from their home page tile. */
+/* Kiosque: the text beside the registry scrolling past. */
 .page--split {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
@@ -1192,6 +1196,16 @@ h1 {
     grid-column: span 12;
   }
 
+  .tile--retouch {
+    flex-direction: column;
+  }
+
+  .tile--retouch .tile__art {
+    flex: none;
+    height: 260px;
+    min-height: 0;
+  }
+
   .tile--kiosque,
   .tile--data {
     flex-direction: column-reverse;
@@ -1226,6 +1240,7 @@ h1 {
     font-size: 19px;
   }
 
+  .tile--retouch .tile__text,
   .tile--kiosque .tile__text,
   .tile--data .tile__text {
     padding: 18px 16px 14px;

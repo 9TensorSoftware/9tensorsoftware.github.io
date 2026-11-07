@@ -1,22 +1,16 @@
 # 9tensor.com
 
-The website of 9Tensor: open-source software and data.
+The website of 9Tensor.
 
 It's plain HTML, CSS and a little JavaScript. There's no build step, and nothing loads from other
-servers except the background map in Carte.
+servers.
 
 ```
-index.html              the landing page: a tile per tool with a live preview, one for Kiosque, one for all data
-lien/ carte/            a page for Lien and for Carte (Rétouch has its own site)
-lien/app/ carte/app/    the free apps: a network canvas and a map
-kiosque/                Kiosque, the media outlet registry, with its free sample
+index.html              the landing page: a tile for Rétouch and one for Kiosque
+kiosque/                Kiosque, the media outlet registry: a coming-soon page for now
 data/media-outlets/     forwards the old address to /kiosque/
-data/                   the list of every synthetic dataset
-data/<name>/            a page for each dataset, with its free sample next to it
 styles.css              the site's styles: one dark palette for every page
-app.css                 the frame shared by the two apps
-site.js                 makes the menus close on an outside click or Escape
-vendor/                 Leaflet, Cytoscape.js, JSZip and toGeoJSON (see vendor/README.md)
+site.js                 the light that follows the cursor on the tiles
 404.html                what GitHub Pages serves for a missing page
 favicon.svg/.ico        icons: a disc cut on the diagonal, its halves slid apart
 apple-touch-icon.png
@@ -34,29 +28,15 @@ python3 -m http.server 8000
 Then open http://localhost:8000. Links start with `/`, so serve the site from its root rather than
 opening the files directly.
 
-## The menu
+## The header
 
-Every page has the same header, with Software and Data menus. Each menu is a `<details>`, so it
-opens even without JavaScript. The Data menu comes in groups, each under a `menu__label`:
-Registries (Kiosque) and Synthetic documents. To add or rename an item, change the header in
-**every** page, including `404.html` (search for `menu__panel`), and in Rétouch's
-`demo/index.html`.
+Every page has the same header, with links to Rétouch, Kiosque and Contact. To change it, edit
+**every** page, including `404.html`, and Rétouch's `demo/index.html`.
 
-## Add a page
+## Removed for now
 
-Copy the nearest page (`lien/` for software, `data/health-records/` for data) into a new folder,
-then change its title, description, `canonical` and `og:url`, and its text. Add it to the menu on
-every page and to `sitemap.xml`. A tool also gets a tile in `index.html`; a dataset goes on the
-list in `data/index.html` instead, so the landing page stays the same size.
-
-Every page offers something free:
-
-- **Software** links to the app itself: Rétouch at retouch.9tensor.com, Lien and Carte in
-  `lien/app/` and `carte/app/`.
-- **Data** shows a free sample on the page and lets people download it. The synthetic document
-  samples sit in `data/<name>/samples/`: each document has a PNG, a scanned-looking JPG, a JSON
-  file of labels and two thumbnails, plus one zip of everything. The media-outlet sample is
-  `kiosque/media-outlets-sample.csv` (and `.json`, which the page's table reads).
+Lien, Carte, the synthetic documents and Kiosque's free sample were taken down on 2026-11-07. The
+last version with them is commit `9d3dc07`.
 
 ## Deploy
 
