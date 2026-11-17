@@ -3,11 +3,13 @@
 The website of 9Tensor.
 
 It's plain HTML, CSS and a little JavaScript. There's no build step, and nothing loads from other
-servers.
+servers, except the regions map's basemap tiles (OpenFreeMap).
 
 ```
 index.html              the landing page: a tile for Rétouch and one for Kiosque
 kiosque/                Kiosque, the media outlet registry: a coming-soon page for now
+kiosque/map/            the regions map: places and borders, no outlet data. Built by
+                        kiosque/build_public_map.py; don't edit it here, rebuild it
 data/media-outlets/     forwards the old address to /kiosque/
 styles.css              the site's styles: one dark palette for every page
 site.js                 the light that follows the cursor on the tiles

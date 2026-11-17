@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kiosque: regions map — 9Tensor</title>
+<meta name="description" content="States, counties, municipalities, cities and towns of every country, on one map. Part of Kiosque by 9Tensor.">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="stylesheet" href="vendor/maplibre-gl.css">
+<link rel="stylesheet" href="style.css?v=2451f0d359">
+<link rel="stylesheet" href="map.css?v=74c1c7865b">
+</head>
+<body>
+<div id="app" v-cloak>
+  <header class="topbar">
+    <button class="iconbtn" @click="sideOpen = !sideOpen" :aria-expanded="sideOpen" title="Filters">☰</button>
+    <div class="brand">Kiosque <span class="sub">map</span></div>
+    <select class="ccsel" v-model="cc" :disabled="!ready">
+      <option value="">World</option>
+      <option v-for="c in countries" :key="c.cc" :value="c.cc">{{ c.name }}</option>
+    </select>
+    <div class="searchbox" @keydown.down.prevent="moveSugg(1)" @keydown.up.prevent="moveSugg(-1)"
+         @keydown.enter.prevent="pickSugg()" @keydown.esc="sOpen = false">
+      <input class="search" type="search" v-model="q" @focus="sOpen = true" @blur="closeSoon"
+             :placeholder="PUBLIC ? 'Search places…' : 'Search outlets, websites, places…'" spellcheck="false" :disabled="!ready">
+      <div class="sdrop" v-if="sOpen && sugg.length">
+        <div v-for="(s, k) in sugg" :key="k" class="sitem" :class="{active: k === sActive, head: s.head}"
+             @mousedown.prevent="pickSugg(k)">
+          <template v-if="s.head">{{ s.head }}</template>
+          <template v-else>
+            <span class="sw" :class="s.cls" :style="s.style"></span>
+            <span class="s-main">{{ s.label }}</span>
+            <span class="s-sub">{{ s.sub }}</span>
+          </template>
+        </div>
+      </div>
+    </div>
+    <div class="counts" v-if="ready && !PUBLIC"><b>{{ fmt(stats.match) }}</b>&nbsp;outlets · {{ fmt(stats.pinned) }} pinned</div>
+    <div class="actions"><a class="navlink" v-if="PUBLIC" href="/kiosque/">← Kiosque</a><a class="navlink" v-else href="index.html">Table →</a></div>
+  </header>
+
+  <div class="mlayout">
+    <aside class="sidebar" :class="{open: sideOpen}">
+      <!-- OUTLETS -->
+      <section class="group" v-if="!PUBLIC">
+        <label class="grouphead"><input type="checkbox" v-model="show.outlets"> Outlets</label>
+        <template v-if="show.outlets">
+          <section class="facet">
+            <h3>Type</h3>
+            <ul>
+              <li v-for="t in typeOpts" :key="t.v">
+                <label :class="{on: types.includes(t.v)}">
+                  <input type="checkbox" :checked="types.includes(t.v)" @change="toggle('types', t.v)">
+                  <span class="val">{{ t.label }}</span><span class="cnt">{{ fmt(t.n) }}</span>
+                </label>
+              </li>
+            </ul>
+          </section>
+          <section class="facet">
+            <h3>Reach</h3>
+            <ul>
+              <li v-for="s in scopeOpts" :key="s.v">
+                <label :class="{on: scopes.includes(s.v)}">
+                  <input type="checkbox" :checked="scopes.includes(s.v)" @change="toggle('scopes', s.v)">
+                  <span class="mk" :class="'mk-' + (s.v || 'none')"></span>
+                  <span class="val">{{ s.label }}</span><span class="cnt">{{ fmt(s.n) }}</span>
+                </label>
+              </li>
+            </ul>
+            <label class="inline"><input type="checkbox" v-model="show.areaCounts">
+              count outlets known only to a state or country</label>
+          </section>
+          <section class="facet locked">
+            <h3>Pro filters <span class="lock">🔒</span></h3>
+            <ul>
+              <li v-for="p in PRO_FILTERS" :key="p"><label class="off"><input type="checkbox" disabled>
+                <span class="val">{{ p }}</span></label></li>
+            </ul>
+          </section>
+        </template>
+      </section>
+
+      <!-- PLACES -->
+      <section class="group">
+        <label class="grouphead"><input type="checkbox" v-model="show.places"> Places
+          <span class="cnt" v-if="show.places">{{ fmt(pmatches.length) }}</span></label>
+        <template v-if="show.places">
+          <section class="facet">
+            <h3>Level</h3>
+            <ul>
+              <li v-for="l in levelOpts" :key="l.v">
+                <label :class="{on: levels.includes(l.v), off: !l.available}" :title="l.hint">
+                  <input type="checkbox" :checked="levels.includes(l.v)" :disabled="!l.available"
+                         @change="toggleLevel(l.v)">
+                  <span class="sw" :style="swatch(l.v)"></span>
+                  <span class="val">{{ l.label }}</span>
+                  <span class="cnt">{{ l.available ? fmt(levelCount[l.v] || 0) : '' }}</span>
+                </label>
+              </li>
+            </ul>
+            <p class="note" v-if="!cc">Pick a country for lower admin levels{{ PUBLIC ? ' and neighbourhoods' : ', villages and neighbourhoods' }}.</p>
+            <p class="note" v-else-if="villageNote">{{ villageNote }}</p>
+          </section>
+          <section class="facet">
+            <h3>Name</h3>
+            <input class="facet-search" type="search" v-model="pq" placeholder="Filter places by name…">
+          </section>
+          <section class="facet" v-if="!PUBLIC">
+            <h3>Outlets already there</h3>
+            <div class="seg">
+              <button v-for="o in outletOpts" :key="o.v" :class="{on: pout === o.v}" @click="pout = o.v">{{ o.label }}</button>
+            </div>
+          </section>
+          <section class="facet">
+            <h3>Population</h3>
+            <select v-model.number="minPop" class="full">
+              <option v-for="p in popOpts" :key="p.v" :value="p.v">{{ p.label }}</option>
+            </select>
+            <label class="inline"><input type="checkbox" v-model="seatsOnly"> admin seats &amp; capitals only</label>
+          </section>
+          <section class="facet" v-if="cc && a1Counts.length > 1">
+            <h3>State / province</h3>
+            <input class="facet-search" type="search" v-model="a1q" placeholder="Filter…" v-if="a1Counts.length > 12">
+            <ul>
+              <li v-for="o in admin1Visible" :key="o.v">
+                <label :class="{on: admin1.includes(o.v)}">
+                  <input type="checkbox" :checked="admin1.includes(o.v)" @change="toggle('admin1', o.v)">
+                  <span class="val">{{ o.v || '—' }}</span><span class="cnt">{{ fmt(o.n) }}</span>
+                </label>
+              </li>
+            </ul>
+            <button class="more" v-if="admin1Filtered.length > a1limit" @click="a1limit += 40">
+              show more ({{ admin1Filtered.length - a1limit }})</button>
+          </section>
+          <section class="facet" v-if="!PUBLIC">
+            <h3>Colour places by</h3>
+            <div class="seg">
+              <button :class="{on: colorBy === 'level'}" @click="colorBy = 'level'">Level</button>
+              <button :class="{on: colorBy === 'cover'}" @click="colorBy = 'cover'">Outlet coverage</button>
+            </div>
+          </section>
+          <button class="ghost small" @click="exportPlaces" :disabled="!pmatches.length">Export places CSV</button>
+        </template>
+      </section>
+
+      <section class="group">
+        <label class="grouphead"><input type="checkbox" v-model="show.borders"> Borders</label>
+        <p class="note">Countries and states everywhere; counties / districts once you pick a country.</p>
+      </section>
+
+      <p class="note">Places: <a href="https://www.geonames.org" target="_blank" rel="noopener">GeoNames</a> (CC BY 4.0) ·
+        borders: <a href="https://www.naturalearthdata.com" target="_blank" rel="noopener">Natural Earth</a>,
+        <a href="https://www.geoboundaries.org" target="_blank" rel="noopener">geoBoundaries</a> (CC BY 4.0),
+        <a href="https://www.istat.it" target="_blank" rel="noopener">ISTAT</a> (CC BY 3.0),
+        <a href="https://www.statcan.gc.ca" target="_blank" rel="noopener">Statistics Canada</a> ·
+        basemap: <a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a>, © OpenStreetMap.
+        <template v-if="!PUBLIC">Outlet data {{ generated }}. Prototype of MAP.md: only free fields are loaded.</template></p>
+    </aside>
+
+    <main class="mmap">
+      <div id="map"></div>
+      <div class="legend" :class="{closed: !legendOpen}">
+        <div class="lg-title" @click="legendOpen = !legendOpen">Legend <span class="lg-toggle">{{ legendOpen ? '–' : '+' }}</span></div>
+        <template v-if="legendOpen">
+          <template v-if="show.outlets">
+            <div><span class="mk mk-local"></span>local outlet (cluster = count)</div>
+            <div><span class="mk mk-regional"></span>statewide / regional, at its base</div>
+            <div><span class="mk mk-national"></span>national, at its base</div>
+            <div v-if="show.areaCounts"><span class="mk mk-area-r"></span><span class="mk mk-area-c"></span>known only to a state / country</div>
+            <div class="lg-muted">select an outlet to shade the area it covers</div>
+          </template>
+          <template v-if="show.places">
+            <div class="lg-title2">Places</div>
+            <template v-if="colorBy === 'level'">
+              <div v-for="l in levelOpts.filter(l => levels.includes(l.v))" :key="l.v">
+                <span class="sw" :style="swatch(l.v)"></span>{{ l.label }}</div>
+            </template>
+            <template v-else>
+              <div><span class="sw" :style="{background: COVER.yes}"></span>has outlets</div>
+              <div><span class="sw" :style="{background: COVER.no}"></span>none yet: a search target</div>
+            </template>
+          </template>
+        </template>
+      </div>
+      <div class="maploading" v-if="busy">{{ busy }}</div>
+    </main>
+
+    <aside class="panel">
+      <!-- OUTLET CARD -->
+      <template v-if="mode === 'outlet' && cur">
+        <div class="phead"><button class="back" @click="back">← back</button></div>
+        <div class="card">
+          <h2>{{ cur.name }}</h2>
+          <a class="url" v-if="cur.url" :href="cur.url" target="_blank" rel="noopener nofollow">{{ cur.host }} ↗</a>
+          <div class="chips">
+            <span class="chip" :class="'t-' + cur.type">{{ TYPE_LABEL[cur.type] || cur.type }}</span>
+            <span class="chip reach" v-if="cur.scope"><span class="mk" :class="'mk-' + cur.scope"></span>{{ SCOPE_LABEL[cur.scope] }}</span>
+          </div>
+          <dl>
+            <dt>Location</dt><dd>{{ cur.where || '—' }}</dd>
+            <dt>Pin</dt><dd>{{ cur.precNote }}</dd>
+            <template v-if="cur.covers"><dt>Covers</dt><dd>{{ cur.covers }}</dd></template>
+          </dl>
+          <button class="ghost small" v-if="cur.cc" @click="hereForOutlet">Who else covers here?</button>
+          <div class="pro">
+            <div class="pro-head">Kiosque Pro</div>
+            <div class="pro-row" v-for="p in PRO_FIELDS" :key="p"><span>{{ p }}</span><span class="lock">🔒</span></div>
+            <button class="small" disabled title="Prototype: billing not wired up">Unlock with Pro</button>
+          </div>
+        </div>
+      </template>
+
+      <!-- WHO COVERS HERE -->
+      <template v-else-if="mode === 'here' && here">
+        <div class="phead">
+          <button class="back" @click="back" title="Back">←</button>
+          <nav class="crumbs" aria-label="Breadcrumb">
+            <template v-for="(c, k) in here.crumbs" :key="k">
+              <span class="sep" v-if="k">›</span>
+              <a v-if="c.go && k < here.crumbs.length - 1" href="#" @click.prevent="goCrumb(c)">{{ c.label }}</a>
+              <b v-else>{{ c.label }}</b>
+            </template>
+          </nav>
+        </div>
+        <div class="card">
+          <h2>{{ here.title }}</h2>
+          <div class="placebox" v-if="here.place">
+            <div>{{ here.place.levelLabel }}<template v-if="here.place.seat"> · {{ here.place.seat }}</template></div>
+            <div>population {{ here.place.pop ? fmt(here.place.pop) : 'unknown' }}<template v-if="!PUBLIC"> ·
+              <b :class="here.place.outlets ? 'has' : 'none'">{{ here.place.outlets ? fmt(here.place.outlets) + ' outlets geocoded here' : 'no outlet geocoded here yet' }}</b></template></div>
+            <div class="links">search:
+              <a :href="here.place.g('newspaper')" target="_blank" rel="noopener">newspapers</a> ·
+              <a :href="here.place.g('radio')" target="_blank" rel="noopener">radio</a> ·
+              <a :href="here.place.g('news')" target="_blank" rel="noopener">news</a> ·
+              <a :href="'https://www.geonames.org/' + here.place.gid" target="_blank" rel="noopener">GeoNames</a></div>
+          </div>
+        </div>
+        <div class="hsec kids" v-if="here.kids && here.kids.rows.length">
+          <div class="hsec-head" @click="here.kids.open = !here.kids.open">
+            <span class="mk mk-kid"></span>{{ here.kids.title }} <b>{{ fmt(here.kids.rows.length) }}</b>
+            <span class="lg-toggle">{{ here.kids.open ? '–' : '+' }}</span></div>
+          <template v-if="here.kids.open">
+            <div class="kidbar">
+              <input class="facet-search" type="search" v-model="here.kids.q" v-if="here.kids.rows.length > 12" placeholder="Filter…">
+              <div class="seg">
+                <button :class="{on: here.kids.sort === 'pop'}" @click="here.kids.sort = 'pop'">Biggest</button>
+                <button v-if="!PUBLIC" :class="{on: here.kids.sort === 'outlets'}" @click="here.kids.sort = 'outlets'">Outlets</button>
+                <button :class="{on: here.kids.sort === 'name'}" @click="here.kids.sort = 'name'">A–Z</button>
+              </div>
+            </div>
+            <div class="hsec-note" v-if="here.kids.note">{{ here.kids.note }}</div>
+            <ul class="olist">
+              <li v-for="r in kidsShown.slice(0, here.kids.limit)" :key="r[11]" @click="openPlace(r)">
+                <div class="o-name kid-row">{{ r[6] }}<span class="rl-local" v-if="localName(r)">{{ r[7] }}</span>
+                  <span class="kid-o" v-if="!PUBLIC" :class="r[4] ? 'has' : 'none'">{{ r[4] ? fmt(r[4]) : '0' }}</span></div>
+                <div class="o-sub">{{ kidSub(r) }}</div>
+              </li>
+            </ul>
+            <button class="more" v-if="kidsShown.length > here.kids.limit" @click="here.kids.limit += 200">show more</button>
+          </template>
+        </div>
+        <template v-if="!PUBLIC">
+        <div class="hsec" v-for="s in here.sections" :key="s.key">
+          <div class="hsec-head" @click="s.open = !s.open">
+            <span class="mk" :class="s.mk"></span>{{ s.title }} <b>{{ fmt(s.rows.length) }}</b>
+            <span class="lg-toggle">{{ s.open ? '–' : '+' }}</span></div>
+          <div class="hsec-note" v-if="s.open && s.note">{{ s.note }}</div>
+          <ul class="olist" v-if="s.open">
+            <li v-for="r in s.rows.slice(0, s.limit)" :key="r[10]" @click="selectOutlet(r)">
+              <div class="o-name">{{ r[5] }}</div>
+              <div class="o-sub">{{ TYPE_LABEL[T[r[3]]] || T[r[3]] }} · {{ rowWhere(r) }}<template v-if="s.dist"> · {{ distLabel(r) }}</template></div>
+            </li>
+          </ul>
+          <button class="more" v-if="s.open && s.rows.length > s.limit" @click="s.limit += 100">show more</button>
+        </div>
+        <p class="note pad" v-if="!here.sections.some(s => s.rows.length)">No outlets match the current filters here.</p>
+        </template>
+      </template>
+
+      <!-- LIST -->
+      <template v-else>
+        <div class="tabs">
+          <button v-if="!PUBLIC" :class="{on: tab === 'outlets'}" @click="tab = 'outlets'">In view <b>{{ fmt(inView.total) }}</b></button>
+          <button :class="{on: tab === 'browse'}" @click="tab = 'browse'">Browse</button>
+          <button :class="{on: tab === 'places'}" @click="tab = 'places'" :disabled="!show.places">Places <b>{{ show.places ? fmt(pmatches.length) : '' }}</b></button>
+        </div>
+        <template v-if="tab === 'outlets'">
+          <p class="note pad">Pinned outlets in the map view, widest reach first. Click the map anywhere for “who covers here”.</p>
+          <ul class="olist">
+            <li v-for="r in inView.rows.slice(0, listLimit)" :key="r[10]" @click="selectOutlet(r)">
+              <div class="o-name"><span class="mk" :class="'mk-' + (SCOPE[r[4]] || 'local')"></span>{{ r[5] }}</div>
+              <div class="o-sub">{{ TYPE_LABEL[T[r[3]]] || T[r[3]] }} · {{ rowWhere(r) }}</div>
+            </li>
+          </ul>
+          <button class="more" v-if="inView.rows.length > listLimit" @click="listLimit += 200">show more</button>
+        </template>
+        <template v-else-if="tab === 'browse'">
+          <p class="note pad">Drill down: country › state › county › town.<template v-if="!PUBLIC"> The number is outlets in the registry.</template></p>
+          <div class="kidbar"><input class="facet-search" type="search" v-model="bq" placeholder="Filter countries…"></div>
+          <ul class="olist">
+            <li v-for="c in browse" :key="c.cc" @click="goArea({ cc: c.cc })">
+              <div class="o-name kid-row">{{ c.name }}<span class="kid-o" v-if="!PUBLIC" :class="c.o ? 'has' : 'none'">{{ fmt(c.o) }}</span></div>
+            </li>
+          </ul>
+        </template>
+        <template v-else>
+          <p class="note pad">Biggest first.<template v-if="!PUBLIC"> A place with people and no outlets is a search target.</template></p>
+          <ul class="olist">
+            <li v-for="r in pshown" :key="r[11]" @click="openPlace(r)">
+              <div class="o-name"><span class="sw" :style="swatch(LV[r[2]])"></span>{{ r[6] }}
+                <span class="rl-local" v-if="localName(r)">{{ r[7] }}</span></div>
+              <div class="o-sub">{{ LABEL[LV[r[2]]] }}<template v-if="placeParents(r)"> · {{ placeParents(r) }}</template></div>
+              <div class="o-sub">{{ r[3] ? 'pop ' + fmt(r[3]) : 'pop unknown' }}<template v-if="!PUBLIC"> ·
+                <span :class="r[4] ? 'has' : 'none'">{{ r[4] ? fmt(r[4]) + ' outlets' : 'no outlets' }}</span></template></div>
+            </li>
+          </ul>
+          <button class="more" v-if="pmatches.length > plimit" @click="plimit += 200">show more</button>
+        </template>
+      </template>
+    </aside>
+  </div>
+</div>
+<script>window.KIOSQUE_PUBLIC = true;</script>
+<script src="vendor/vue.global.prod.js"></script>
+<script src="vendor/maplibre-gl.js"></script>
+<script src="map.js?v=74a4013914"></script>
+</body>
+</html>
