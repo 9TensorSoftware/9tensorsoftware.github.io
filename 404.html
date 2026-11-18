@@ -3,40 +3,59 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Not found — 9Tensor</title>
+  <title>9Tensor</title>
+  <!-- A holding page until launch. The full site is in the commit before this one. -->
   <meta name="robots" content="noindex">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#07080B">
-  <!-- Served for any missing path, so everything links from the root. -->
   <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
-  <link rel="stylesheet" href="/styles.css">
-  <script src="/site.js" defer></script>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      min-height: 100dvh;
+      margin: 0;
+      background: #07080B;
+      color: #F1F2F5;
+      font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    a {
+      color: #A9AEBA;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #F1F2F5;
+    }
+    a:focus-visible {
+      outline: 2px solid #8C96FF;
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+  </style>
 </head>
 <body>
-  <header class="wrap top">
-    <a class="brand" href="/" aria-label="9Tensor, home">
-      <img class="mark" src="/mark.png" alt="" width="28" height="28">
-      <span class="brand__name">9Tensor</span>
-    </a>
-    <nav class="top__nav" aria-label="Main">
-      <a class="top__link" href="https://retouch.9tensor.com">R<em>é</em>touch</a>
-      <a class="top__link" href="/kiosque/">Kiosque</a>
-      <a class="top__link" href="mailto:hello@9tensor.com">Contact</a>
-    </nav>
-  </header>
-
-  <main class="wrap missing">
-    <h1>Nothing here.</h1>
-    <p>That page doesn't exist. <a href="/">Go to 9Tensor</a>.</p>
+  <main>
+    <img src="/mark.png" alt="" width="72" height="72">
+    <h1>9Tensor</h1>
+    <a href="mailto:hello@9tensor.com">hello@9tensor.com</a>
   </main>
-
-  <footer class="wrap foot">
-    <div class="foot__id">
-      <p>© 2026 9Tensor LLC</p>
-      <address>10770 Columbia Pike, Suite 300 #1283, Silver Spring, MD 20901</address>
-      <p><a href="tel:+12406034964">+1 (240) 603 4964</a></p>
-    </div>
-  </footer>
 </body>
 </html>

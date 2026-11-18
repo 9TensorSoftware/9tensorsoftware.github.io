@@ -3,185 +3,59 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>9Tensor — Analysis software and data</title>
-  <meta name="description" content="9Tensor makes Rétouch, a free image and video editor. Kiosque, a registry of news outlets, is coming soon.">
-  <link rel="canonical" href="https://9tensor.com/">
+  <title>9Tensor</title>
+  <!-- A holding page until launch. The full site is in the commit before this one. -->
+  <meta name="robots" content="noindex">
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#07080B">
   <link rel="icon" href="/favicon.png" type="image/png" sizes="192x192">
   <link rel="icon" href="/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="9Tensor">
-  <meta property="og:url" content="https://9tensor.com/">
-  <meta property="og:title" content="9Tensor">
-  <meta property="og:description" content="9Tensor makes Rétouch, a free image and video editor. Kiosque, a registry of news outlets, is coming soon.">
-  <meta property="og:image" content="https://9tensor.com/og.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="9Tensor: analysis software and data">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/styles.css">
-  <script src="/site.js" defer></script>
+  <style>
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      min-height: 100dvh;
+      margin: 0;
+      background: #07080B;
+      color: #F1F2F5;
+      font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    a {
+      color: #A9AEBA;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #F1F2F5;
+    }
+    a:focus-visible {
+      outline: 2px solid #8C96FF;
+      outline-offset: 3px;
+      border-radius: 3px;
+    }
+  </style>
 </head>
-<body class="home">
-  <header class="wrap top">
-    <a class="brand" href="/" aria-label="9Tensor, home">
-      <img class="mark" src="/mark.png" alt="" width="28" height="28">
-      <span class="brand__name">9Tensor</span>
-    </a>
-    <nav class="top__nav" aria-label="Main">
-      <a class="top__link" href="https://retouch.9tensor.com">R<em>é</em>touch</a>
-      <a class="top__link" href="/kiosque/">Kiosque</a>
-      <a class="top__link" href="mailto:hello@9tensor.com">Contact</a>
-    </nav>
-  </header>
-
-  <main class="wrap">
-    <section class="hero">
-      <div class="hero__text">
-        <h1>Analysis software and <span class="glow">data.</span></h1>
-        <p class="hero__sub">Rétouch is free to use online, or add it to your own app. Kiosque is coming soon.</p>
-      </div>
-      <!-- The mark, large: a disc cut on the diagonal, its halves sliding apart. -->
-      <svg class="orb" viewBox="0 0 120 120" aria-hidden="true">
-        <defs>
-          <clipPath id="orb-a"><path d="M0 0H120L0 120Z"/></clipPath>
-          <clipPath id="orb-b"><path d="M120 0V120H0Z"/></clipPath>
-        </defs>
-        <g class="orb__sway orb__sway--a">
-          <g class="orb__half orb__half--a" clip-path="url(#orb-a)">
-            <image href="/mark.png" width="120" height="120"/>
-          </g>
-        </g>
-        <g class="orb__sway orb__sway--b">
-          <g class="orb__half orb__half--b" clip-path="url(#orb-b)">
-            <image href="/mark.png" width="120" height="120"/>
-          </g>
-        </g>
-      </svg>
-    </section>
-
-    <section class="bento" aria-label="Software and data">
-      <a class="tile tile--retouch" href="https://retouch.9tensor.com">
-        <div class="tile__art">
-          <!-- Before and after: the same scene, flat on the left and graded on the right, with a handle sweeping between. -->
-          <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <defs>
-              <linearGradient id="rt-sky" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#1B1433"/><stop offset=".5" stop-color="#6E3550"/><stop offset=".78" stop-color="#F5753F"/><stop offset="1" stop-color="#FFC457"/>
-              </linearGradient>
-              <radialGradient id="rt-sun"><stop offset="0" stop-color="#FFF1D0"/><stop offset=".45" stop-color="#FFC457" stop-opacity=".8"/><stop offset="1" stop-color="#FFC457" stop-opacity="0"/></radialGradient>
-              <linearGradient id="rt-water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F5753F" stop-opacity=".6"/><stop offset="1" stop-color="#120B1C"/></linearGradient>
-              <g id="rt-scene">
-                <rect width="600" height="272" fill="url(#rt-sky)"/>
-                <circle cx="380" cy="236" r="110" fill="url(#rt-sun)"/>
-                <circle cx="380" cy="240" r="34" fill="#FFE2A8"/>
-                <path d="M0 222 70 168l50 30 70-70 70 76 60-30 80 60 70-74 70 50 60-30v110H0z" fill="#4A2442"/>
-                <path d="m0 252 90-46 80 34 70-40 90 50 90-36 80 30 100-26v54H0z" fill="#2A1530"/>
-                <rect y="272" width="600" height="128" fill="url(#rt-water)"/>
-                <path d="M350 290h60M334 306h92M358 322h44M344 340h72M368 358h24" stroke="#FFD08A" stroke-width="3" stroke-linecap="round" opacity=".7"/>
-              </g>
-              <filter id="rt-flat"><feColorMatrix type="saturate" values=".08"/><feComponentTransfer><feFuncR type="linear" slope=".7" intercept=".05"/><feFuncG type="linear" slope=".7" intercept=".05"/><feFuncB type="linear" slope=".78" intercept=".07"/></feComponentTransfer></filter>
-              <clipPath id="rt-graded"><rect x="300" width="600" height="400"><animate attributeName="x" values="300;170;430;300" dur="10s" repeatCount="indefinite" keyTimes="0;.33;.66;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"/></rect></clipPath>
-            </defs>
-            <use href="#rt-scene" filter="url(#rt-flat)"/>
-            <use href="#rt-scene" clip-path="url(#rt-graded)"/>
-            <g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity=".9">
-              <path d="M332 210v-16h16M412 194h16v16M428 270v16h-16M348 286h-16v-16"/>
-            </g>
-            <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">
-              <rect x="332" y="164" width="96" height="22" rx="6" fill="rgba(0,0,0,.55)"/>
-              <text x="342" y="179" fill="#fff">sun · 0.98</text>
-            </g>
-            <g>
-              <animateTransform attributeName="transform" type="translate" values="300 0;170 0;430 0;300 0" dur="10s" repeatCount="indefinite" keyTimes="0;.33;.66;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"/>
-              <line y2="400" stroke="#fff" stroke-width="2"/>
-              <circle cy="200" r="17" fill="#fff"/>
-              <path d="m-4 194-6 6 6 6m8-12 6 6-6 6" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </g>
-          </svg>
-        </div>
-        <div class="tile__text">
-          <span class="tile__kicker">Software</span>
-          <span class="tile__name">R<em>é</em>touch</span>
-          <span class="tile__desc">Image and video editing and analysis</span>
-        </div>
-      </a>
-
-
-      <a class="tile tile--kiosque" href="/kiosque/">
-        <div class="tile__text">
-          <span class="tile__kicker">Media registry</span>
-          <span class="tile__name">Kiosque</span>
-          <span class="tile__desc">A registry of news outlets around the world, from national broadcasters to local papers.</span>
-          <span class="tile__more">Coming soon</span>
-        </div>
-        <div class="tile__art">
-          <!-- Outlets scrolling past; the list repeats once so the loop is seamless. -->
-          <div class="board" aria-hidden="true">
-            <div class="board__head"><span>Outlet</span><span>Type</span><span>Country</span></div>
-            <div class="board__window">
-              <ul class="board__track">
-                <li><span class="board__name">Le Monde</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">FR</span></li>
-                <li><span class="board__name">Asahi Shimbun <small lang="ja">朝日新聞</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">JP</span></li>
-                <li><span class="board__name">Al-Ahram <small lang="ar">الأهرام</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">EG</span></li>
-                <li><span class="board__name">The Hindu</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">IN</span></li>
-                <li><span class="board__name">Al Jazeera Mubasher</span><span class="board__type board__type--tv">TV</span><span class="board__cc">QA</span></li>
-                <li><span class="board__name">Haaretz <small lang="he">הארץ</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">IL</span></li>
-                <li><span class="board__name">Clarín</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">AR</span></li>
-                <li><span class="board__name">NHK World-Japan</span><span class="board__type board__type--radio">Radio</span><span class="board__cc">JP</span></li>
-                <li><span class="board__name">Kathimerini <small lang="el">Καθημερινή</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">CY</span></li>
-                <li><span class="board__name">Rappler</span><span class="board__type board__type--online">Online</span><span class="board__cc">PH</span></li>
-                <li><span class="board__name">Mail &amp; Guardian</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ZA</span></li>
-                <li><span class="board__name">Gazeta Wyborcza</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">PL</span></li>
-                <li><span class="board__name">Dawn</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">PK</span></li>
-                <li><span class="board__name">Kompas</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ID</span></li>
-                <li><span class="board__name">The Punch</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">NG</span></li>
-                <li><span class="board__name">Aftenposten</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">NO</span></li>
-                <li><span class="board__name">Hürriyet</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">TR</span></li>
-                <li><span class="board__name">El País</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ES</span></li>
-                <li><span class="board__name">The Straits Times</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">SG</span></li>
-                <li><span class="board__name">Der Spiegel</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">DE</span></li>
-                <li><span class="board__name">Le Monde</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">FR</span></li>
-                <li><span class="board__name">Asahi Shimbun <small lang="ja">朝日新聞</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">JP</span></li>
-                <li><span class="board__name">Al-Ahram <small lang="ar">الأهرام</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">EG</span></li>
-                <li><span class="board__name">The Hindu</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">IN</span></li>
-                <li><span class="board__name">Al Jazeera Mubasher</span><span class="board__type board__type--tv">TV</span><span class="board__cc">QA</span></li>
-                <li><span class="board__name">Haaretz <small lang="he">הארץ</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">IL</span></li>
-                <li><span class="board__name">Clarín</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">AR</span></li>
-                <li><span class="board__name">NHK World-Japan</span><span class="board__type board__type--radio">Radio</span><span class="board__cc">JP</span></li>
-                <li><span class="board__name">Kathimerini <small lang="el">Καθημερινή</small></span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">CY</span></li>
-                <li><span class="board__name">Rappler</span><span class="board__type board__type--online">Online</span><span class="board__cc">PH</span></li>
-                <li><span class="board__name">Mail &amp; Guardian</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ZA</span></li>
-                <li><span class="board__name">Gazeta Wyborcza</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">PL</span></li>
-                <li><span class="board__name">Dawn</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">PK</span></li>
-                <li><span class="board__name">Kompas</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ID</span></li>
-                <li><span class="board__name">The Punch</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">NG</span></li>
-                <li><span class="board__name">Aftenposten</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">NO</span></li>
-                <li><span class="board__name">Hürriyet</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">TR</span></li>
-                <li><span class="board__name">El País</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">ES</span></li>
-                <li><span class="board__name">The Straits Times</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">SG</span></li>
-                <li><span class="board__name">Der Spiegel</span><span class="board__type board__type--newspaper">Newspaper</span><span class="board__cc">DE</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </a>
-    </section>
+<body>
+  <main>
+    <img src="/mark.png" alt="" width="72" height="72">
+    <h1>9Tensor</h1>
+    <a href="mailto:hello@9tensor.com">hello@9tensor.com</a>
   </main>
-
-  <footer class="wrap foot">
-    <div class="foot__id">
-      <p>© 2026 9Tensor LLC</p>
-      <address>10770 Columbia Pike, Suite 300 #1283, Silver Spring, MD 20901</address>
-      <p><a href="tel:+12406034964">+1 (240) 603 4964</a></p>
-    </div>
-    <p class="foot__links">
-      <a href="mailto:hello@9tensor.com">hello@9tensor.com</a>
-      <a href="https://github.com/9tensorsoftware">GitHub</a>
-      <a href="https://github.com/9tensorsoftware/9tensorsoftware.github.io">Site source</a>
-    </p>
-  </footer>
 </body>
 </html>

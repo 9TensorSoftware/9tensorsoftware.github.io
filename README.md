@@ -2,6 +2,17 @@
 
 The website of 9Tensor.
 
+> **Taken down until launch (2026-11-18).** The site is a holding page for now: the 9Tensor mark
+> and hello@9tensor.com, also served for every other address. The last full version is commit
+> `b2f7bc8`. To launch, revert the commit that took it down, then push:
+>
+> ```sh
+> git revert $(git log -1 --format=%h --grep='holding page')
+> git push
+> ```
+>
+> Everything below describes the full site, as it comes back.
+
 It's plain HTML, CSS and a little JavaScript. There's no build step, and nothing loads from other
 servers, except the regions map's basemap tiles (OpenFreeMap).
 
